@@ -90,39 +90,56 @@
 }
 
 :root {
-    /* Timeout At Shannon's Barber Shop Colors */
-    --background: #fefdfb; /* Warm off-white */
-    --foreground: #2d2520; /* Rich dark brown */
-    --card: #ffffff;
-    --card-foreground: #2d2520;
-    --popover: #ffffff;
-    --popover-foreground: #2d2520;
-    --primary: #8b4513; /* Warm saddle brown */
-    --primary-foreground: #ffffff;
-    --secondary: #f5f3f0; /* Warm light beige */
-    --secondary-foreground: #2d2520;
-    --muted: #f0ede8; /* Subtle warm gray */
-    --muted-foreground: #6b5b4f; /* Medium brown-gray */
-    --accent: #d2691e; /* Burnt orange */
-    --accent-foreground: #ffffff;
-    --destructive: #dc2626; /* Deep red */
+    /* Timeout At Shannon's Barber Shop - Core Theme Colors */
+    /* Referenced from our custom barber color palette for consistency */
+    
+    /* Background & Surface Colors */
+    --background: #fefdfb; /* Warm off-white - based on barber-brown-50 */
+    --foreground: #2d2520; /* Rich dark brown - based on barber-brown-900+ */
+    --card: #ffffff; /* Pure white for clean cards */
+    --card-foreground: #2d2520; /* Dark brown text */
+    --popover: #ffffff; /* Clean white popovers */
+    --popover-foreground: #2d2520; /* Dark brown text */
+    
+    /* Brand Colors - Primary Brown Theme */
+    --primary: var(--barber-brown-500); /* Main brand color - Saddle Brown */
+    --primary-foreground: #ffffff; /* White text on brown */
+    --secondary: var(--barber-brown-100); /* Light warm beige */
+    --secondary-foreground: var(--barber-brown-800); /* Dark brown text */
+    
+    /* Accent Colors - Burnt Orange Theme */
+    --accent: var(--barber-orange-500); /* Burnt orange accent */
+    --accent-foreground: #ffffff; /* White text on orange */
+    
+    /* Muted & Subtle Colors */
+    --muted: var(--barber-brown-200); /* Subtle warm background */
+    --muted-foreground: var(--barber-brown-600); /* Medium brown text */
+    
+    /* Interactive & Form Elements */
+    --border: var(--barber-steel-200); /* Light steel gray borders */
+    --input: var(--barber-brown-100); /* Light warm input background */
+    --ring: var(--barber-brown-500); /* Focus ring color */
+    
+    /* System Colors */
+    --destructive: #dc2626; /* Keep red for errors */
     --destructive-foreground: #ffffff;
-    --border: #e6ddd4; /* Warm border */
-    --input: #f5f3f0;
-    --ring: #8b4513; /* Primary brown for focus rings */
-    --chart-1: #8b4513; /* Saddle Brown */
-    --chart-2: #556b2f; /* Dark Olive Green */
-    --chart-3: #d2691e; /* Burnt Orange */
-    --chart-4: #708090; /* Slate Gray (Steel) */
-    --chart-5: #a0522d; /* Sienna */
-    --sidebar: #f5f3f0;
-    --sidebar-foreground: #2d2520;
-    --sidebar-primary: #8b4513;
+    
+    /* Chart Colors - Using Barber Palette */
+    --chart-1: var(--barber-brown-500); /* Saddle Brown */
+    --chart-2: var(--barber-green-500); /* Forest Green */
+    --chart-3: var(--barber-orange-500); /* Burnt Orange */
+    --chart-4: var(--barber-steel-500); /* Steel Gray */
+    --chart-5: var(--barber-brown-400); /* Medium Brown */
+    
+    /* Sidebar Colors - Consistent with Main Theme */
+    --sidebar: var(--barber-brown-100);
+    --sidebar-foreground: var(--barber-brown-800);
+    --sidebar-primary: var(--barber-brown-500);
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #ede7df;
-    --sidebar-accent-foreground: #2d2520;
-    --sidebar-border: #e6ddd4;
-    --sidebar-ring: #8b4513;
+    --sidebar-accent: var(--barber-brown-200);
+    --sidebar-accent-foreground: var(--barber-brown-700);
+    --sidebar-border: var(--barber-steel-200);
+    --sidebar-ring: var(--barber-brown-500);
     
     /* Barber Shop Brand Colors */
     --barber-brown-50: #faf8f5;
@@ -218,34 +235,45 @@
 }
 
 .dark {
-    /* Dark mode barber shop theme */
-    --background: #1a1512; /* Very dark warm brown */
-    --foreground: #f5f1ea; /* Light cream text */
-    --card: #2d2520; /* Dark brown card background */
-    --card-foreground: #f5f1ea;
-    --popover: #2d2520;
-    --popover-foreground: #f5f1ea;
-    --primary: #b8956f; /* Lighter brown for dark mode */
-    --primary-foreground: #1a1512; /* Dark text on light brown */
-    --secondary: #3d1e08; /* Dark brown secondary */
-    --secondary-foreground: #e8dcc9;
-    --muted: #2d2520; /* Dark muted */
-    --muted-foreground: #b8956f; /* Light brown muted text */
-    --accent: #e8924f; /* Brighter orange for dark mode */
-    --accent-foreground: #1a1512;
-    --border: #52280b; /* Dark brown border */
-    --input: #3d1e08; /* Dark input background */
-    --ring: #b8956f; /* Focus ring */
+    /* Dark Mode - Timeout At Shannon's Barber Shop Theme */
+    /* Using inverted barber color palette for dark mode consistency */
     
-    /* Dark sidebar colors */
-    --sidebar: #2d2520;
-    --sidebar-foreground: #f5f1ea;
-    --sidebar-primary: #b8956f;
-    --sidebar-primary-foreground: #1a1512;
-    --sidebar-accent: #3d1e08;
-    --sidebar-accent-foreground: #e8dcc9;
-    --sidebar-border: #52280b;
-    --sidebar-ring: #b8956f;
+    /* Dark Background & Surface Colors */
+    --background: #1a1512; /* Very dark warm brown - darker than barber-brown-900 */
+    --foreground: var(--barber-brown-100); /* Light cream text */
+    --card: var(--barber-brown-800); /* Dark brown card background */
+    --card-foreground: var(--barber-brown-100);
+    --popover: var(--barber-brown-800);
+    --popover-foreground: var(--barber-brown-100);
+    
+    /* Dark Brand Colors - Lighter Variants */
+    --primary: var(--barber-brown-400); /* Lighter brown for dark mode */
+    --primary-foreground: var(--barber-brown-900); /* Dark text on light brown */
+    --secondary: var(--barber-brown-800); /* Dark brown secondary */
+    --secondary-foreground: var(--barber-brown-200);
+    
+    /* Dark Accent Colors */
+    --accent: var(--barber-orange-400); /* Brighter orange for dark mode */
+    --accent-foreground: var(--barber-brown-900);
+    
+    /* Dark Muted & Subtle Colors */
+    --muted: var(--barber-brown-800); /* Dark muted background */
+    --muted-foreground: var(--barber-brown-400); /* Light brown muted text */
+    
+    /* Dark Interactive & Form Elements */
+    --border: var(--barber-brown-700); /* Dark brown borders */
+    --input: var(--barber-brown-800); /* Dark input background */
+    --ring: var(--barber-brown-400); /* Focus ring - lighter brown */
+    
+    /* Dark Sidebar Colors - Consistent with Main Dark Theme */
+    --sidebar: var(--barber-brown-800);
+    --sidebar-foreground: var(--barber-brown-100);
+    --sidebar-primary: var(--barber-brown-400);
+    --sidebar-primary-foreground: var(--barber-brown-900);
+    --sidebar-accent: var(--barber-brown-700);
+    --sidebar-accent-foreground: var(--barber-brown-200);
+    --sidebar-border: var(--barber-brown-700);
+    --sidebar-ring: var(--barber-brown-400);
 }
 
 @layer base {

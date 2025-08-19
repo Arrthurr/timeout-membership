@@ -11,6 +11,8 @@
     },
     "routeIdToServerBundleId": {
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/bar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-in": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-up": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/pricing": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -32,6 +34,24 @@
         "parentId": "root",
         "file": "app/routes/home.tsx",
         "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/services": {
+        "id": "routes/services",
+        "parentId": "root",
+        "file": "app/routes/services.tsx",
+        "path": "services",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/bar": {
+        "id": "routes/bar",
+        "parentId": "root",
+        "file": "app/routes/bar.tsx",
+        "path": "bar",
         "config": {
           "runtime": "nodejs"
         }
@@ -117,9 +137,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "/Users/michaelshimeles/Desktop/rsk/app",
+    "appDirectory": "/Users/arthurturnbull/Developer/timeout-membership/app",
     "basename": "/",
-    "buildDirectory": "/Users/michaelshimeles/Desktop/rsk/build",
+    "buildDirectory": "/Users/arthurturnbull/Developer/timeout-membership/build",
     "future": {
       "unstable_middleware": false,
       "unstable_optimizeDeps": false,
@@ -138,6 +158,18 @@
         "parentId": "root",
         "file": "routes/home.tsx",
         "index": true
+      },
+      "routes/services": {
+        "id": "routes/services",
+        "parentId": "root",
+        "file": "routes/services.tsx",
+        "path": "services"
+      },
+      "routes/bar": {
+        "id": "routes/bar",
+        "parentId": "root",
+        "file": "routes/bar.tsx",
+        "path": "bar"
       },
       "routes/sign-in": {
         "id": "routes/sign-in",

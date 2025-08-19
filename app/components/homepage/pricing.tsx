@@ -68,12 +68,12 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
     <section id="pricing" className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl space-y-6 text-center">
-          <h1 className="text-center text-4xl font-semibold lg:text-5xl">
-            Pricing that Scales with You
+          <h1 className="text-center text-4xl font-semibold lg:text-5xl text-primary">
+            Membership Tiers
           </h1>
-          <p>
-            Choose the plan that fits your needs. All plans include full access
-            to our platform.
+          <p className="text-lg text-muted-foreground">
+            Join the Timeout family and enjoy premium barber services, community perks, 
+            and exclusive member benefits. Every membership supports the :20 Second Timeout Foundation.
           </p>
         </div>
 

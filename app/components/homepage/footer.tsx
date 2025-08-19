@@ -2,37 +2,75 @@ import { Link } from "react-router";
 
 export default function FooterSection() {
   return (
-    <footer className="py-16 md:py-32">
+    <footer className="py-16 md:py-32 bg-barber-brown-50 dark:bg-background border-t border-barber-brown-200">
       <div className="mx-auto max-w-5xl px-6">
-        <Link to="/" aria-label="go home" className="mx-auto block size-fit">
-          <img src="/rsk.png" alt="RSK Logo" className="h-12 w-12" />
-        </Link>
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
-          <Link
-            to="https://x.com/rasmickyy"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X/Twitter"
-            className="text-muted-foreground hover:text-primary block"
-          >
-            <svg
-              className="size-6"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"
-              ></path>
-            </svg>
+        <div className="text-center">
+          <Link to="/" aria-label="go home" className="mx-auto block size-fit mb-6">
+            <img 
+              src="/images/barber-shop/timeout_logo_crop.png" 
+              alt="Timeout At Shannon's Logo" 
+              className="h-16 w-auto mx-auto" 
+            />
           </Link>
+          
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-primary mb-2">
+              Timeout At Shannon's
+            </h3>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Chicago's premier barber shop experience - where tradition meets excellence, 
+              and every visit supports our community through the :20 Second Timeout Foundation.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm mb-6">
+            <Link
+              to="/services"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              to="/bar"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Bar
+            </Link>
+            <Link
+              to="#team"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              to="#pricing"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Membership
+            </Link>
+            <Link
+              to="/dashboard"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Member Portal
+            </Link>
+          </div>
+
+          <div className="mb-6 text-center">
+            <div className="inline-flex items-center gap-2 bg-barber-green-100 text-barber-green-800 px-3 py-1 rounded-full text-xs font-medium">
+              🏆 Proudly supporting the :20 Second Timeout Foundation
+            </div>
+          </div>
+
+          <div className="border-t border-barber-brown-200 pt-6">
+            <span className="text-muted-foreground block text-center text-sm">
+              © {new Date().getFullYear()} Timeout At Shannon's. All rights reserved.
+            </span>
+            <p className="text-xs text-muted-foreground mt-2">
+              Building stronger communities, one timeout at a time.
+            </p>
+          </div>
         </div>
-        <span className="text-muted-foreground block text-center text-sm">
-          {" "}
-          © {new Date().getFullYear()} RSK, All rights reserved
-        </span>
       </div>
     </footer>
   );

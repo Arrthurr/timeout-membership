@@ -111,20 +111,88 @@ export const SIDEBAR_COLORS = {
   ring: BRAND_COLORS.ring,
 } as const;
 
-// Utility function to get CSS variable reference
+// Utility Functions for Color Management
+
+/**
+ * Get CSS variable reference for a color path
+ * @param colorPath - The color identifier (e.g., 'primary', 'barber-brown-500')
+ * @returns CSS variable reference or the original path if not found
+ */
 export const getCSSVariable = (colorPath: string): string => {
   const colorMap: Record<string, string> = {
+    // Brand colors
     'primary': 'var(--primary)',
-    'accent': 'var(--accent)',
+    'primary-foreground': 'var(--primary-foreground)',
+    'accent': 'var(--accent)', 
+    'accent-foreground': 'var(--accent-foreground)',
     'background': 'var(--background)',
     'foreground': 'var(--foreground)',
+    'secondary': 'var(--secondary)',
+    'secondary-foreground': 'var(--secondary-foreground)',
+    'muted': 'var(--muted)',
+    'muted-foreground': 'var(--muted-foreground)',
+    'border': 'var(--border)',
+    'input': 'var(--input)',
+    'ring': 'var(--ring)',
+    'destructive': 'var(--destructive)',
+    
+    // Barber color palette
     'barber-brown-500': 'var(--barber-brown-500)',
     'barber-green-500': 'var(--barber-green-500)',
     'barber-steel-500': 'var(--barber-steel-500)',
     'barber-orange-500': 'var(--barber-orange-500)',
+    
+    // All barber brown shades
+    'barber-brown-50': 'var(--barber-brown-50)',
+    'barber-brown-100': 'var(--barber-brown-100)',
+    'barber-brown-200': 'var(--barber-brown-200)',
+    'barber-brown-300': 'var(--barber-brown-300)',
+    'barber-brown-400': 'var(--barber-brown-400)',
+    'barber-brown-600': 'var(--barber-brown-600)',
+    'barber-brown-700': 'var(--barber-brown-700)',
+    'barber-brown-800': 'var(--barber-brown-800)',
+    'barber-brown-900': 'var(--barber-brown-900)',
   };
   
   return colorMap[colorPath] || colorPath;
+};
+
+/**
+ * Get Tailwind CSS class name for a barber color
+ * @param colorFamily - Color family ('brown', 'green', 'steel', 'orange')
+ * @param shade - Color shade (50-900)
+ * @param property - CSS property ('bg', 'text', 'border', 'ring', etc.)
+ * @returns Tailwind class name
+ */
+export const getBarberColorClass = (
+  colorFamily: 'brown' | 'green' | 'steel' | 'orange',
+  shade: ColorShade,
+  property: 'bg' | 'text' | 'border' | 'ring' | 'from' | 'to' | 'via' = 'bg'
+): string => {
+  return `${property}-barber-${colorFamily}-${shade}`;
+};
+
+/**
+ * Check if a color is dark (useful for determining text color)
+ * @param hexColor - Hex color code
+ * @returns True if the color is considered dark
+ */
+export const isColorDark = (hexColor: string): boolean => {
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness < 155;
+};
+
+/**
+ * Get contrasting text color for a given background color
+ * @param backgroundColor - Background color hex code
+ * @returns Either 'white' or the dark foreground color
+ */
+export const getContrastingTextColor = (backgroundColor: string): string => {
+  return isColorDark(backgroundColor) ? '#ffffff' : BRAND_COLORS.foreground;
 };
 
 // Color palette for easy access

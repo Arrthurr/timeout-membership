@@ -1,0 +1,175 @@
+export interface BarberService {
+  id: string;
+  name: string;
+  sportsTheme: string;
+  price: number;
+  duration: string;
+  description: string;
+  includes: string[];
+  category: 'premium' | 'standard' | 'specialty';
+  memberDiscount?: number;
+  icon?: string;
+}
+
+export const BARBER_SERVICES: BarberService[] = [
+  {
+    id: 'overtime',
+    name: 'Overtime',
+    sportsTheme: 'Complete Service',
+    price: 150,
+    duration: '90 minutes',
+    description: 'Our signature complete service experience - the ultimate timeout treatment.',
+    includes: ['Precision haircut', 'Hot towel straight razor shave', 'Beard trim & styling', 'Shampoo & scalp treatment', 'Styling & aftercare'],
+    category: 'premium',
+    memberDiscount: 15,
+    icon: '👑'
+  },
+  {
+    id: 'jump-ball',
+    name: 'Jump Ball',
+    sportsTheme: 'The Full Court Press',
+    price: 85,
+    duration: '60 minutes',
+    description: 'Start strong with our comprehensive grooming service.',
+    includes: ['Haircut', 'Straight razor shave', 'Shampoo', 'Razor edge lining'],
+    category: 'premium',
+    memberDiscount: 10,
+    icon: '🏀'
+  },
+  {
+    id: 'close-call',
+    name: 'Takes a Close Call',
+    sportsTheme: 'Complete Razor Shave',
+    price: 85,
+    duration: '45 minutes',
+    description: 'Precision straight razor shave that\'s smoother than a perfect call.',
+    includes: ['Hot towel preparation', 'Straight razor shave', 'Cool towel finish', 'Aftershave treatment'],
+    category: 'specialty',
+    memberDiscount: 10,
+    icon: '🪒'
+  },
+  {
+    id: 'timeout-called',
+    name: 'Timeout Called',
+    sportsTheme: 'The Classic Play',
+    price: 70,
+    duration: '45 minutes',
+    description: 'Take a timeout for the perfect haircut and beard refresh.',
+    includes: ['Precision haircut', 'Beard trim', 'Shampoo', 'Styling'],
+    category: 'standard',
+    memberDiscount: 10,
+    icon: '⏱️'
+  },
+  {
+    id: 'she-got-game',
+    name: 'She Got Game',
+    sportsTheme: 'Women\'s Championship Cut',
+    price: 50,
+    duration: '30 minutes',
+    description: 'Precision shear cut and shampoo designed specifically for women.',
+    includes: ['Shear cut', 'Shampoo', 'Styling consultation'],
+    category: 'specialty',
+    memberDiscount: 8,
+    icon: '💃'
+  },
+  {
+    id: 'official-review',
+    name: 'An Official Review',
+    sportsTheme: 'Beard & Shave Specialist',
+    price: 50,
+    duration: '30 minutes',
+    description: 'Professional beard maintenance with precision razor work.',
+    includes: ['Razor shave', 'Beard trim & shaping', 'Hot towel treatment'],
+    category: 'specialty',
+    memberDiscount: 8,
+    icon: '🧔'
+  },
+  {
+    id: 'foot-on-line',
+    name: 'His Foot Was on the Line',
+    sportsTheme: 'Locs & Braids Taper',
+    price: 40,
+    duration: '30 minutes',
+    description: 'Specialized taper service for locs and braids - precision you can count on.',
+    includes: ['Taper cut', 'Edge lining', 'Style consultation'],
+    category: 'specialty',
+    memberDiscount: 5,
+    icon: '💫'
+  },
+  {
+    id: 'rookies',
+    name: 'Rookies',
+    sportsTheme: 'College Student Special',
+    price: 40,
+    duration: '25 minutes',
+    description: 'College students with valid ID get the rookie rate on quality cuts.',
+    includes: ['Haircut', 'Basic styling', 'Student ID required'],
+    category: 'standard',
+    memberDiscount: 5,
+    icon: '🎓'
+  },
+  {
+    id: 'few-good-men',
+    name: 'A Few Good Men',
+    sportsTheme: 'Veterans Salute',
+    price: 40,
+    duration: '35 minutes',
+    description: 'Honoring our veterans with premium service at a special rate.',
+    includes: ['Haircut', 'Shave', 'Military ID or discharge papers required'],
+    category: 'specialty',
+    memberDiscount: 5,
+    icon: '🇺🇸'
+  },
+  {
+    id: 'draft-picks',
+    name: 'Draft Picks',
+    sportsTheme: 'Youth League',
+    price: 35,
+    duration: '20 minutes',
+    description: 'Future all-stars get the VIP treatment - kids through high school.',
+    includes: ['Age-appropriate haircut', 'Gentle approach', 'Parent consultation welcome'],
+    category: 'standard',
+    memberDiscount: 5,
+    icon: '⭐'
+  }
+];
+
+export const SERVICE_CATEGORIES = {
+  premium: {
+    name: 'Premium Experience',
+    description: 'Our signature services for the ultimate grooming experience',
+    color: 'barber-brown'
+  },
+  standard: {
+    name: 'Essential Services',
+    description: 'Quality cuts and grooming for everyday excellence',
+    color: 'barber-green'
+  },
+  specialty: {
+    name: 'Specialty Services',
+    description: 'Specialized services for unique needs and preferences',
+    color: 'orange'
+  }
+} as const;
+
+// Helper functions
+export const getServiceById = (id: string): BarberService | undefined => {
+  return BARBER_SERVICES.find(service => service.id === id);
+};
+
+export const getServicesByCategory = (category: BarberService['category']): BarberService[] => {
+  return BARBER_SERVICES.filter(service => service.category === category);
+};
+
+export const getMemberPrice = (service: BarberService): number => {
+  if (!service.memberDiscount) return service.price;
+  return service.price - service.memberDiscount;
+};
+
+export const formatPrice = (price: number): string => {
+  return `$${price}`;
+};
+
+export const formatDuration = (duration: string): string => {
+  return duration;
+};
