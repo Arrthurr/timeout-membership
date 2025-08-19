@@ -37,6 +37,52 @@
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
     --color-card: var(--card);
+    
+    /* Barber Shop Brand Colors for Tailwind */
+    --color-barber-brown-50: var(--barber-brown-50);
+    --color-barber-brown-100: var(--barber-brown-100);
+    --color-barber-brown-200: var(--barber-brown-200);
+    --color-barber-brown-300: var(--barber-brown-300);
+    --color-barber-brown-400: var(--barber-brown-400);
+    --color-barber-brown-500: var(--barber-brown-500);
+    --color-barber-brown-600: var(--barber-brown-600);
+    --color-barber-brown-700: var(--barber-brown-700);
+    --color-barber-brown-800: var(--barber-brown-800);
+    --color-barber-brown-900: var(--barber-brown-900);
+    
+    --color-barber-green-50: var(--barber-green-50);
+    --color-barber-green-100: var(--barber-green-100);
+    --color-barber-green-200: var(--barber-green-200);
+    --color-barber-green-300: var(--barber-green-300);
+    --color-barber-green-400: var(--barber-green-400);
+    --color-barber-green-500: var(--barber-green-500);
+    --color-barber-green-600: var(--barber-green-600);
+    --color-barber-green-700: var(--barber-green-700);
+    --color-barber-green-800: var(--barber-green-800);
+    --color-barber-green-900: var(--barber-green-900);
+    
+    --color-barber-steel-50: var(--barber-steel-50);
+    --color-barber-steel-100: var(--barber-steel-100);
+    --color-barber-steel-200: var(--barber-steel-200);
+    --color-barber-steel-300: var(--barber-steel-300);
+    --color-barber-steel-400: var(--barber-steel-400);
+    --color-barber-steel-500: var(--barber-steel-500);
+    --color-barber-steel-600: var(--barber-steel-600);
+    --color-barber-steel-700: var(--barber-steel-700);
+    --color-barber-steel-800: var(--barber-steel-800);
+    --color-barber-steel-900: var(--barber-steel-900);
+    
+    --color-barber-orange-50: var(--barber-orange-50);
+    --color-barber-orange-100: var(--barber-orange-100);
+    --color-barber-orange-200: var(--barber-orange-200);
+    --color-barber-orange-300: var(--barber-orange-300);
+    --color-barber-orange-400: var(--barber-orange-400);
+    --color-barber-orange-500: var(--barber-orange-500);
+    --color-barber-orange-600: var(--barber-orange-600);
+    --color-barber-orange-700: var(--barber-orange-700);
+    --color-barber-orange-800: var(--barber-orange-800);
+    --color-barber-orange-900: var(--barber-orange-900);
+    
     --radius-sm: 8px;
     --radius-md: 10px;
     --radius-lg: 12px;
@@ -44,39 +90,84 @@
 }
 
 :root {
-    /* Apple Light Theme Colors */
-    --background: #ffffff;
-    --foreground: #000000;
+    /* Timeout At Shannon's Barber Shop Colors */
+    --background: #fefdfb; /* Warm off-white */
+    --foreground: #2d2520; /* Rich dark brown */
     --card: #ffffff;
-    --card-foreground: #000000;
+    --card-foreground: #2d2520;
     --popover: #ffffff;
-    --popover-foreground: #000000;
-    --primary: #0071e3; /* Apple Blue */
+    --popover-foreground: #2d2520;
+    --primary: #8b4513; /* Warm saddle brown */
     --primary-foreground: #ffffff;
-    --secondary: #f5f5f7; /* Apple Light Gray */
-    --secondary-foreground: #1d1d1f;
-    --muted: #f5f5f7;
-    --muted-foreground: #86868b;
-    --accent: #0071e3; /* Apple Blue */
+    --secondary: #f5f3f0; /* Warm light beige */
+    --secondary-foreground: #2d2520;
+    --muted: #f0ede8; /* Subtle warm gray */
+    --muted-foreground: #6b5b4f; /* Medium brown-gray */
+    --accent: #d2691e; /* Burnt orange */
     --accent-foreground: #ffffff;
-    --destructive: #ff3b30; /* Apple Red */
+    --destructive: #dc2626; /* Deep red */
     --destructive-foreground: #ffffff;
-    --border: #e2e2e7; /* Lighter, more subtle border */
-    --input: #f5f5f7;
-    --ring: #0071e3;
-    --chart-1: #0071e3; /* Apple Blue */
-    --chart-2: #34c759; /* Apple Green */
-    --chart-3: #ff9500; /* Apple Orange */
-    --chart-4: #ffcc00; /* Apple Yellow */
-    --chart-5: #af52de; /* Apple Purple */
-    --sidebar: #f5f5f7;
-    --sidebar-foreground: #1d1d1f;
-    --sidebar-primary: #0071e3;
+    --border: #e6ddd4; /* Warm border */
+    --input: #f5f3f0;
+    --ring: #8b4513; /* Primary brown for focus rings */
+    --chart-1: #8b4513; /* Saddle Brown */
+    --chart-2: #556b2f; /* Dark Olive Green */
+    --chart-3: #d2691e; /* Burnt Orange */
+    --chart-4: #708090; /* Slate Gray (Steel) */
+    --chart-5: #a0522d; /* Sienna */
+    --sidebar: #f5f3f0;
+    --sidebar-foreground: #2d2520;
+    --sidebar-primary: #8b4513;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #e8e8ed;
-    --sidebar-accent-foreground: #1d1d1f;
-    --sidebar-border: #e2e2e7; /* Lighter border */
-    --sidebar-ring: #0071e3;
+    --sidebar-accent: #ede7df;
+    --sidebar-accent-foreground: #2d2520;
+    --sidebar-border: #e6ddd4;
+    --sidebar-ring: #8b4513;
+    
+    /* Barber Shop Brand Colors */
+    --barber-brown-50: #faf8f5;
+    --barber-brown-100: #f5f1ea;
+    --barber-brown-200: #e8dcc9;
+    --barber-brown-300: #d4c0a1;
+    --barber-brown-400: #b8956f;
+    --barber-brown-500: #8b4513; /* Primary brown */
+    --barber-brown-600: #7a3c11;
+    --barber-brown-700: #66320e;
+    --barber-brown-800: #52280b;
+    --barber-brown-900: #3d1e08;
+    
+    --barber-green-50: #f7f8f4;
+    --barber-green-100: #eef0e8;
+    --barber-green-200: #d6dcc6;
+    --barber-green-300: #b8c49c;
+    --barber-green-400: #8fa065;
+    --barber-green-500: #556b2f; /* Forest green */
+    --barber-green-600: #4a5e29;
+    --barber-green-700: #3f5023;
+    --barber-green-800: #34421d;
+    --barber-green-900: #293417;
+    
+    --barber-steel-50: #f8f9fa;
+    --barber-steel-100: #f1f3f4;
+    --barber-steel-200: #e1e5e9;
+    --barber-steel-300: #cfd6dc;
+    --barber-steel-400: #b4c1ca;
+    --barber-steel-500: #708090; /* Steel gray */
+    --barber-steel-600: #647282;
+    --barber-steel-700: #566474;
+    --barber-steel-800: #485666;
+    --barber-steel-900: #3a4858;
+    
+    --barber-orange-50: #fef7f0;
+    --barber-orange-100: #fdede0;
+    --barber-orange-200: #f9d4b7;
+    --barber-orange-300: #f4b584;
+    --barber-orange-400: #e8924f;
+    --barber-orange-500: #d2691e; /* Burnt orange */
+    --barber-orange-600: #be5d1a;
+    --barber-orange-700: #a15016;
+    --barber-orange-800: #844312;
+    --barber-orange-900: #67360e;
     /* Apple Fonts */
     --font-apple-system:
         -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue",
@@ -127,14 +218,34 @@
 }
 
 .dark {
-    --sidebar: hsl(240 5.9% 10%);
-    --sidebar-foreground: hsl(240 4.8% 95.9%);
-    --sidebar-primary: hsl(224.3 76.3% 48%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(240 3.7% 15.9%);
-    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-    --sidebar-border: hsl(240 3.7% 15.9%);
-    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    /* Dark mode barber shop theme */
+    --background: #1a1512; /* Very dark warm brown */
+    --foreground: #f5f1ea; /* Light cream text */
+    --card: #2d2520; /* Dark brown card background */
+    --card-foreground: #f5f1ea;
+    --popover: #2d2520;
+    --popover-foreground: #f5f1ea;
+    --primary: #b8956f; /* Lighter brown for dark mode */
+    --primary-foreground: #1a1512; /* Dark text on light brown */
+    --secondary: #3d1e08; /* Dark brown secondary */
+    --secondary-foreground: #e8dcc9;
+    --muted: #2d2520; /* Dark muted */
+    --muted-foreground: #b8956f; /* Light brown muted text */
+    --accent: #e8924f; /* Brighter orange for dark mode */
+    --accent-foreground: #1a1512;
+    --border: #52280b; /* Dark brown border */
+    --input: #3d1e08; /* Dark input background */
+    --ring: #b8956f; /* Focus ring */
+    
+    /* Dark sidebar colors */
+    --sidebar: #2d2520;
+    --sidebar-foreground: #f5f1ea;
+    --sidebar-primary: #b8956f;
+    --sidebar-primary-foreground: #1a1512;
+    --sidebar-accent: #3d1e08;
+    --sidebar-accent-foreground: #e8dcc9;
+    --sidebar-border: #52280b;
+    --sidebar-ring: #b8956f;
 }
 
 @layer base {

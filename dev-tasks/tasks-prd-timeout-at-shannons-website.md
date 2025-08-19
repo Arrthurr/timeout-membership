@@ -44,11 +44,11 @@ Based on `prd-timeout-at-shannons-website.md`
 
 ## Tasks
 
-- [ ] 1.0 Brand Identity & Color Scheme Implementation
-  - [ ] 1.1 Create custom Tailwind color palette with warm browns, forest greens, steel grays, and burnt oranges
-  - [ ] 1.2 Update global CSS variables for consistent theming across components
-  - [ ] 1.3 Create brand color constants file for easy reference throughout the app
-  - [ ] 1.4 Update existing shadcn/ui component color mappings to use new palette
+- [x] 1.0 Brand Identity & Color Scheme Implementation
+- [x] 1.1 Create custom Tailwind color palette with warm browns, forest greens, steel grays, and burnt oranges
+  - [x] 1.2 Update global CSS variables for consistent theming across components
+  - [x] 1.3 Create brand color constants file for easy reference throughout the app
+  - [x] 1.4 Update existing shadcn/ui component color mappings to use new palette
 
 - [ ] 2.0 Homepage Refacing & Hero Section
   - [ ] 2.1 Replace current SaaS hero content with barber shop welcome message and call-to-action
