@@ -22,17 +22,32 @@ export default function IntegrationsSection({
     <section id="hero">
       <Navbar loaderData={loaderData} />
       <div className="relative bg-muted dark:bg-background py-24 md:py-32 overflow-hidden">
-        {/* Background imagery */}
+        {/* Enhanced Background imagery */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-900/40 via-barber-brown-800/30 to-transparent z-10"></div>
-          <div className="w-full h-full bg-[url('/images/barber-shop/barber-chairs.jpg')] bg-cover bg-center bg-no-repeat opacity-15"></div>
+          {/* Primary background image */}
+          <div className="absolute inset-0 z-0">
+            <div className="w-full h-full bg-[url('/images/barber-shop/barber-chairs.jpg')] bg-cover bg-center bg-no-repeat opacity-20"></div>
+          </div>
+          
+          {/* Secondary atmosphere image - Chess area */}
+          <div className="absolute top-0 right-0 w-1/2 h-full z-1">
+            <div className="w-full h-full bg-[url('/images/barber-shop/chess-board-chairs.jpg')] bg-cover bg-left bg-no-repeat opacity-10"></div>
+          </div>
+          
+          {/* Gradient overlays for depth and readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-900/50 via-barber-brown-800/30 to-barber-brown-700/20 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-barber-brown-900/20 z-10"></div>
         </div>
         
         <div className="relative z-20 mx-auto max-w-5xl px-6 mt-[2rem]">
           <div className="grid items-center sm:grid-cols-2">
             <div className="relative mx-auto w-fit">
+              {/* Atmospheric decorative elements */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-barber-orange-500/10 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-barber-brown-500/10 rounded-full blur-xl animate-pulse [animation-delay:1s]"></div>
+              
               {/* Barber shop atmosphere showcase */}
-              <div className="relative grid grid-cols-2 gap-4 p-6">
+              <div className="relative grid grid-cols-2 gap-4 p-6 backdrop-blur-sm">
                 <div className="col-span-2 text-center mb-4">
                   <h3 className="text-lg font-semibold text-primary mb-2">The Timeout Experience</h3>
                 </div>
@@ -84,8 +99,36 @@ export default function IntegrationsSection({
                 </p>
               </div>
 
+              {/* Membership Benefits Preview */}
+              <div className="space-y-4">
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 border border-barber-orange-200">
+                  <h4 className="text-sm font-semibold text-barber-orange-800 mb-3 flex items-center gap-2">
+                    <span className="text-base">💎</span> Member Benefits
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
+                      <span className="text-barber-orange-700">Service discounts</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
+                      <span className="text-barber-orange-700">Priority booking</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
+                      <span className="text-barber-orange-700">Free bar drinks</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
+                      <span className="text-barber-orange-700">Reward points</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Enhanced Call-to-Action Buttons */}
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+                <Button size="lg" asChild className="bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group">
                   <Link
                     to={
                       loaderData?.isSignedIn
@@ -96,27 +139,45 @@ export default function IntegrationsSection({
                     }
                     prefetch="viewport"
                   >
-                    {loaderData?.isSignedIn
-                      ? loaderData?.hasActiveSubscription
-                        ? "View My Membership"
-                        : "Join Today"
-                      : "Become a Member"}
+                    <span className="relative z-10 flex items-center gap-2">
+                      {loaderData?.isSignedIn
+                        ? loaderData?.hasActiveSubscription
+                          ? <>📋 View My Membership</>
+                          : <>🚀 Join Today</>
+                        : <>🎯 Become a Member</>}
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link
-                    to="#features"
-                    prefetch="viewport"
-                  >
-                    View Services
-                  </Link>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-barber-brown-300 hover:bg-barber-brown-50"
+                  onClick={() => {
+                    const element = document.getElementById('features');
+                    if (element) {
+                      const navOffset = 80;
+                      const elementTop = element.offsetTop - navOffset;
+                      window.scrollTo({ top: elementTop, behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  <span className="flex items-center gap-2">
+                    ✂️ View Services
+                  </span>
                 </Button>
               </div>
               
-              <div className="pt-2">
-                <p className="text-xs text-muted-foreground">
-                  Supporting Chicago's youth through the :20 Second Timeout Foundation
-                </p>
+              {/* Value Proposition & Foundation */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="text-barber-green-600">💰</span>
+                  <span>Save 20% annually • No commitment required</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="text-barber-green-600">🏆</span>
+                  <span>Supporting Chicago's youth through the :20 Second Timeout Foundation</span>
+                </div>
               </div>
             </div>
           </div>

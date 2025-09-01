@@ -14,8 +14,80 @@ import { ConvexProviderWithClerk } from "convex/react-clerk";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
+import { BRAND_COLORS } from "./lib/constants/colors";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+
+// Clerk appearance configuration for Timeout At Shannon's theme
+const clerkAppearance = {
+  baseTheme: undefined, // Use default theme as base
+  variables: {
+    colorPrimary: BRAND_COLORS.primary,
+    colorBackground: BRAND_COLORS.background,
+    colorInputBackground: BRAND_COLORS.input,
+    colorInputText: BRAND_COLORS.foreground,
+    colorText: BRAND_COLORS.foreground,
+    colorTextSecondary: BRAND_COLORS.mutedForeground,
+    colorNeutral: BRAND_COLORS.muted,
+    colorDanger: BRAND_COLORS.destructive,
+    borderRadius: '0.5rem',
+    fontFamily: 'Inter, sans-serif',
+  },
+  elements: {
+    // Main container
+    card: {
+      backgroundColor: BRAND_COLORS.card,
+      border: `1px solid ${BRAND_COLORS.border}`,
+      borderRadius: '0.75rem',
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    },
+    // Header with logo area
+    headerTitle: {
+      color: BRAND_COLORS.foreground,
+      fontSize: '1.5rem',
+      fontWeight: '600',
+    },
+    headerSubtitle: {
+      color: BRAND_COLORS.mutedForeground,
+    },
+    // Form elements
+    formButtonPrimary: {
+      backgroundColor: BRAND_COLORS.primary,
+      color: BRAND_COLORS.primaryForeground,
+      borderRadius: '0.5rem',
+      fontSize: '0.875rem',
+      fontWeight: '500',
+      '&:hover': {
+        backgroundColor: BRAND_COLORS.accent,
+      },
+    },
+    formFieldInput: {
+      backgroundColor: BRAND_COLORS.input,
+      borderColor: BRAND_COLORS.border,
+      color: BRAND_COLORS.foreground,
+      borderRadius: '0.5rem',
+      '&:focus': {
+        borderColor: BRAND_COLORS.primary,
+        boxShadow: `0 0 0 3px ${BRAND_COLORS.primary}20`,
+      },
+    },
+    // Links and secondary buttons
+    footerActionLink: {
+      color: BRAND_COLORS.primary,
+      '&:hover': {
+        color: BRAND_COLORS.accent,
+      },
+    },
+    // Social connection buttons
+    socialButtonsBlockButton: {
+      borderColor: BRAND_COLORS.border,
+      color: BRAND_COLORS.foreground,
+      '&:hover': {
+        backgroundColor: BRAND_COLORS.secondary,
+      },
+    },
+  },
+} as const;
 
 export async function loader(args: Route.LoaderArgs) {
   return rootAuthLoader(args);
@@ -44,7 +116,7 @@ export const links: Route.LinksFunction = () => [
   // Preload critical assets
   {
     rel: "preload",
-    href: "/rsk.png",
+    href: "/images/barber-shop/timeout_logo_crop.png",
     as: "image",
     type: "image/png",
   },
@@ -88,6 +160,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
       loaderData={loaderData}
       signUpFallbackRedirectUrl="/"
       signInFallbackRedirectUrl="/"
+      appearance={clerkAppearance}
     >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
         <Outlet />

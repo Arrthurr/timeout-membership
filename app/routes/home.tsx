@@ -4,18 +4,19 @@ import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
 import Pricing from "~/components/homepage/pricing";
+import ScrollNavigation from "~/components/homepage/scroll-nav";
+import SectionPreviews from "~/components/homepage/section-previews";
 import Team from "~/components/homepage/team";
 import { api } from "../../convex/_generated/api";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
-  const title = "React Starter Kit - Launch Your SAAS Quickly";
+  const title = "Timeout At Shannon's - Premium Barber Shop & Coffee Bar";
   const description =
-    "This powerful starter kit is designed to help you launch your SAAS application quickly and efficiently.";
-  const keywords = "React, Starter Kit, SAAS, Launch, Quickly, Efficiently";
-  const siteUrl = "https://www.reactstarter.xyz/";
-  const imageUrl =
-    "https://jdj14ctwppwprnqu.public.blob.vercel-storage.com/rsk-image-FcUcfBMBgsjNLo99j3NhKV64GT2bQl.png";
+    "Experience exceptional barber services in Chicago. Traditional cuts, hot shaves, coffee bar, and community spirit. Supporting local youth through the :20 Second Timeout Foundation.";
+  const keywords = "Chicago barber shop, premium haircuts, hot shaves, coffee bar, traditional barber, community foundation, :20 Second Timeout";
+  const siteUrl = "https://timeoutatshanons.com/";
+  const imageUrl = "/images/barber-shop/barber-chairs.jpg";
 
   return [
     { title },
@@ -32,7 +33,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:url", content: siteUrl },
-    { property: "og:site_name", content: "React Starter Kit" },
+    { property: "og:site_name", content: "Timeout At Shannon's" },
     { property: "og:image", content: imageUrl },
 
     // Twitter Card
@@ -47,7 +48,7 @@ export function meta({}: Route.MetaArgs) {
       name: "keywords",
       content: keywords,
     },
-    { name: "author", content: "Ras Mic" },
+    { name: "author", content: "Shannon Jones" },
     { name: "favicon", content: imageUrl },
   ];
 }
@@ -79,10 +80,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Integrations loaderData={loaderData} />
+      <SectionPreviews />
       <ContentSection />
       <Team />
       <Pricing loaderData={loaderData} />
       <Footer />
+      <ScrollNavigation />
     </>
   );
 }

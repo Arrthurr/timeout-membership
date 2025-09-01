@@ -46,7 +46,7 @@ export const LogoIcon = ({
   className?: string;
   uniColor?: boolean;
 }) => {
-  return <img src="/rsk.png" className="w-12 h-12" />;
+  return <img src="/images/barber-shop/timeout_logo_crop.png" alt="Timeout At Shannon's" className={cn("w-12 h-12", className)} />;
 };
 
 export const LogoStroke = ({ className }: { className?: string }) => {

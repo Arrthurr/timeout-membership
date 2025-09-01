@@ -10,6 +10,32 @@ import {
   getSpiritsItems
 } from "~/lib/constants/bar";
 
+export function meta() {
+  return [
+    { title: "Bar & Coffee | Timeout At Shannon's - Premium Beverages in Chicago" },
+    { 
+      name: "description", 
+      content: "Complement your grooming experience with premium coffee and select spirits. Our bar offers quality beverages in a classic barber shop atmosphere." 
+    },
+    { 
+      name: "keywords", 
+      content: "Chicago coffee bar, barber shop beverages, premium spirits, espresso drinks, whiskey, cognac, barber shop atmosphere" 
+    },
+    { property: "og:title", content: "Bar & Coffee | Timeout At Shannon's" },
+    { 
+      property: "og:description", 
+      content: "Premium coffee and select spirits in Chicago's finest barber shop. Quality beverages that complement our championship grooming services." 
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Bar & Coffee | Timeout At Shannon's" },
+    {
+      name: "twitter:description",
+      content: "Premium coffee and select spirits in Chicago's finest barber shop. Quality beverages that complement our championship grooming services."
+    }
+  ];
+}
+
 export default function BarPage() {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'coffee' | 'spirits'>('all');
 

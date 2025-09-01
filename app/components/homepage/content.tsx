@@ -9,12 +9,72 @@ export default function ContentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-primary">
-            Experience The Timeout Difference
+            Premium Amenities & Atmosphere
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            More than just a haircut – discover our unique blend of traditional barbering, 
-            premium amenities, and community spirit.
+            Step into a world where traditional barbering meets modern comfort. Every detail is designed 
+            to create an exceptional experience that goes far beyond the ordinary haircut.
           </p>
+        </div>
+
+        {/* Amenities Highlights Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-20">
+          
+          {/* Coffee Bar Amenity */}
+          <div className="bg-barber-orange-50 border border-barber-orange-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-barber-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">☕</span>
+            </div>
+            <h4 className="text-lg font-semibold mb-2 text-barber-orange-900">Coffee Bar</h4>
+            <p className="text-sm text-barber-orange-700 mb-3">Premium coffee, espresso, and specialty drinks served fresh throughout your visit.</p>
+            <div className="space-y-1 text-xs text-barber-orange-600">
+              <div>• Artisan coffee blends</div>
+              <div>• Member drink discounts</div>
+              <div>• Morning pastries</div>
+            </div>
+          </div>
+
+          {/* Spirits Bar Amenity */}
+          <div className="bg-barber-brown-50 border border-barber-brown-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-barber-brown-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🥃</span>
+            </div>
+            <h4 className="text-lg font-semibold mb-2 text-barber-brown-900">Select Spirits</h4>
+            <p className="text-sm text-barber-brown-700 mb-3">Curated selection of premium spirits for the perfect end-of-day relaxation.</p>
+            <div className="space-y-1 text-xs text-barber-brown-600">
+              <div>• Premium whiskeys</div>
+              <div>• Local craft spirits</div>
+              <div>• Evening service only</div>
+            </div>
+          </div>
+
+          {/* Member Perks */}
+          <div className="bg-barber-green-50 border border-barber-green-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-barber-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">⭐</span>
+            </div>
+            <h4 className="text-lg font-semibold mb-2 text-barber-green-900">Member Perks</h4>
+            <p className="text-sm text-barber-green-700 mb-3">Exclusive benefits and VIP treatment for our valued members.</p>
+            <div className="space-y-1 text-xs text-barber-green-600">
+              <div>• Priority booking</div>
+              <div>• Service discounts</div>
+              <div>• Rewards points</div>
+            </div>
+          </div>
+
+          {/* Premium Products */}
+          <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl">🧴</span>
+            </div>
+            <h4 className="text-lg font-semibold mb-2 text-slate-900">Premium Products</h4>
+            <p className="text-sm text-slate-700 mb-3">Professional-grade grooming products available for purchase and use.</p>
+            <div className="space-y-1 text-xs text-slate-600">
+              <div>• Beard care essentials</div>
+              <div>• Hair styling products</div>
+              <div>• Aftershave collections</div>
+            </div>
+          </div>
         </div>
 
         {/* Features Grid */}
@@ -77,22 +137,34 @@ export default function ContentSection() {
                 Classic Barber Excellence
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Settle into our premium barber chairs and experience the artistry of traditional 
-                and modern cutting techniques. Every cut is crafted with precision and care by 
-                our experienced barbers.
+                Settle into our premium, vintage-inspired barber chairs and experience the perfect fusion 
+                of traditional craftsmanship and modern comfort. Every service includes luxury amenities 
+                designed to make your visit truly exceptional.
               </p>
-              <div className="space-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
-                  <span>Vintage-inspired barber chairs</span>
+                  <span>Hot towel treatments</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
-                  <span>Traditional hot towel shaves</span>
+                  <span>Premium grooming products</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
-                  <span>Modern cutting techniques</span>
+                  <span>Complimentary beverages</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
+                  <span>Master barber expertise</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
+                  <span>Scalp massage service</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-barber-brown-600 rounded-full"></span>
+                  <span>Beard oil conditioning</span>
                 </div>
               </div>
             </div>
@@ -155,22 +227,34 @@ export default function ContentSection() {
                 Rich History & Character
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Every corner tells a story. From vintage architectural details to carefully 
-                curated historical elements, Timeout At Shannon's preserves the character 
-                and charm that makes Chicago neighborhoods special.
+                Every detail creates atmosphere. From vintage architectural elements to modern amenities, 
+                discover the thoughtful touches that transform a simple visit into a memorable experience 
+                that keeps our members coming back.
               </p>
-              <div className="space-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
-                  <span>Historic architectural elements</span>
+                  <span>Member lounge areas</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
-                  <span>Neighborhood character preservation</span>
+                  <span>Product display & retail</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
-                  <span>Authentic Chicago experience</span>
+                  <span>Climate-controlled comfort</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
+                  <span>Vintage decor & memorabilia</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
+                  <span>Private consultation areas</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
+                  <span>Chicago sports memorabilia</span>
                 </div>
               </div>
             </div>
@@ -179,17 +263,46 @@ export default function ContentSection() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Button
-            asChild
-            size="lg"
-            className="gap-2 bg-primary hover:bg-primary/90"
-          >
-            <Link to="/pricing">
-              <span>Experience Timeout Today</span>
-              <ChevronRight className="size-4" />
-            </Link>
-          </Button>
+        <div className="text-center mt-20">
+          <div className="bg-gradient-to-r from-barber-green-50 to-barber-orange-50 rounded-2xl p-8 border border-barber-green-100">
+            <div className="inline-flex items-center gap-2 bg-barber-green-100 text-barber-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <span>🎯</span>
+              <span>Ready to join our community?</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+              Experience All These Amenities As A Member
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+              Join our membership community and enjoy exclusive access to premium amenities, 
+              priority booking, and significant savings on all services.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button
+                asChild
+                size="lg"
+                className="gap-2 bg-primary hover:bg-primary/90 shadow-lg"
+              >
+                <Link to="/pricing">
+                  <span>View Membership Plans</span>
+                  <ChevronRight className="size-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="gap-2 border-barber-brown-300 hover:bg-barber-brown-50"
+              >
+                <Link to="/services">
+                  <span>Book A Service First</span>
+                  <ChevronRight className="size-4" />
+                </Link>
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Save 20% with annual membership • No long-term commitment
+            </p>
+          </div>
         </div>
       </div>
     </section>

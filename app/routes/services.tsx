@@ -9,6 +9,32 @@ import {
   BarberService 
 } from "~/lib/constants/services";
 
+export function meta() {
+  return [
+    { title: "Barber Services | Timeout At Shannon's - Chicago Premium Barber Shop" },
+    { 
+      name: "description", 
+      content: "Discover our championship-level barber services. From precision cuts to luxury shaves, experience the ultimate in men's grooming at Timeout At Shannon's in Chicago." 
+    },
+    { 
+      name: "keywords", 
+      content: "Chicago barber, premium haircuts, straight razor shave, beard trim, men's grooming, barber shop services, sports themed cuts" 
+    },
+    { property: "og:title", content: "Barber Services | Timeout At Shannon's" },
+    { 
+      property: "og:description", 
+      content: "Championship-level barber services in Chicago. Premium cuts, shaves, and grooming with sports-themed service names and expert craftsmanship." 
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Barber Services | Timeout At Shannon's" },
+    {
+      name: "twitter:description",
+      content: "Championship-level barber services in Chicago. Premium cuts, shaves, and grooming with sports-themed service names and expert craftsmanship."
+    }
+  ];
+}
+
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedService, setSelectedService] = useState<string | null>(null);
