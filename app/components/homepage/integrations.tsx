@@ -22,17 +22,18 @@ export default function IntegrationsSection({
     <section id="hero">
       <Navbar loaderData={loaderData} />
       <div className="relative bg-muted dark:bg-background py-24 md:py-32 overflow-hidden">
-        {/* Enhanced Background imagery */}
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          {/* Primary background image */}
-          <div className="absolute inset-0 z-0">
-            <div className="w-full h-full bg-[url('/images/barber-shop/barber-chairs.jpg')] bg-cover bg-center bg-no-repeat opacity-20"></div>
-          </div>
-          
-          {/* Secondary atmosphere image - Chess area */}
-          <div className="absolute top-0 right-0 w-1/2 h-full z-1">
-            <div className="w-full h-full bg-[url('/images/barber-shop/chess-board-chairs.jpg')] bg-cover bg-left bg-no-repeat opacity-10"></div>
-          </div>
+          {/* Background video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          >
+            <source src="/SJ-Last-Chapter.mp4" type="video/mp4" />
+          </video>
           
           {/* Gradient overlays for depth and readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-900/50 via-barber-brown-800/30 to-barber-brown-700/20 z-10"></div>
@@ -42,62 +43,22 @@ export default function IntegrationsSection({
         <div className="relative z-20 mx-auto max-w-5xl px-6 mt-[2rem]">
           <div className="grid items-center sm:grid-cols-2">
             <div className="relative mx-auto w-fit">
-              {/* Atmospheric decorative elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-barber-orange-500/10 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-barber-brown-500/10 rounded-full blur-xl animate-pulse [animation-delay:1s]"></div>
-              
-              {/* Barber shop atmosphere showcase */}
-              <div className="relative grid grid-cols-2 gap-4 p-6 backdrop-blur-sm">
-                <div className="col-span-2 text-center mb-4">
-                  <h3 className="text-lg font-semibold text-primary mb-2">The Timeout Experience</h3>
-                </div>
-                
-                {/* Service highlights with icons */}
-                <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 text-center border border-barber-brown-200">
-                  <div className="text-2xl mb-2">✂️</div>
-                  <p className="text-sm font-medium">Expert Cuts</p>
-                  <p className="text-xs text-muted-foreground">Traditional & Modern</p>
-                </div>
-                
-                <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 text-center border border-barber-brown-200">
-                  <div className="text-2xl mb-2">🪒</div>
-                  <p className="text-sm font-medium">Hot Shaves</p>
-                  <p className="text-xs text-muted-foreground">Straight Razor</p>
-                </div>
-                
-                <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 text-center border border-barber-brown-200">
-                  <div className="text-2xl mb-2">☕</div>
-                  <p className="text-sm font-medium">Coffee Bar</p>
-                  <p className="text-xs text-muted-foreground">Premium Brews</p>
-                </div>
-                
-                <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 text-center border border-barber-brown-200">
-                  <div className="text-2xl mb-2">🥃</div>
-                  <p className="text-sm font-medium">Select Spirits</p>
-                  <p className="text-xs text-muted-foreground">Evening Relaxation</p>
-                </div>
-                
-                {/* Additional atmosphere elements */}
-                <div className="col-span-2 mt-4 text-center">
-                  <div className="bg-barber-green-50 rounded-lg p-3 border border-barber-green-200">
-                    <p className="text-sm font-medium text-barber-green-800">🏆 Community Champions</p>
-                    <p className="text-xs text-barber-green-600">:20 Second Timeout Foundation</p>
-                  </div>
-                </div>
-              </div>
+              {/* Left column intentionally left empty */}
             </div>
             <div className="mx-auto mt-6 max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
-              <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-                Timeout At Shannon's
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Where tradition meets excellence. Experience premium barber services in a warm, welcoming environment that feels like home.
-              </p>
-              <div className="space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  ✂️ Expert cuts & shaves • ☕ Coffee & spirits bar • 🏆 Community focused
-                </p>
+              <div className="flex justify-center sm:justify-start mb-4">
+                <img
+                  src="/images/barber-shop/timeout_logo_crop.png"
+                  alt="Timeout At Shannon's Logo"
+                  className="h-20 md:h-28 w-auto"
+                />
               </div>
+              <p className="text-muted-foreground text-lg">
+                The sole desire of Timeout at Shannon's is to inspire our clientele to live a lifestyle that exceeds the boundaries others have erected around them and dare to walk their own path and create their own, with our professional clientele along with our staff training and community outreach.
+              </p>
+              <p className="text-muted-foreground text-lg">
+                Our core values encompass grooming, lifestyle, and mental enrichment. It reflects our commitment to providing a comprehensive experience that goes beyond physical grooming.
+              </p>
 
               {/* Membership Benefits Preview */}
               <div className="space-y-4">
@@ -166,18 +127,6 @@ export default function IntegrationsSection({
                     ✂️ View Services
                   </span>
                 </Button>
-              </div>
-              
-              {/* Value Proposition & Foundation */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-barber-green-600">💰</span>
-                  <span>Save 20% annually • No commitment required</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span className="text-barber-green-600">🏆</span>
-                  <span>Supporting Chicago's youth through the :20 Second Timeout Foundation</span>
-                </div>
               </div>
             </div>
           </div>

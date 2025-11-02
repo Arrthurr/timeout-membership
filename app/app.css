@@ -279,8 +279,23 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
+}
+
+/* Navbar Animation Fixes */
+.navbar-transition-fix nav {
+  will-change: transform, max-width, padding;
+}
+
+.navbar-transition-fix nav > div {
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.navbar-transition-fix nav img,
+.navbar-transition-fix nav span,
+.navbar-transition-fix nav button {
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }

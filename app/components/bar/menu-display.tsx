@@ -8,63 +8,63 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
-import { 
-  BarItem, 
-  formatPrice, 
+import {
+  type BarItem,
+  formatPrice,
   getMemberPrice,
   getMemberSavings,
-  BAR_CATEGORIES 
+  BAR_CATEGORIES,
 } from "~/lib/constants/bar";
 
 interface MenuDisplayProps {
   items: BarItem[];
-  category: 'coffee' | 'spirits';
+  category: "coffee" | "spirits";
   showMemberPricing?: boolean;
   className?: string;
 }
 
-export function MenuDisplay({ 
-  items, 
-  category, 
+export function MenuDisplay({
+  items,
+  category,
   showMemberPricing = false,
-  className 
+  className,
 }: MenuDisplayProps) {
   const categoryInfo = BAR_CATEGORIES[category];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'coffee':
-        return 'border-barber-brown-300 bg-barber-brown-50';
-      case 'spirits':
-        return 'border-orange-300 bg-orange-50';
+      case "coffee":
+        return "border-barber-brown-300 bg-barber-brown-50";
+      case "spirits":
+        return "border-orange-300 bg-orange-50";
       default:
-        return 'border-gray-300 bg-gray-50';
+        return "border-gray-300 bg-gray-50";
     }
   };
 
   const getItemTypeColor = (type?: string) => {
     switch (type) {
-      case 'hot':
-        return 'bg-red-100 text-red-800 border-red-200';
-      case 'cold':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'specialty':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case "hot":
+        return "bg-red-100 text-red-800 border-red-200";
+      case "cold":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      case "specialty":
+        return "bg-purple-100 text-purple-800 border-purple-200";
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   const getAvailabilityColor = (availability?: string) => {
     switch (availability) {
-      case 'all-day':
-        return 'text-barber-green-600';
-      case 'evening':
-        return 'text-orange-600';
-      case 'limited':
-        return 'text-amber-600';
+      case "all-day":
+        return "text-barber-green-600";
+      case "evening":
+        return "text-orange-600";
+      case "limited":
+        return "text-amber-600";
       default:
-        return 'text-muted-foreground';
+        return "text-muted-foreground";
     }
   };
 
@@ -88,7 +88,8 @@ export function MenuDisplay({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {items.map((item) => {
           const memberPrice = getMemberPrice(item);
-          const hasMemberDiscount = item.memberDiscount && item.memberDiscount > 0;
+          const hasMemberDiscount =
+            item.memberDiscount && item.memberDiscount > 0;
 
           return (
             <Card
@@ -108,11 +109,12 @@ export function MenuDisplay({
                         </span>
                       )}
                       {item.type && (
-                        <Badge 
-                          variant="outline" 
+                        <Badge
+                          variant="outline"
                           className={cn("text-xs", getItemTypeColor(item.type))}
                         >
-                          {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                          {item.type.charAt(0).toUpperCase() +
+                            item.type.slice(1)}
                         </Badge>
                       )}
                     </div>
@@ -161,9 +163,10 @@ export function MenuDisplay({
                     <div className="flex items-center gap-2 text-sm">
                       <Clock className="w-3 h-3 text-muted-foreground" />
                       <span className={getAvailabilityColor(item.availability)}>
-                        {item.availability === 'all-day' && 'Available all day'}
-                        {item.availability === 'evening' && 'Evening only'}
-                        {item.availability === 'limited' && 'Limited availability'}
+                        {item.availability === "all-day" && "Available all day"}
+                        {item.availability === "evening" && "Evening only"}
+                        {item.availability === "limited" &&
+                          "Limited availability"}
                       </span>
                     </div>
                   )}

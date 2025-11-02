@@ -7,38 +7,39 @@ interface UpcomingEventsProps {
   compact?: boolean;
 }
 
-export function UpcomingEvents({ 
-  maxEvents = 6, 
+export function UpcomingEvents({
+  maxEvents = 6,
   showFilters = false,
-  compact = false 
+  compact = false,
 }: UpcomingEventsProps) {
   // Filter to only upcoming events and sort by date
-  const upcomingEvents = FOUNDATION_EVENTS
-    .filter((event) => event.status === "upcoming")
+  const upcomingEvents = FOUNDATION_EVENTS.filter(
+    (event) => event.status === "upcoming"
+  )
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, maxEvents);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     if (compact) {
-      return date.toLocaleDateString('en-US', { 
-        month: 'short', 
-        day: 'numeric' 
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
       });
     }
-    return date.toLocaleDateString('en-US', { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
   const formatCompactDate = (dateString: string) => {
     const date = new Date(dateString);
     return {
-      month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
-      day: date.getDate()
+      month: date.toLocaleDateString("en-US", { month: "short" }).toUpperCase(),
+      day: date.getDate(),
     };
   };
 
@@ -71,7 +72,9 @@ export function UpcomingEvents({
                 <div className="flex-shrink-0 w-16 text-center">
                   <div className="bg-amber-600 text-white rounded-lg p-2">
                     <div className="text-xs font-medium">{dateInfo.month}</div>
-                    <div className="text-xl font-bold leading-none">{dateInfo.day}</div>
+                    <div className="text-xl font-bold leading-none">
+                      {dateInfo.day}
+                    </div>
                   </div>
                 </div>
 
@@ -89,14 +92,16 @@ export function UpcomingEvents({
                       <MapPin className="h-3 w-3" />
                       <span className="truncate">{event.location}</span>
                     </div>
-                    {event.ticketPrice > 0 && (
+                    {event.ticketPrice !== 0 && (
                       <div className="flex items-center gap-1">
                         <DollarSign className="h-3 w-3" />
                         <span>${event.ticketPrice}</span>
                       </div>
                     )}
                     {event.ticketPrice === 0 && (
-                      <span className="text-green-600 dark:text-green-400 font-medium">Free</span>
+                      <span className="text-green-600 dark:text-green-400 font-medium">
+                        Free
+                      </span>
                     )}
                   </div>
                 </div>
@@ -143,8 +148,12 @@ export function UpcomingEvents({
                 </div>
                 <div className="absolute bottom-4 left-4">
                   <div className="text-white">
-                    <div className="text-2xl font-bold">{formatCompactDate(event.date).day}</div>
-                    <div className="text-sm opacity-90">{formatCompactDate(event.date).month}</div>
+                    <div className="text-2xl font-bold">
+                      {formatCompactDate(event.date).day}
+                    </div>
+                    <div className="text-sm opacity-90">
+                      {formatCompactDate(event.date).month}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -169,7 +178,7 @@ export function UpcomingEvents({
                     <MapPin className="h-4 w-4 text-amber-600" />
                     <span className="text-sm">{event.location}</span>
                   </div>
-                  {event.ticketPrice > 0 && (
+                  {event.ticketPrice !== 0 && (
                     <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                       <DollarSign className="h-4 w-4 text-amber-600" />
                       <span className="text-sm">${event.ticketPrice}</span>

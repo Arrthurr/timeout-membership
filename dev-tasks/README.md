@@ -89,7 +89,7 @@ While it's not always perfect, this method has proven to be a very reliable way 
 
 If you'd like to see this in action, I demonstrated it on [Claire Vo's "How I AI" podcast](https://www.youtube.com/watch?v=fD4ktSkNCw4).
 
-![Demonstration of AI Dev Tasks on How I AI Podcast](https://img.youtube.com/vi/fD4ktSkNCw4/maxresdefault.jpg)
+[![Demonstration of AI Dev Tasks on How I AI Podcast](https://img.youtube.com/vi/fD4ktSkNCw4/maxresdefault.jpg)](https://www.youtube.com/watch?v=fD4ktSkNCw4).
 
 ## 🗂️ Files in this Repository
 
@@ -151,8 +151,8 @@ To use these tools with Claude Code:
      ```
      Please generate tasks from the PRD using /ai-dev-tasks/generate-tasks.md
      If not explicitly told which PRD to use, generate a list of PRDs and ask the user to select one under `/tasks` or create a new one using `create-prd.md`:
-     - assume it's stored under `/tasks` and has a filename starting with `prd-` (e.g., `prd-[name].md`)
-     - it should not already have a corresponding task list in `/tasks` (e.g., `tasks-prd-[name].md`)
+     - assume it's stored under `/tasks` and has a filename starting with `[n]-prd-` (e.g., `0001-prd-[name].md`)
+     - it should not already have a corresponding task list in `/tasks` (e.g., `tasks-0001-prd-[name].md`)
      - **always** ask the user to confirm the PRD file name before proceeding
      Make sure to provide options in number lists so I can respond easily (if multiple options).
      ```

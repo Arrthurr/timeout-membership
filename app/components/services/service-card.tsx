@@ -10,11 +10,11 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
-import { 
-  BarberService, 
-  formatPrice, 
+import {
+  type BarberService,
+  formatPrice,
   getMemberPrice,
-  SERVICE_CATEGORIES 
+  SERVICE_CATEGORIES,
 } from "~/lib/constants/services";
 
 interface ServiceCardProps {
@@ -24,48 +24,51 @@ interface ServiceCardProps {
   className?: string;
 }
 
-export function ServiceCard({ 
-  service, 
-  showMemberPricing = false, 
+export function ServiceCard({
+  service,
+  showMemberPricing = false,
   onBookService,
-  className 
+  className,
 }: ServiceCardProps) {
   const category = SERVICE_CATEGORIES[service.category];
   const memberPrice = getMemberPrice(service);
-  const hasMemberDiscount = service.memberDiscount && service.memberDiscount > 0;
+  const hasMemberDiscount =
+    service.memberDiscount && service.memberDiscount > 0;
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'premium':
-        return 'border-barber-brown-300 bg-barber-brown-50';
-      case 'standard':
-        return 'border-barber-green-300 bg-barber-green-50';
-      case 'specialty':
-        return 'border-orange-300 bg-orange-50';
+      case "premium":
+        return "border-barber-brown-300 bg-barber-brown-50";
+      case "standard":
+        return "border-barber-green-300 bg-barber-green-50";
+      case "specialty":
+        return "border-orange-300 bg-orange-50";
       default:
-        return 'border-gray-300 bg-gray-50';
+        return "border-gray-300 bg-gray-50";
     }
   };
 
   const getBadgeColor = (category: string) => {
     switch (category) {
-      case 'premium':
-        return 'bg-barber-brown-100 text-barber-brown-800 border-barber-brown-200';
-      case 'standard':
-        return 'bg-barber-green-100 text-barber-green-800 border-barber-green-200';
-      case 'specialty':
-        return 'bg-orange-100 text-orange-800 border-orange-200';
+      case "premium":
+        return "bg-barber-brown-100 text-barber-brown-800 border-barber-brown-200";
+      case "standard":
+        return "bg-barber-green-100 text-barber-green-800 border-barber-green-200";
+      case "specialty":
+        return "bg-orange-100 text-orange-800 border-orange-200";
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   return (
-    <Card className={cn(
-      "relative overflow-hidden hover:shadow-lg transition-shadow duration-300",
-      getCategoryColor(service.category),
-      className
-    )}>
+    <Card
+      className={cn(
+        "relative overflow-hidden hover:shadow-lg transition-shadow duration-300",
+        getCategoryColor(service.category),
+        className
+      )}
+    >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="space-y-2 flex-1">
@@ -75,9 +78,12 @@ export function ServiceCard({
                   {service.icon}
                 </span>
               )}
-              <Badge 
-                variant="outline" 
-                className={cn("text-xs font-medium", getBadgeColor(service.category))}
+              <Badge
+                variant="outline"
+                className={cn(
+                  "text-xs font-medium",
+                  getBadgeColor(service.category)
+                )}
               >
                 {category.name}
               </Badge>
@@ -89,7 +95,7 @@ export function ServiceCard({
               {service.sportsTheme}
             </CardDescription>
           </div>
-          
+
           <div className="text-right ml-4">
             <div className="flex flex-col items-end">
               {showMemberPricing && hasMemberDiscount ? (
@@ -154,7 +160,7 @@ export function ServiceCard({
       </CardContent>
 
       <CardFooter className="pt-0">
-        <Button 
+        <Button
           onClick={() => onBookService?.(service.id)}
           className="w-full bg-primary hover:bg-primary/90"
           size="lg"

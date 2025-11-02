@@ -23,7 +23,7 @@ const data = {
     {
       title: "Chat",
       url: "/dashboard/chat",
-      icon: MessageCircle,
+      icon: MessageCircle as any,
     },
   ],
   navSecondary: [

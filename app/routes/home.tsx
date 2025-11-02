@@ -4,8 +4,6 @@ import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
 import Pricing from "~/components/homepage/pricing";
-import ScrollNavigation from "~/components/homepage/scroll-nav";
-import SectionPreviews from "~/components/homepage/section-previews";
 import Team from "~/components/homepage/team";
 import { api } from "../../convex/_generated/api";
 import type { Route } from "./+types/home";
@@ -34,7 +32,6 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:image:height", content: "630" },
     { property: "og:url", content: siteUrl },
     { property: "og:site_name", content: "Timeout At Shannon's" },
-    { property: "og:image", content: imageUrl },
 
     // Twitter Card
     { name: "twitter:card", content: "summary_large_image" },
@@ -80,12 +77,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Integrations loaderData={loaderData} />
-      <SectionPreviews />
       <ContentSection />
       <Team />
       <Pricing loaderData={loaderData} />
       <Footer />
-      <ScrollNavigation />
     </>
   );
 }
