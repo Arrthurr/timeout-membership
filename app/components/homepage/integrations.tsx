@@ -30,7 +30,7 @@ export default function IntegrationsSection({
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
           >
             <source src="/SJ-Last-Chapter.mp4" type="video/mp4" />
           </video>
@@ -50,13 +50,13 @@ export default function IntegrationsSection({
                 <img
                   src="/images/barber-shop/timeout_logo_crop.png"
                   alt="Timeout At Shannon's Logo"
-                  className="h-20 md:h-28 w-auto"
+                  className="w-3/4 h-auto"
                 />
               </div>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-white text-lg">
                 The sole desire of Timeout at Shannon's is to inspire our clientele to live a lifestyle that exceeds the boundaries others have erected around them and dare to walk their own path and create their own, with our professional clientele along with our staff training and community outreach.
               </p>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-white text-lg">
                 Our core values encompass grooming, lifestyle, and mental enrichment. It reflects our commitment to providing a comprehensive experience that goes beyond physical grooming.
               </p>
 

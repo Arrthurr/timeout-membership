@@ -12,114 +12,14 @@ export default function ContentSection() {
             Premium Amenities & Atmosphere
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Step into a world where traditional barbering meets modern comfort. Every detail is designed 
-            to create an exceptional experience that goes far beyond the ordinary haircut.
+            Step into a world where traditional barbering meets modern comfort. Every detail creates an exceptional experience that goes far beyond the ordinary haircut.
           </p>
-        </div>
-
-        {/* Amenities Highlights Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-20">
-          
-          {/* Coffee Bar Amenity */}
-          <div className="bg-barber-orange-50 border border-barber-orange-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-barber-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">☕</span>
-            </div>
-            <h4 className="text-lg font-semibold mb-2 text-barber-orange-900">Coffee Bar</h4>
-            <p className="text-sm text-barber-orange-700 mb-3">Premium coffee, espresso, and specialty drinks served fresh throughout your visit.</p>
-            <div className="space-y-1 text-xs text-barber-orange-600">
-              <div>• Artisan coffee blends</div>
-              <div>• Member drink discounts</div>
-              <div>• Morning pastries</div>
-            </div>
-          </div>
-
-          {/* Spirits Bar Amenity */}
-          <div className="bg-barber-brown-50 border border-barber-brown-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-barber-brown-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🥃</span>
-            </div>
-            <h4 className="text-lg font-semibold mb-2 text-barber-brown-900">Select Spirits</h4>
-            <p className="text-sm text-barber-brown-700 mb-3">Curated selection of premium spirits for the perfect end-of-day relaxation.</p>
-            <div className="space-y-1 text-xs text-barber-brown-600">
-              <div>• Premium whiskeys</div>
-              <div>• Local craft spirits</div>
-              <div>• Evening service only</div>
-            </div>
-          </div>
-
-          {/* Member Perks */}
-          <div className="bg-barber-green-50 border border-barber-green-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-barber-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">⭐</span>
-            </div>
-            <h4 className="text-lg font-semibold mb-2 text-barber-green-900">Member Perks</h4>
-            <p className="text-sm text-barber-green-700 mb-3">Exclusive benefits and VIP treatment for our valued members.</p>
-            <div className="space-y-1 text-xs text-barber-green-600">
-              <div>• Priority booking</div>
-              <div>• Service discounts</div>
-              <div>• Rewards points</div>
-            </div>
-          </div>
-
-          {/* Premium Products */}
-          <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🧴</span>
-            </div>
-            <h4 className="text-lg font-semibold mb-2 text-slate-900">Premium Products</h4>
-            <p className="text-sm text-slate-700 mb-3">Professional-grade grooming products available for purchase and use.</p>
-            <div className="space-y-1 text-xs text-slate-600">
-              <div>• Beard care essentials</div>
-              <div>• Hair styling products</div>
-              <div>• Aftershave collections</div>
-            </div>
-          </div>
         </div>
 
         {/* Features Grid */}
         <div className="grid gap-8 md:gap-12">
           
-          {/* Feature 1: Chess & Relaxation */}
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-barber-green-100 text-barber-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                ♛ Strategic Relaxation
-              </div>
-              <h3 className="text-3xl font-semibold">
-                Chess & Conversation
-              </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Challenge fellow members to a game while you wait, or engage in thoughtful 
-                conversation. Our chess boards create connections and foster the community 
-                spirit that makes Timeout special.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
-                  <span>Hand-crafted chess sets</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
-                  <span>Community tournaments</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
-                  <span>Comfortable seating areas</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/images/barber-shop/chess-board-chairs.jpg"
-                alt="Chess boards and comfortable chairs at Timeout At Shannon's"
-                className="w-full h-[400px] object-cover rounded-xl shadow-lg"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-barber-brown-900/20 to-transparent rounded-xl"></div>
-            </div>
-          </div>
-
-          {/* Feature 2: Premium Barber Chairs */}
+          {/* Feature 1: Premium Barber Chairs */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative order-2 md:order-1">
               <img
@@ -170,46 +70,45 @@ export default function ContentSection() {
             </div>
           </div>
 
-          {/* Feature 3: Shot Clock Heritage */}
+          {/* Feature 2: Chess & Relaxation */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-                🏀 Chicago Heritage
+              <div className="inline-flex items-center gap-2 bg-barber-green-100 text-barber-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                ♛ Strategic Relaxation
               </div>
               <h3 className="text-3xl font-semibold">
-                :20 Second Timeout Legacy
+                Golf, Chess & Conversation
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Our vintage shot clock represents more than decor – it symbolizes our commitment 
-                to Chicago's youth through the :20 Second Timeout Foundation, creating opportunities 
-                and building futures in our community.
+                Challenge yourself on our golf simulator, or fellow members to a game of chess while you wait. Our games create connections and foster the community 
+                spirit that makes Timeout special.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
-                  <span>Community foundation support</span>
+                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
+                  <span>Realistic indoor golf simulator</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
-                  <span>Youth mentorship programs</span>
+                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
+                  <span>Hand-crafted chess sets</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
-                  <span>Chicago basketball heritage</span>
+                  <span className="w-2 h-2 bg-barber-green-600 rounded-full"></span>
+                  <span>Comfortable seating areas</span>
                 </div>
               </div>
             </div>
             <div className="relative">
               <img
-                src="/images/barber-shop/shot-clock.jpg"
-                alt="Vintage shot clock representing the :20 Second Timeout Foundation"
+                src="/images/barber-shop/chess-board-pictures.jpg"
+                alt="Chess boards and comfortable chairs at Timeout At Shannon's"
                 className="w-full h-[400px] object-cover rounded-xl shadow-lg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-barber-brown-900/20 to-transparent rounded-xl"></div>
             </div>
           </div>
 
-          {/* Feature 4: Unique Details */}
+          {/* Feature 3: Unique Details */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative order-2 md:order-1">
               <img
@@ -257,6 +156,45 @@ export default function ContentSection() {
                   <span>Chicago sports memorabilia</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Feature 4: Shot Clock Heritage */}
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                🏀 Chicago Heritage
+              </div>
+              <h3 className="text-3xl font-semibold">
+                :20 Second Timeout Legacy
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Our vintage shot clock represents more than decor — it symbolizes our commitment 
+                to Chicago's youth through the <a href="/foundation" className="text-primary hover:underline">:20 Second Timeout Foundation</a>, creating opportunities 
+                and building futures in our community.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
+                  <span>Community foundation support</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
+                  <span>Youth mentorship programs</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
+                  <span>Chicago basketball heritage</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/images/barber-shop/shot-clock.jpg"
+                alt="Vintage shot clock representing the :20 Second Timeout Foundation"
+                className="w-full h-[400px] object-cover rounded-xl shadow-lg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent rounded-xl"></div>
             </div>
           </div>
 
