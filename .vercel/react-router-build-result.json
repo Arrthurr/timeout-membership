@@ -11,8 +11,10 @@
     },
     "routeIdToServerBundleId": {
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/bar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/foundation": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-in": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-up": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/pricing": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -24,9 +26,9 @@
     },
     "routes": {
       "root": {
-        "path": "",
         "id": "root",
         "file": "app/root.tsx",
+        "path": "",
         "config": {}
       },
       "routes/home": {
@@ -34,6 +36,15 @@
         "parentId": "root",
         "file": "app/routes/home.tsx",
         "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "app/routes/about.tsx",
+        "path": "about",
         "config": {
           "runtime": "nodejs"
         }
@@ -52,6 +63,15 @@
         "parentId": "root",
         "file": "app/routes/bar.tsx",
         "path": "bar",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/foundation": {
+        "id": "routes/foundation",
+        "parentId": "root",
+        "file": "app/routes/foundation.tsx",
+        "path": "foundation",
         "config": {
           "runtime": "nodejs"
         }
@@ -141,7 +161,7 @@
     "basename": "/",
     "buildDirectory": "/Users/arthurturnbull/Developer/timeout-membership/build",
     "future": {
-      "unstable_middleware": false,
+      "v8_middleware": false,
       "unstable_optimizeDeps": false,
       "unstable_splitRouteModules": false,
       "unstable_subResourceIntegrity": false,
@@ -149,15 +169,21 @@
     },
     "routes": {
       "root": {
-        "path": "",
         "id": "root",
-        "file": "root.tsx"
+        "file": "root.tsx",
+        "path": ""
       },
       "routes/home": {
         "id": "routes/home",
         "parentId": "root",
         "file": "routes/home.tsx",
         "index": true
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "routes/about.tsx",
+        "path": "about"
       },
       "routes/services": {
         "id": "routes/services",
@@ -170,6 +196,12 @@
         "parentId": "root",
         "file": "routes/bar.tsx",
         "path": "bar"
+      },
+      "routes/foundation": {
+        "id": "routes/foundation",
+        "parentId": "root",
+        "file": "routes/foundation.tsx",
+        "path": "foundation"
       },
       "routes/sign-in": {
         "id": "routes/sign-in",
@@ -231,7 +263,73 @@
     },
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
-    "ssr": true
+    "ssr": true,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/about.tsx",
+            "path": "about"
+          },
+          {
+            "file": "routes/services.tsx",
+            "path": "services"
+          },
+          {
+            "file": "routes/bar.tsx",
+            "path": "bar"
+          },
+          {
+            "file": "routes/foundation.tsx",
+            "path": "foundation"
+          },
+          {
+            "file": "routes/sign-in.tsx",
+            "path": "sign-in/*"
+          },
+          {
+            "file": "routes/sign-up.tsx",
+            "path": "sign-up/*"
+          },
+          {
+            "file": "routes/pricing.tsx",
+            "path": "pricing"
+          },
+          {
+            "file": "routes/success.tsx",
+            "path": "success"
+          },
+          {
+            "file": "routes/subscription-required.tsx",
+            "path": "subscription-required"
+          },
+          {
+            "file": "routes/dashboard/layout.tsx",
+            "children": [
+              {
+                "file": "routes/dashboard/index.tsx",
+                "path": "dashboard"
+              },
+              {
+                "file": "routes/dashboard/chat.tsx",
+                "path": "dashboard/chat"
+              },
+              {
+                "file": "routes/dashboard/settings.tsx",
+                "path": "dashboard/settings"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "viteConfig": {
     "build": {

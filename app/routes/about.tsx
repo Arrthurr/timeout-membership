@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import { ShopHistory } from "~/components/about/shop-history";
 
 export const meta: MetaFunction = () => {

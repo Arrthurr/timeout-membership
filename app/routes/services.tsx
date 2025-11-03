@@ -3,10 +3,10 @@ import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
+import type { BarberService } from "~/lib/constants/services";
 import { 
   BARBER_SERVICES, 
-  SERVICE_CATEGORIES, 
-  BarberService 
+  SERVICE_CATEGORIES
 } from "~/lib/constants/services";
 
 export function meta() {

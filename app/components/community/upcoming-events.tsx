@@ -92,13 +92,13 @@ export function UpcomingEvents({
                       <MapPin className="h-3 w-3" />
                       <span className="truncate">{event.location}</span>
                     </div>
-                    {event.ticketPrice !== 0 && (
+                    {(event.ticketPrice as number) > 0 && (
                       <div className="flex items-center gap-1">
                         <DollarSign className="h-3 w-3" />
                         <span>${event.ticketPrice}</span>
                       </div>
                     )}
-                    {event.ticketPrice === 0 && (
+                    {(event.ticketPrice as number) === 0 && (
                       <span className="text-green-600 dark:text-green-400 font-medium">
                         Free
                       </span>
@@ -178,13 +178,13 @@ export function UpcomingEvents({
                     <MapPin className="h-4 w-4 text-amber-600" />
                     <span className="text-sm">{event.location}</span>
                   </div>
-                  {event.ticketPrice !== 0 && (
+                  {(event.ticketPrice as number) > 0 && (
                     <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                       <DollarSign className="h-4 w-4 text-amber-600" />
                       <span className="text-sm">${event.ticketPrice}</span>
                     </div>
                   )}
-                  {event.ticketPrice === 0 && (
+                  {(event.ticketPrice as number) === 0 && (
                     <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                       <span className="text-sm font-medium">Free Event</span>
                     </div>
