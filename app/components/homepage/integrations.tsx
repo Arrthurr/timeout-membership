@@ -36,8 +36,8 @@ export default function IntegrationsSection({
           </video>
           
           {/* Gradient overlays for depth and readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-900/50 via-barber-brown-800/30 to-barber-brown-700/20 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-barber-brown-900/20 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40 z-10"></div>
         </div>
         
         <div className="relative z-20 mx-auto max-w-5xl px-6 mt-[2rem]">
@@ -53,42 +53,33 @@ export default function IntegrationsSection({
                   className="w-3/4 h-auto"
                 />
               </div>
-              <p className="text-white text-lg">
-                The sole desire of Timeout at Shannon's is to inspire our clientele to live a lifestyle that exceeds the boundaries others have erected around them and dare to walk their own path and create their own, with our professional clientele along with our staff training and community outreach.
-              </p>
-              <p className="text-white text-lg">
-                Our core values encompass grooming, lifestyle, and mental enrichment. It reflects our commitment to providing a comprehensive experience that goes beyond physical grooming.
-              </p>
+              <div className="space-y-3">
+                <h1 className="text-white text-4xl font-semibold leading-tight sm:text-5xl">
+                  Modern members-only grooming lounge in the heart of Chicago.
+                </h1>
+                <p className="text-white/80 text-lg">
+                  Quiet luxury, crafted cuts, and a club to linger—without the fuss.
+                </p>
+              </div>
 
-              {/* Membership Benefits Preview */}
-              <div className="space-y-4">
-                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 border border-barber-orange-200">
-                  <h4 className="text-sm font-semibold text-barber-orange-800 mb-3 flex items-center gap-2">
-                    <span className="text-base">💎</span> Member Benefits
-                  </h4>
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
-                      <span className="text-barber-orange-700">Service discounts</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
-                      <span className="text-barber-orange-700">Priority booking</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
-                      <span className="text-barber-orange-700">Free bar drinks</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-barber-orange-600 rounded-full"></span>
-                      <span className="text-barber-orange-700">Reward points</span>
-                    </div>
-                  </div>
+              {/* Membership Outcomes */}
+              <div className="grid gap-3 text-sm text-white/80">
+                <div className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-white/70" />
+                  <span>Club access: lounge, bar, golf sim, and member events.</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-white/70" />
+                  <span>Priority booking with master barbers and elevated amenities.</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="h-2 w-2 rounded-full bg-white/70" />
+                  <span>Member perks that keep visits easy—drinks, comforts, and care.</span>
                 </div>
               </div>
 
               {/* Enhanced Call-to-Action Buttons */}
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group">
                   <Link
                     to={
@@ -104,16 +95,14 @@ export default function IntegrationsSection({
                       {loaderData?.isSignedIn
                         ? loaderData?.hasActiveSubscription
                           ? <>📋 View My Membership</>
-                          : <>🚀 Join Today</>
+                          : <>🚀 Join the Club</>
                         : <>🎯 Become a Member</>}
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-barber-brown-300 hover:bg-barber-brown-50"
+                <button
+                  className="text-white/80 text-sm underline-offset-4 hover:underline transition"
                   onClick={() => {
                     const element = document.getElementById('features');
                     if (element) {
@@ -123,10 +112,8 @@ export default function IntegrationsSection({
                     }
                   }}
                 >
-                  <span className="flex items-center gap-2">
-                    ✂️ View Services
-                  </span>
-                </Button>
+                  See what’s inside
+                </button>
               </div>
             </div>
           </div>

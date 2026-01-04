@@ -9,27 +9,27 @@
 // Primary Brand Colors
 export const BRAND_COLORS = {
   // Core Brand Colors
-  primary: '#8b4513',           // Warm saddle brown
+  primary: '#f7821a',           // Brand orange
   primaryForeground: '#ffffff', // White text on primary
-  accent: '#d2691e',            // Burnt orange
+  accent: '#f7821a',            // Accent aligns with brand orange
   accentForeground: '#ffffff',  // White text on accent
   
   // Background & Text
   background: '#fefdfb',        // Warm off-white
-  foreground: '#2d2520',        // Rich dark brown
+  foreground: '#1f1f1f',        // Neutral charcoal
   card: '#ffffff',              // Card background
-  cardForeground: '#2d2520',    // Card text
+  cardForeground: '#1f1f1f',    // Card text
   
   // Secondary & Muted
-  secondary: '#f5f3f0',         // Warm light beige
-  secondaryForeground: '#2d2520', // Text on secondary
-  muted: '#f0ede8',             // Subtle warm gray
-  mutedForeground: '#6b5b4f',   // Medium brown-gray
+  secondary: '#f4f4f2',         // Light neutral
+  secondaryForeground: '#1f1f1f', // Text on secondary
+  muted: '#f1f3f4',             // Subtle neutral gray
+  mutedForeground: '#5b636e',   // Neutral-muted text
   
   // UI Elements
-  border: '#e6ddd4',            // Warm border
-  input: '#f5f3f0',             // Input background
-  ring: '#8b4513',              // Focus ring (primary)
+  border: '#e1e5e9',            // Neutral border
+  input: '#f8f8f6',             // Input background
+  ring: '#f7821a',              // Focus ring (primary)
   destructive: '#dc2626',       // Error/delete actions
   destructiveForeground: '#ffffff',
 } as const;

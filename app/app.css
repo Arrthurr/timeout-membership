@@ -95,30 +95,30 @@
     
     /* Background & Surface Colors */
     --background: #fefdfb; /* Warm off-white - based on barber-brown-50 */
-    --foreground: #2d2520; /* Rich dark brown - based on barber-brown-900+ */
+    --foreground: #1f1f1f; /* Neutral charcoal for modern-minimal UI */
     --card: #ffffff; /* Pure white for clean cards */
-    --card-foreground: #2d2520; /* Dark brown text */
+    --card-foreground: #1f1f1f; /* Neutral text */
     --popover: #ffffff; /* Clean white popovers */
-    --popover-foreground: #2d2520; /* Dark brown text */
+    --popover-foreground: #1f1f1f; /* Neutral text */
     
-    /* Brand Colors - Primary Brown Theme */
-    --primary: var(--barber-brown-500); /* Main brand color - Saddle Brown */
-    --primary-foreground: #ffffff; /* White text on brown */
-    --secondary: var(--barber-brown-100); /* Light warm beige */
-    --secondary-foreground: var(--barber-brown-800); /* Dark brown text */
+    /* Brand Colors - Orange-led Theme */
+    --primary: #f7821a; /* Brand orange */
+    --primary-foreground: #ffffff; /* White text on orange */
+    --secondary: #f4f4f2; /* Light neutral surface */
+    --secondary-foreground: #1f1f1f; /* Neutral text */
     
-    /* Accent Colors - Burnt Orange Theme */
-    --accent: var(--barber-orange-500); /* Burnt orange accent */
-    --accent-foreground: #ffffff; /* White text on orange */
+    /* Accent Colors */
+    --accent: #f7821a; /* Use the same orange as accent */
+    --accent-foreground: #ffffff; /* White text on accent */
     
     /* Muted & Subtle Colors */
-    --muted: var(--barber-brown-200); /* Subtle warm background */
-    --muted-foreground: var(--barber-brown-600); /* Medium brown text */
+    --muted: var(--barber-steel-100); /* Subtle neutral background */
+    --muted-foreground: #5b636e; /* Neutral-muted text */
     
     /* Interactive & Form Elements */
     --border: var(--barber-steel-200); /* Light steel gray borders */
-    --input: var(--barber-brown-100); /* Light warm input background */
-    --ring: var(--barber-brown-500); /* Focus ring color */
+    --input: #f8f8f6; /* Light neutral input background */
+    --ring: #f7821a; /* Focus ring color */
     
     /* System Colors */
     --destructive: #dc2626; /* Keep red for errors */
@@ -240,30 +240,30 @@
     
     /* Dark Background & Surface Colors */
     --background: #1a1512; /* Very dark warm brown - darker than barber-brown-900 */
-    --foreground: var(--barber-brown-100); /* Light cream text */
-    --card: var(--barber-brown-800); /* Dark brown card background */
-    --card-foreground: var(--barber-brown-100);
-    --popover: var(--barber-brown-800);
-    --popover-foreground: var(--barber-brown-100);
+    --foreground: #f5f5f5; /* Light neutral text */
+    --card: #221b19; /* Dark neutral card background */
+    --card-foreground: #f5f5f5;
+    --popover: #221b19;
+    --popover-foreground: #f5f5f5;
     
-    /* Dark Brand Colors - Lighter Variants */
-    --primary: var(--barber-brown-400); /* Lighter brown for dark mode */
-    --primary-foreground: var(--barber-brown-900); /* Dark text on light brown */
-    --secondary: var(--barber-brown-800); /* Dark brown secondary */
-    --secondary-foreground: var(--barber-brown-200);
+    /* Dark Brand Colors - Orange-led */
+    --primary: #f7821a; /* Brand orange */
+    --primary-foreground: #0f0f0f; /* Dark text on bright orange */
+    --secondary: #1f1f1f; /* Dark neutral secondary */
+    --secondary-foreground: #f5f5f5;
     
     /* Dark Accent Colors */
-    --accent: var(--barber-orange-400); /* Brighter orange for dark mode */
-    --accent-foreground: var(--barber-brown-900);
+    --accent: #f7821a; /* Keep orange as accent */
+    --accent-foreground: #0f0f0f;
     
     /* Dark Muted & Subtle Colors */
-    --muted: var(--barber-brown-800); /* Dark muted background */
-    --muted-foreground: var(--barber-brown-400); /* Light brown muted text */
+    --muted: #241d1a; /* Dark muted background */
+    --muted-foreground: #b0b0b0; /* Light muted text */
     
     /* Dark Interactive & Form Elements */
-    --border: var(--barber-brown-700); /* Dark brown borders */
-    --input: var(--barber-brown-800); /* Dark input background */
-    --ring: var(--barber-brown-400); /* Focus ring - lighter brown */
+    --border: #2f2f2f; /* Neutral borders */
+    --input: #1f1f1f; /* Dark input background */
+    --ring: #f7821a; /* Focus ring - brand accent */
     
     /* Dark Sidebar Colors - Consistent with Main Dark Theme */
     --sidebar: var(--barber-brown-800);

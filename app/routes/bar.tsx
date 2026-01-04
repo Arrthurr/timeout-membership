@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Badge } from "~/components/ui/badge";
+import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { MenuDisplay } from "~/components/bar/menu-display";
-import { 
+import {
   BAR_MENU,
   BAR_HOURS,
   getCoffeeItems,
-  getSpiritsItems
+  getSpiritsItems,
 } from "~/lib/constants/bar";
 
 export function meta() {
@@ -37,7 +37,7 @@ export function meta() {
 }
 
 export default function BarPage() {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'coffee' | 'spirits'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<"all" | "coffee" | "spirits">("all");
 
   const coffeeItems = getCoffeeItems();
   const spiritsItems = getSpiritsItems();
@@ -60,60 +60,50 @@ export default function BarPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative bg-barber-brown-50 py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-100/50 to-orange-100/30"></div>
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <div className="flex justify-center items-center gap-4 mb-6">
-              <span className="text-4xl">☕</span>
-              <h1 className="text-4xl md:text-6xl font-bold text-primary">
-                Bar & Coffee
-              </h1>
-              <span className="text-4xl">🥃</span>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6">
+              Coffee by day, spirits by night—hosted for members
+            </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Fuel your day with championship coffee or unwind with premium spirits. 
-              Our bar complements your grooming experience with quality beverages 
-              that match our commitment to excellence.
+              A calm bar and coffee program inside the lounge. Grab a coffee before a cut, or stay after hours with select spirits.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="text-sm">
-                ☕ Premium Coffee All Day
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                🥃 Select Spirits Evenings
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                💯 Member Discounts
-              </Badge>
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+                <Link to="/pricing">Join the club</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
+                <Link to="#menu">See the menu</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-background border-b border-barber-brown-200">
+      <section className="py-8 bg-background border-b border-border">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-wrap justify-center gap-4">
             <Button
-              variant={selectedCategory === 'all' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('all')}
+              variant={selectedCategory === "all" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("all")}
               className="min-w-[120px]"
             >
               Full Menu
             </Button>
             <Button
-              variant={selectedCategory === 'coffee' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('coffee')}
+              variant={selectedCategory === "coffee" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("coffee")}
               className="min-w-[120px]"
             >
               ☕ Coffee ({coffeeItems.length})
             </Button>
             <Button
-              variant={selectedCategory === 'spirits' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('spirits')}
+              variant={selectedCategory === "spirits" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("spirits")}
               className="min-w-[120px]"
             >
               🥃 Spirits ({spiritsItems.length})
@@ -123,29 +113,29 @@ export default function BarPage() {
       </section>
 
       {/* Menu Display */}
-      <section className="py-16">
+      <section id="menu" className="py-16">
         <div className="mx-auto max-w-6xl px-6">
           {renderCategorySection()}
         </div>
       </section>
 
       {/* Bar Hours & Information */}
-      <section className="py-16 bg-barber-brown-50">
+      <section className="py-16 bg-muted">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Bar Hours & Information
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              Hours & details
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Enjoy our beverages during your visit or while waiting for your appointment.
+              Enjoy coffee throughout the day and spirits in the evening—whether you’re here for a service or to unwind.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Coffee Hours */}
-            <Card className="border-barber-brown-300 bg-background">
+            <Card className="border border-border bg-background">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-barber-brown-800">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <span className="text-2xl">☕</span>
                   Coffee Bar Hours
                 </CardTitle>
@@ -166,8 +156,8 @@ export default function BarPage() {
                   <span className="font-medium">Sunday:</span>
                   <span className="text-barber-brown-700">{BAR_HOURS.coffee.sunday}</span>
                 </div>
-                <div className="mt-4 p-3 bg-barber-brown-50 rounded-lg border border-barber-brown-200">
-                  <p className="text-sm text-barber-brown-700">
+                <div className="mt-4 p-3 bg-muted rounded-lg border border-border">
+                  <p className="text-sm text-muted-foreground">
                     ☕ Fresh coffee available all day • Espresso drinks • Cold brew • French press
                   </p>
                 </div>
@@ -175,9 +165,9 @@ export default function BarPage() {
             </Card>
 
             {/* Spirits Hours */}
-            <Card className="border-orange-300 bg-background">
+            <Card className="border border-border bg-background">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-orange-800">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <span className="text-2xl">🥃</span>
                   Spirits Bar Hours
                 </CardTitle>
@@ -198,8 +188,8 @@ export default function BarPage() {
                   <span className="font-medium">Sunday:</span>
                   <span className="text-orange-700">{BAR_HOURS.spirits.sunday}</span>
                 </div>
-                <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                  <p className="text-sm text-orange-700">
+                <div className="mt-4 p-3 bg-muted rounded-lg border border-border">
+                  <p className="text-sm text-muted-foreground">
                     🥃 Must be 21+ with valid ID • Premium whiskeys, cognac, rum • Evening only
                   </p>
                 </div>
@@ -210,67 +200,54 @@ export default function BarPage() {
       </section>
 
       {/* Member Benefits */}
-      <section className="py-16 bg-barber-green-50">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-barber-green-800 mb-4">
-              🏆 Member Bar Benefits
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              Member perks at the bar
             </h2>
-            <p className="text-lg text-barber-green-700 max-w-2xl mx-auto">
-              Members enjoy exclusive discounts on all bar offerings - another reason 
-              to join the Timeout family.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Better pricing, reserved spots, and hosted service while you sip.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
               <div className="text-3xl mb-3">💰</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Save on Every Drink
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Member pricing
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
-                $0.50-$3.00 off all coffee and spirits
+                Preferred rates on coffee and select spirits.
               </p>
-              <div className="text-xs text-barber-green-600 space-y-1">
-                <div>• Coffee: Save $0.50-$1.00</div>
-                <div>• Spirits: Save $2.00-$3.00</div>
-              </div>
             </div>
 
             <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
               <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Exclusive Access
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Reserved seating
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Priority seating and special menu items
+                Settle into member-preferred spots and occasional specials.
               </p>
-              <div className="text-xs text-barber-green-600 space-y-1">
-                <div>• Reserved bar seating</div>
-                <div>• Member-only specials</div>
-              </div>
             </div>
 
             <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
               <div className="text-3xl mb-3">☕</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Complimentary Coffee
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Hosted coffee
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Free basic coffee during services
+                Complimentary drip coffee during services.
               </p>
-              <div className="text-xs text-barber-green-600 space-y-1">
-                <div>• Free drip coffee</div>
-                <div>• During appointments</div>
-              </div>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <a href="/pricing">
-                Become a Member Today
-              </a>
+              <Link to="/pricing">
+                Become a member
+              </Link>
             </Button>
           </div>
         </div>
@@ -280,37 +257,35 @@ export default function BarPage() {
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              More Than Just a Barber Shop
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              A hosted bar inside the lounge
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our bar creates a unique atmosphere where traditional barbering meets 
-              modern hospitality. Whether you're starting your day with coffee or 
-              ending it with premium spirits, every sip complements the Timeout experience.
+              Traditional barbering meets modern hospitality—start with coffee, stay for a pour, and linger with friends.
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-barber-brown-50 to-orange-50 rounded-xl p-8 border border-barber-brown-200">
+          <div className="rounded-xl p-8 border border-border bg-muted">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl mb-2">🏛️</div>
                 <h3 className="font-semibold text-lg mb-2">Classic Atmosphere</h3>
                 <p className="text-sm text-muted-foreground">
-                  Traditional barber shop ambiance with modern bar amenities
+                  Warm, classic vibe with a calm bar experience.
                 </p>
               </div>
               <div>
                 <div className="text-3xl mb-2">🤝</div>
-                <h3 className="font-semibold text-lg mb-2">Social Hub</h3>
+                <h3 className="font-semibold text-lg mb-2">Social hub</h3>
                 <p className="text-sm text-muted-foreground">
-                  Connect with fellow members over quality beverages and conversation
+                  Connect with fellow members over a coffee or an evening pour.
                 </p>
               </div>
               <div>
                 <div className="text-3xl mb-2">🎯</div>
                 <h3 className="font-semibold text-lg mb-2">Quality Focus</h3>
                 <p className="text-sm text-muted-foreground">
-                  Every beverage meets the same standard of excellence as our barber services
+                  Every beverage meets the same standard as our grooming craft.
                 </p>
               </div>
             </div>

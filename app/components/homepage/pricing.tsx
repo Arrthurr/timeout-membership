@@ -72,8 +72,7 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
             Membership Tiers
           </h1>
           <p className="text-lg text-muted-foreground">
-            Join the Timeout family and enjoy premium barber services, community perks, 
-            and exclusive member benefits. Every membership supports the :20 Second Timeout Foundation.
+            Join the club for lounge access, priority booking, and elevated hospitality. Every membership supports the :20 Second Timeout Foundation.
           </p>
         </div>
 
@@ -173,7 +172,7 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
                             }
                           })()
                         ) : (
-                          "Get Started (Demo)"
+                          "Join"
                         )}
                       </Button>
                     </CardHeader>
@@ -184,22 +183,26 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
                       <ul className="list-outside space-y-3 text-sm">
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
-                          All features included
+                          Club lounge, bar, and golf/chess access
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
-                          Priority support
+                          Priority booking with master barbers
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
-                          Cancel anytime
+                          Complimentary coffee and bar perks while you stay
                         </li>
                         {plan.isRecurring && (
                           <li className="flex items-center gap-2">
                             <Check className="size-3" />
-                            Recurring billing
+                            Manage renewals anytime
                           </li>
                         )}
+                        <li className="flex items-center gap-2">
+                          <Check className="size-3" />
+                          Member events and :20 Second Timeout impact
+                        </li>
                       </ul>
                     </CardContent>
                   </Card>

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Badge } from "~/components/ui/badge";
+import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
 import type { BarberService } from "~/lib/constants/services";
-import { 
-  BARBER_SERVICES, 
-  SERVICE_CATEGORIES
+import {
+  BARBER_SERVICES,
+  SERVICE_CATEGORIES,
 } from "~/lib/constants/services";
 
 export function meta() {
@@ -57,52 +57,46 @@ export default function ServicesPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative bg-barber-brown-50 py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-barber-brown-100/50 to-transparent"></div>
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-              Our Services
+            <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6">
+              Signature services for members
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Experience championship-level grooming with our sports-themed services. 
-              From precision cuts to luxury shaves, every service is crafted with the 
-              excellence you deserve.
+              Precision cuts, shaves, and grooming with room to linger. Book the craft; enjoy the lounge, bar, and priority treatment that come with membership.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="text-sm">
-                ✂️ Expert Barbers
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                🏆 Championship Service
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                💯 Premium Products
-              </Badge>
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+                <Link to="/pricing">Join the club</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
+                <Link to="#booking-section">Book a service</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Service Categories Filter */}
-      <section className="py-8 bg-background border-b border-barber-brown-200">
+      <section className="py-8 bg-background border-b border-border">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-wrap justify-center gap-4">
             <Button
-              variant={selectedCategory === 'all' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('all')}
+              variant={selectedCategory === "all" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("all")}
               className="min-w-[120px]"
             >
               All Services ({BARBER_SERVICES.length})
             </Button>
             {Object.entries(SERVICE_CATEGORIES).map(([key, category]) => {
-              const count = BARBER_SERVICES.filter(s => s.category === key).length;
+              const count = BARBER_SERVICES.filter((s) => s.category === key).length;
               return (
                 <Button
                   key={key}
-                  variant={selectedCategory === key ? 'default' : 'outline'}
+                  variant={selectedCategory === key ? "default" : "outline"}
                   onClick={() => setSelectedCategory(key)}
                   className="min-w-[120px]"
                 >
@@ -157,54 +151,46 @@ export default function ServicesPage() {
       </section>
 
       {/* Member Benefits Section */}
-      <section className="py-16 bg-barber-green-50">
+      <section className="py-16 bg-muted">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-barber-green-800 mb-4">
-              🏆 Member Benefits
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              Member benefits with every visit
             </h2>
-            <p className="text-lg text-barber-green-700 max-w-2xl mx-auto">
-              Join the Timeout family and enjoy exclusive member pricing on all services.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Priority booking, lounge access, and perks that make every appointment feel hosted.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
+            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
               <div className="text-3xl mb-3">💰</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Save on Every Service
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Member pricing
               </h3>
-              <p className="text-sm text-muted-foreground">
-                Get $5-$15 off every service with your membership
-              </p>
+              <p className="text-sm text-muted-foreground">Preferential rates across cuts, shaves, and grooming.</p>
             </div>
 
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
+            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
               <div className="text-3xl mb-3">⭐</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Earn Points
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Priority booking
               </h3>
-              <p className="text-sm text-muted-foreground">
-                Accumulate points with every service for future rewards
-              </p>
+              <p className="text-sm text-muted-foreground">Reserve premium slots first; stay as long as you like.</p>
             </div>
 
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
+            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
               <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-semibold text-lg mb-2 text-barber-green-800">
-                Priority Booking
+              <h3 className="font-semibold text-lg mb-2 text-foreground">
+                Hosted experience
               </h3>
-              <p className="text-sm text-muted-foreground">
-                Get first access to premium time slots and new services
-              </p>
+              <p className="text-sm text-muted-foreground">Complimentary coffee/bar perks and a lounge to unwind.</p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <a href="/pricing">
-                Become a Member Today
-              </a>
+              <Link to="/pricing">Become a member</Link>
             </Button>
           </div>
         </div>
@@ -214,8 +200,8 @@ export default function ServicesPage() {
       <section id="booking-section" className="py-16 bg-background">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Ready to Book?
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              Ready to book?
             </h2>
             <p className="text-lg text-muted-foreground">
               Schedule your appointment and experience the Timeout difference.
