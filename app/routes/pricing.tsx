@@ -13,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { Navbar } from "~/components/homepage/navbar";
 import { api } from "../../convex/_generated/api";
 
 export default function IntegratedPricing() {
@@ -98,22 +99,27 @@ export default function IntegratedPricing() {
 
   if (!plans) {
     return (
-      <section className="flex flex-col items-center justify-center min-h-screen px-4">
-        <div className="flex items-center gap-2">
-          <Loader2 className="h-4 w-4 animate-spin" />
-          <span>Loading plans...</span>
-        </div>
-        {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
-      </section>
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4">
+          <div className="flex items-center gap-2">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            <span>Loading plans...</span>
+          </div>
+          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+        </section>
+      </div>
     );
   }
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">
-          Simple, transparent pricing
-        </h1>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">
+            Simple, transparent pricing
+          </h1>
         <p className="text-xl text-muted-foreground">
           Choose the plan that fits your needs
         </p>
@@ -271,6 +277,7 @@ export default function IntegratedPricing() {
             </div>
           )}
       </div>
-    </section>
+      </section>
+    </div>
   );
 }

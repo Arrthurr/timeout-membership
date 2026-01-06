@@ -2,41 +2,42 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { MenuDisplay } from "~/components/bar/menu-display";
+import { MenuDisplay } from "~/components/cafe/menu-display";
+import { Navbar } from "~/components/homepage/navbar";
 import {
-  BAR_MENU,
-  BAR_HOURS,
+  CAFE_MENU,
+  CAFE_HOURS,
   getCoffeeItems,
   getSpiritsItems,
-} from "~/lib/constants/bar";
+} from "~/lib/constants/cafe";
 
 export function meta() {
   return [
-    { title: "Bar & Coffee | Timeout At Shannon's - Premium Beverages in Chicago" },
+    { title: "Out of Bounds Café | Timeout At Shannon's - Premium Beverages in Chicago" },
     { 
       name: "description", 
-      content: "Complement your grooming experience with premium coffee and select spirits. Our bar offers quality beverages in a classic barber shop atmosphere." 
+      content: "Complement your grooming experience with premium coffee and select spirits at Out of Bounds Café. Quality beverages in a classic barber shop atmosphere." 
     },
     { 
       name: "keywords", 
-      content: "Chicago coffee bar, barber shop beverages, premium spirits, espresso drinks, whiskey, cognac, barber shop atmosphere" 
+      content: "Chicago coffee cafe, barber shop beverages, premium spirits, espresso drinks, whiskey, cognac, Out of Bounds Café" 
     },
-    { property: "og:title", content: "Bar & Coffee | Timeout At Shannon's" },
+    { property: "og:title", content: "Out of Bounds Café | Timeout At Shannon's" },
     { 
       property: "og:description", 
-      content: "Premium coffee and select spirits in Chicago's finest barber shop. Quality beverages that complement our championship grooming services." 
+      content: "Premium coffee and select spirits at Out of Bounds Café in Chicago's finest barber shop. Quality beverages that complement our championship grooming services." 
     },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Bar & Coffee | Timeout At Shannon's" },
+    { name: "twitter:title", content: "Out of Bounds Café | Timeout At Shannon's" },
     {
       name: "twitter:description",
-      content: "Premium coffee and select spirits in Chicago's finest barber shop. Quality beverages that complement our championship grooming services."
+      content: "Premium coffee and select spirits at Out of Bounds Café in Chicago's finest barber shop. Quality beverages that complement our championship grooming services."
     }
   ];
 }
 
-export default function BarPage() {
+export default function CafePage() {
   const [selectedCategory, setSelectedCategory] = useState<"all" | "coffee" | "spirits">("all");
 
   const coffeeItems = getCoffeeItems();
@@ -61,15 +62,16 @@ export default function BarPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
       {/* Hero Section */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6">
-              Coffee by day, spirits by night—hosted for members
+              Out of Bounds Café
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              A calm bar and coffee program inside the lounge. Grab a coffee before a cut, or stay after hours with select spirits.
+              Coffee by day, spirits by night—hosted for members. A calm café and coffee program inside the lounge. Grab a coffee before a cut, or stay after hours with select spirits.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
@@ -119,7 +121,7 @@ export default function BarPage() {
         </div>
       </section>
 
-      {/* Bar Hours & Information */}
+      {/* Café Hours & Information */}
       <section className="py-16 bg-muted">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
@@ -127,7 +129,7 @@ export default function BarPage() {
               Hours & details
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Enjoy coffee throughout the day and spirits in the evening—whether you’re here for a service or to unwind.
+              Enjoy coffee throughout the day and spirits in the evening—whether you're here for a service or to unwind.
             </p>
           </div>
 
@@ -137,7 +139,7 @@ export default function BarPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-foreground">
                   <span className="text-2xl">☕</span>
-                  Coffee Bar Hours
+                  Out of Bounds Café Hours
                 </CardTitle>
                 <CardDescription>
                   Premium coffee available throughout the day
@@ -146,15 +148,15 @@ export default function BarPage() {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Monday - Friday:</span>
-                  <span className="text-barber-brown-700">{BAR_HOURS.coffee.weekdays}</span>
+                  <span className="text-barber-brown-700">{CAFE_HOURS.coffee.weekdays}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Saturday:</span>
-                  <span className="text-barber-brown-700">{BAR_HOURS.coffee.saturday}</span>
+                  <span className="text-barber-brown-700">{CAFE_HOURS.coffee.saturday}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Sunday:</span>
-                  <span className="text-barber-brown-700">{BAR_HOURS.coffee.sunday}</span>
+                  <span className="text-barber-brown-700">{CAFE_HOURS.coffee.sunday}</span>
                 </div>
                 <div className="mt-4 p-3 bg-muted rounded-lg border border-border">
                   <p className="text-sm text-muted-foreground">
@@ -169,7 +171,7 @@ export default function BarPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-foreground">
                   <span className="text-2xl">🥃</span>
-                  Spirits Bar Hours
+                  Spirits Hours
                 </CardTitle>
                 <CardDescription>
                   Premium spirits for evening relaxation
@@ -178,15 +180,15 @@ export default function BarPage() {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Monday - Friday:</span>
-                  <span className="text-orange-700">{BAR_HOURS.spirits.weekdays}</span>
+                  <span className="text-orange-700">{CAFE_HOURS.spirits.weekdays}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Saturday:</span>
-                  <span className="text-orange-700">{BAR_HOURS.spirits.saturday}</span>
+                  <span className="text-orange-700">{CAFE_HOURS.spirits.saturday}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Sunday:</span>
-                  <span className="text-orange-700">{BAR_HOURS.spirits.sunday}</span>
+                  <span className="text-orange-700">{CAFE_HOURS.spirits.sunday}</span>
                 </div>
                 <div className="mt-4 p-3 bg-muted rounded-lg border border-border">
                   <p className="text-sm text-muted-foreground">
@@ -204,7 +206,7 @@ export default function BarPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Member perks at the bar
+              Member perks at Out of Bounds Café
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Better pricing, reserved spots, and hosted service while you sip.
@@ -258,7 +260,7 @@ export default function BarPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              A hosted bar inside the lounge
+              A hosted café inside the lounge
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Traditional barbering meets modern hospitality—start with coffee, stay for a pour, and linger with friends.
@@ -271,7 +273,7 @@ export default function BarPage() {
                 <div className="text-3xl mb-2">🏛️</div>
                 <h3 className="font-semibold text-lg mb-2">Classic Atmosphere</h3>
                 <p className="text-sm text-muted-foreground">
-                  Warm, classic vibe with a calm bar experience.
+                  Warm, classic vibe with a calm café experience.
                 </p>
               </div>
               <div>
@@ -295,3 +297,4 @@ export default function BarPage() {
     </div>
   );
 }
+

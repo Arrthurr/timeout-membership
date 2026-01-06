@@ -116,7 +116,7 @@ export const links: Route.LinksFunction = () => [
   // Preload critical assets
   {
     rel: "preload",
-    href: "/images/barber-shop/timeout_logo_crop.png",
+    href: "/images/timeout_logo_crop.png",
     as: "image",
     type: "image/png",
   },

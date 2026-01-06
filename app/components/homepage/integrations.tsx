@@ -19,9 +19,9 @@ export default function IntegrationsSection({
   loaderData?: { isSignedIn: boolean; hasActiveSubscription: boolean };
 }) {
   return (
-    <section id="hero">
-      <Navbar loaderData={loaderData} />
-      <div className="relative bg-muted dark:bg-background py-24 md:py-32 overflow-hidden">
+    <section id="hero" className="relative">
+      <Navbar loaderData={loaderData} variant="transparent" />
+      <div className="relative bg-muted dark:bg-background py-24 md:py-32 overflow-hidden pt-32">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           {/* Background video */}
@@ -48,18 +48,15 @@ export default function IntegrationsSection({
             <div className="mx-auto mt-6 max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
               <div className="flex justify-center sm:justify-start mb-4">
                 <img
-                  src="/images/barber-shop/timeout_logo_crop.png"
+                  src="/images/timeout_logo_crop.png"
                   alt="Timeout At Shannon's Logo"
                   className="w-3/4 h-auto"
                 />
               </div>
               <div className="space-y-3">
                 <h1 className="text-white text-4xl font-semibold leading-tight sm:text-5xl">
-                  Modern members-only grooming lounge in the heart of Chicago.
+                  Quiet luxury and crafted cuts without the fuss.
                 </h1>
-                <p className="text-white/80 text-lg">
-                  Quiet luxury, crafted cuts, and a club to linger—without the fuss.
-                </p>
               </div>
 
               {/* Membership Outcomes */}

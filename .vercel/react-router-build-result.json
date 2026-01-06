@@ -13,7 +13,7 @@
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/bar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/cafe": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/foundation": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-in": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/sign-up": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -58,11 +58,11 @@
           "runtime": "nodejs"
         }
       },
-      "routes/bar": {
-        "id": "routes/bar",
+      "routes/cafe": {
+        "id": "routes/cafe",
         "parentId": "root",
-        "file": "app/routes/bar.tsx",
-        "path": "bar",
+        "file": "app/routes/cafe.tsx",
+        "path": "cafe",
         "config": {
           "runtime": "nodejs"
         }
@@ -191,11 +191,11 @@
         "file": "routes/services.tsx",
         "path": "services"
       },
-      "routes/bar": {
-        "id": "routes/bar",
+      "routes/cafe": {
+        "id": "routes/cafe",
         "parentId": "root",
-        "file": "routes/bar.tsx",
-        "path": "bar"
+        "file": "routes/cafe.tsx",
+        "path": "cafe"
       },
       "routes/foundation": {
         "id": "routes/foundation",
@@ -283,8 +283,8 @@
             "path": "services"
           },
           {
-            "file": "routes/bar.tsx",
-            "path": "bar"
+            "file": "routes/cafe.tsx",
+            "path": "cafe"
           },
           {
             "file": "routes/foundation.tsx",

@@ -9,15 +9,15 @@ import {
 } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
 import {
-  type BarItem,
+  type CafeItem,
   formatPrice,
   getMemberPrice,
   getMemberSavings,
-  BAR_CATEGORIES,
-} from "~/lib/constants/bar";
+  CAFE_CATEGORIES,
+} from "~/lib/constants/cafe";
 
 interface MenuDisplayProps {
-  items: BarItem[];
+  items: CafeItem[];
   category: "coffee" | "spirits";
   showMemberPricing?: boolean;
   className?: string;
@@ -29,7 +29,7 @@ export function MenuDisplay({
   showMemberPricing = false,
   className,
 }: MenuDisplayProps) {
-  const categoryInfo = BAR_CATEGORIES[category];
+  const categoryInfo = CAFE_CATEGORIES[category];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -201,3 +201,4 @@ export function MenuDisplay({
     </div>
   );
 }
+

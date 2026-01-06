@@ -2,7 +2,7 @@ export const FOUNDATION_INFO = {
   name: "20 Second Timeout Foundation",
   tagline: "Building Stronger Communities Through Connection and Care",
   mission: "The 20 Second Timeout Foundation is dedicated to fostering community wellness, supporting mental health awareness, and creating opportunities for meaningful connections in our local neighborhoods.",
-  logo: "/images/barber-shop/20-Second-Timeout-logo.png",
+  logo: "/images/20-Second-Timeout-logo.png",
   establishedYear: 2024,
   website: "https://20secondtimeout.org",
   email: "foundation@20secondtimeout.org",

@@ -15,7 +15,7 @@ export default function SignUpPage() {
       <div className="w-full p-6">
         <Link to="/" className="flex items-center space-x-3 text-primary hover:opacity-80 transition-opacity">
           <img 
-            src="/images/barber-shop/timeout_logo_crop.png" 
+            src="/images/timeout_logo_crop.png" 
             alt="Timeout At Shannon's Logo" 
             className="h-10 w-auto" 
           />

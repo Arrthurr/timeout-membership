@@ -1,4 +1,4 @@
-export interface BarItem {
+export interface CafeItem {
   id: string;
   name: string;
   description: string;
@@ -11,7 +11,7 @@ export interface BarItem {
   availability?: 'all-day' | 'evening' | 'limited';
 }
 
-export const BAR_MENU: BarItem[] = [
+export const CAFE_MENU: CafeItem[] = [
   // Coffee Menu
   {
     id: 'timeout-espresso',
@@ -171,9 +171,9 @@ export const BAR_MENU: BarItem[] = [
   }
 ];
 
-export const BAR_CATEGORIES = {
+export const CAFE_CATEGORIES = {
   coffee: {
-    name: 'Coffee Bar',
+    name: 'Out of Bounds Café',
     description: 'Premium coffee drinks to fuel your day',
     color: 'barber-brown',
     icon: '☕',
@@ -188,7 +188,7 @@ export const BAR_CATEGORIES = {
   }
 } as const;
 
-export const BAR_HOURS = {
+export const CAFE_HOURS = {
   coffee: {
     weekdays: '7:00 AM - 7:00 PM',
     saturday: '7:00 AM - 6:00 PM',
@@ -202,23 +202,23 @@ export const BAR_HOURS = {
 };
 
 // Helper functions
-export const getBarItemById = (id: string): BarItem | undefined => {
-  return BAR_MENU.find(item => item.id === id);
+export const getCafeItemById = (id: string): CafeItem | undefined => {
+  return CAFE_MENU.find(item => item.id === id);
 };
 
-export const getItemsByCategory = (category: BarItem['category']): BarItem[] => {
-  return BAR_MENU.filter(item => item.category === category);
+export const getItemsByCategory = (category: CafeItem['category']): CafeItem[] => {
+  return CAFE_MENU.filter(item => item.category === category);
 };
 
-export const getCoffeeItems = (): BarItem[] => {
+export const getCoffeeItems = (): CafeItem[] => {
   return getItemsByCategory('coffee');
 };
 
-export const getSpiritsItems = (): BarItem[] => {
+export const getSpiritsItems = (): CafeItem[] => {
   return getItemsByCategory('spirits');
 };
 
-export const getMemberPrice = (item: BarItem): number => {
+export const getMemberPrice = (item: CafeItem): number => {
   if (!item.memberDiscount) return item.price;
   return Math.max(0, item.price - item.memberDiscount);
 };
@@ -227,7 +227,8 @@ export const formatPrice = (price: number): string => {
   return `$${price.toFixed(2)}`;
 };
 
-export const getMemberSavings = (item: BarItem): string => {
+export const getMemberSavings = (item: CafeItem): string => {
   if (!item.memberDiscount) return '';
   return `Save $${item.memberDiscount.toFixed(2)}`;
 };
+

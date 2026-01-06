@@ -22,3 +22,6 @@
 - **Error Handling**: Try/catch with console.error for logging
 - **Naming**: camelCase for variables/functions, PascalCase for components
 - **File Structure**: Routes in `app/routes/`, components in `app/components/`, Convex functions in `convex/`
+
+## Available System Tools
+- **`gh`**: GitHub CLI for accessing code repository and commit history

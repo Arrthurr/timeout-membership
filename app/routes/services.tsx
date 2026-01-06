@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
+import { Navbar } from "~/components/homepage/navbar";
 import type { BarberService } from "~/lib/constants/services";
 import {
   BARBER_SERVICES,
@@ -58,6 +59,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
       {/* Hero Section */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
@@ -184,7 +186,7 @@ export default function ServicesPage() {
               <h3 className="font-semibold text-lg mb-2 text-foreground">
                 Hosted experience
               </h3>
-              <p className="text-sm text-muted-foreground">Complimentary coffee/bar perks and a lounge to unwind.</p>
+              <p className="text-sm text-muted-foreground">Complimentary coffee at Out of Bounds Café and a lounge to unwind.</p>
             </div>
           </div>
 

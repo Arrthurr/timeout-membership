@@ -5,6 +5,7 @@ import { CommunityPrograms } from "~/components/foundation/programs";
 import { CommunityEvents } from "~/components/foundation/events";
 import { ImpactMetrics } from "~/components/foundation/impact";
 import { Button } from "~/components/ui/button";
+import { Navbar } from "~/components/homepage/navbar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -31,6 +32,7 @@ export const meta: MetaFunction = () => {
 export default function Foundation() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
       {/* Foundation Hero Section */}
       <FoundationHero />
 

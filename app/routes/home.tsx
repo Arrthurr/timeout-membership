@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
     "Experience exceptional barber services in Chicago. Traditional cuts, hot shaves, coffee bar, and community spirit. Supporting local youth through the :20 Second Timeout Foundation.";
   const keywords = "Chicago barber shop, premium haircuts, hot shaves, coffee bar, traditional barber, community foundation, :20 Second Timeout";
   const siteUrl = "https://timeoutatshanons.com/";
-  const imageUrl = "/images/barber-shop/barber-chairs.jpg";
+  const imageUrl = "/images/barber-chairs.jpg";
 
   return [
     { title },

@@ -57,7 +57,7 @@ export function OwnerBio({
           {showImage && (
             <div className="flex-shrink-0">
               <img
-                src="/images/barber-shop/shannon-jones-portrait.jpg"
+                src="/images/shannon-jones-portrait.jpg"
                 alt="Shannon Jones - Master Barber"
                 className="w-20 h-20 rounded-lg object-cover"
               />
@@ -84,7 +84,7 @@ export function OwnerBio({
         <div className="text-center">
           {showImage && (
             <img
-              src="/images/barber-shop/shannon-jones-portrait.jpg"
+              src="/images/shannon-jones-portrait.jpg"
               alt="Shannon Jones - Master Barber"
               className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-amber-200 dark:border-amber-700"
             />
@@ -148,7 +148,7 @@ export function OwnerBio({
                 <div className="relative mb-8">
                   <div className="aspect-[4/5] max-w-sm mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl shadow-2xl overflow-hidden">
                     <img
-                      src="/images/barber-shop/shannon-jones-portrait.jpg"
+                      src="/images/shannon-jones-portrait.jpg"
                       alt="Shannon Jones - Master Barber and Founder"
                       className="w-full h-full object-cover"
                     />

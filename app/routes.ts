@@ -9,7 +9,7 @@ export default [
   index("routes/home.tsx"),
   route("about", "routes/about.tsx"),
   route("services", "routes/services.tsx"),
-  route("bar", "routes/bar.tsx"),
+  route("cafe", "routes/cafe.tsx"),
   route("foundation", "routes/foundation.tsx"),
   route("sign-in/*", "routes/sign-in.tsx"),
   route("sign-up/*", "routes/sign-up.tsx"),

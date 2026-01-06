@@ -13,17 +13,17 @@ export default function SectionPreviews() {
       link: "/services",
       color: "barber-brown",
       highlights: ["$35-$150 range", "10 unique services", "Sports themes"],
-      image: "/images/barber-shop/barber-chairs.jpg"
+      image: "/images/barber-chairs.jpg"
     },
     {
-      id: "bar",
-      title: "Coffee & Spirits",
-      description: "Premium coffee bar and select spirits to complement your experience",
+      id: "cafe",
+      title: "Out of Bounds Café",
+      description: "Premium coffee and select spirits to complement your experience",
       icon: Coffee,
-      link: "/bar",
+      link: "/cafe",
       color: "barber-orange", 
       highlights: ["Specialty coffee", "Select spirits", "Member perks"],
-      image: "/images/barber-shop/coffee-bar.jpg"
+      image: "/images/coffee-bar.jpg"
     },
     {
       id: "community",
@@ -33,7 +33,7 @@ export default function SectionPreviews() {
       link: "/community",
       color: "barber-green",
       highlights: ["Chess tournaments", "Youth foundation", "Community events"],
-      image: "/images/barber-shop/chess-board-chairs.jpg"
+      image: "/images/chess-board-chairs.jpg"
     },
     {
       id: "about",
@@ -43,7 +43,7 @@ export default function SectionPreviews() {
       link: "/about",
       color: "slate",
       highlights: ["Master barber", "Chicago heritage", "Community focused"],
-      image: "/images/barber-shop/shannon-jones-portrait.jpg"
+      image: "/images/shannon-jones-portrait.jpg"
     },
     {
       id: "membership",
@@ -53,7 +53,7 @@ export default function SectionPreviews() {
       link: "#pricing",
       color: "barber-green",
       highlights: ["20% savings", "Priority booking", "Exclusive perks"],
-      image: "/images/barber-shop/membership-card.jpg"
+      image: "/images/membership-card.jpg"
     }
   ];
 

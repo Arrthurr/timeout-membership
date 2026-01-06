@@ -21,7 +21,7 @@ export default function ContentSection() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="relative order-2 md:order-1">
               <img
-                src="/images/barber-shop/barber-chairs.jpg"
+                src="/images/barber-chairs.jpg"
                 alt="Lounge seating and barber chairs"
                 className="w-full h-[400px] object-cover rounded-xl shadow-lg"
               />
@@ -59,7 +59,7 @@ export default function ContentSection() {
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>Member-only golf simulator and games that spark conversation.</span>
+                  <span>Golf simulator rental ($50 per hour) and games that compliment conversation.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
@@ -73,8 +73,8 @@ export default function ContentSection() {
             </div>
             <div className="relative">
               <img
-                src="/images/barber-shop/chess-board-pictures.jpg"
-                alt="Chess boards and comfortable chairs at Timeout At Shannon's"
+                src="/images/golf-simulator.jpg"
+                alt="Golf simulator at Timeout At Shannon's"
                 className="w-full h-[400px] object-cover rounded-xl shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
@@ -85,8 +85,8 @@ export default function ContentSection() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="relative order-2 md:order-1">
               <img
-                src="/images/barber-shop/shot-clock.jpg"
-                alt="Vintage shot clock representing the :20 Second Timeout Foundation"
+                src="/images/lounge-frames.jpg"
+                alt="Lounge interior with sports memorabilia and comfortable seating"
                 className="w-full h-[400px] object-cover rounded-xl shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent rounded-xl"></div>

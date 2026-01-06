@@ -5,7 +5,7 @@ const teamValues = [
     description: "Precision cuts and shaves from seasoned barbers."
   },
   {
-    title: "Club Comfort",
+    title: "Out of Bounds Café",
     icon: "🛋️",
     description: "A calm lounge to stay before and after your appointment."
   },
@@ -77,17 +77,6 @@ export default function TeamSection() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Foundation Callout */}
-        <div className="mt-16 bg-muted rounded-xl p-8 text-center border border-border">
-          <div className="text-3xl mb-3">🏆</div>
-          <h3 className="text-xl font-bold mb-2 text-foreground">
-            :20 Second Timeout Foundation
-          </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Every membership funds mentorship and community programs for Chicago youth—impact baked into the experience.
-          </p>
         </div>
       </div>
     </section>

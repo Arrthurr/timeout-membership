@@ -2,6 +2,7 @@ import type { MetaFunction } from "react-router";
 import { Link } from "react-router";
 import { ShopHistory } from "~/components/about/shop-history";
 import { Button } from "~/components/ui/button";
+import { Navbar } from "~/components/homepage/navbar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,6 +15,7 @@ export const meta: MetaFunction = () => {
 export default function AboutRoute() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
       {/* Hero Section */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
@@ -52,7 +54,7 @@ export default function AboutRoute() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden">
                 <img
-                  src="/images/barber-shop/shannon-jones-portrait.jpg"
+                  src="/images/shannon-jones-portrait.jpg"
                   alt="Shannon Jones - Master Barber and Owner of Timeout At Shannon's"
                   className="w-full h-full object-cover"
                 />

@@ -7,7 +7,7 @@ export default function FooterSection() {
         <div className="text-center">
           <Link to="/" aria-label="go home" className="mx-auto block size-fit mb-6">
             <img 
-              src="/images/barber-shop/timeout_logo_small.png" 
+              src="/images/timeout_logo_small.png" 
               alt="Timeout At Shannon's Logo" 
               className="h-16 w-auto mx-auto" 
             />
@@ -31,10 +31,10 @@ export default function FooterSection() {
               Services
             </Link>
             <Link
-              to="/bar"
+              to="/cafe"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Bar
+              Out of Bounds
             </Link>
             <Link
               to="#team"
