@@ -68,10 +68,6 @@ export default function AboutRoute() {
                 <div className="text-2xl font-semibold text-foreground">25+</div>
                 <div className="text-sm text-muted-foreground">Years of craft</div>
               </div>
-              <div className="absolute -bottom-3 -left-3 bg-background/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-border">
-                <div className="text-2xl font-semibold text-foreground">1998</div>
-                <div className="text-sm text-muted-foreground">Founded in Chicago</div>
-              </div>
             </div>
           </div>
         </div>
