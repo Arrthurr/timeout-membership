@@ -55,7 +55,7 @@ export default function IntegrationsSection({
               </div>
               <div className="space-y-3">
                 <h1 className="text-white text-4xl font-semibold leading-tight sm:text-5xl">
-                  Quiet luxury and crafted cuts without the fuss.
+                  Quiet luxury never sounded so good.
                 </h1>
               </div>
 
