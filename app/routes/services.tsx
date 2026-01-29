@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
+import { MembershipCards } from "~/components/pricing/membership-cards";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 import type { BarberService } from "~/lib/constants/services";
@@ -153,49 +154,18 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Member Benefits Section */}
+      {/* Membership Levels Section */}
       <section className="py-16 bg-muted">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Member benefits with every visit
+              Membership levels
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Priority booking, lounge access, and perks that make every appointment feel hosted.
+              Choose the plan that fits your needs
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
-              <div className="text-3xl mb-3">💰</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Member pricing
-              </h3>
-              <p className="text-sm text-muted-foreground">Preferential rates across cuts, shaves, and grooming.</p>
-            </div>
-
-            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
-              <div className="text-3xl mb-3">⭐</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Priority booking
-              </h3>
-              <p className="text-sm text-muted-foreground">Reserve premium slots first; stay as long as you like.</p>
-            </div>
-
-            <div className="bg-background rounded-xl p-6 text-center border border-border shadow-sm">
-              <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Hosted experience
-              </h3>
-              <p className="text-sm text-muted-foreground">Complimentary coffee at Out of Bounds Café and a lounge to unwind.</p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/pricing">Become a member</Link>
-            </Button>
-          </div>
+          <MembershipCards />
         </div>
       </section>
 
