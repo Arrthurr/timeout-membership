@@ -70,7 +70,7 @@ export const BARBER_SERVICES: BarberService[] = [
     includes: ['Shear cut', 'Shampoo', 'Styling consultation'],
     category: 'specialty',
     memberDiscount: 8,
-    icon: '💃'
+    icon: '👩🏾‍🦱'
   },
   {
     id: 'official-review',
@@ -82,13 +82,13 @@ export const BARBER_SERVICES: BarberService[] = [
     includes: ['Razor shave', 'Beard trim & shaping', 'Hot towel treatment'],
     category: 'specialty',
     memberDiscount: 8,
-    icon: '🧔'
+    icon: '🧔🏾‍♂️'
   },
   {
     id: 'foot-on-line',
     name: 'His Foot Was on the Line',
     sportsTheme: 'Locs & Braids Taper',
-    price: 40,
+    price: 50,
     duration: '30 minutes',
     description: 'Specialized taper service for locs and braids - precision you can count on.',
     includes: ['Taper cut', 'Edge lining', 'Style consultation'],
@@ -99,8 +99,8 @@ export const BARBER_SERVICES: BarberService[] = [
   {
     id: 'rookies',
     name: 'Rookies',
-    sportsTheme: 'College Student Special',
-    price: 40,
+    sportsTheme: 'High School & Undergrads',
+    price: 50,
     duration: '25 minutes',
     description: 'College students with valid ID get the rookie rate on quality cuts.',
     includes: ['Haircut', 'Basic styling', 'Student ID required'],
@@ -124,7 +124,7 @@ export const BARBER_SERVICES: BarberService[] = [
     id: 'draft-picks',
     name: 'Draft Picks',
     sportsTheme: 'Youth League',
-    price: 35,
+    price: 40,
     duration: '20 minutes',
     description: 'Future all-stars get the VIP treatment - kids through high school.',
     includes: ['Age-appropriate haircut', 'Gentle approach', 'Parent consultation welcome'],

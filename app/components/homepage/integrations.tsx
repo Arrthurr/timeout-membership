@@ -60,24 +60,18 @@ export default function IntegrationsSection({
               </div>
 
               {/* Membership Outcomes */}
-              <div className="grid gap-3 text-sm text-white/80">
-                <div className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-white/70" />
-                  <span>Club access: lounge, bar, golf sim, and member events.</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-white/70" />
-                  <span>Priority booking with master barbers and elevated amenities.</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-white/70" />
-                  <span>Member perks that keep visits easy—drinks, comforts, and care.</span>
-                </div>
-              </div>
+              <p className="text-sm text-white/80 leading-relaxed">
+                Modern-minimal spaces, crafted service, and room to linger. Membership
+                gives you the run of the lounge, not just a booking slot.
+              </p>
 
               {/* Enhanced Call-to-Action Buttons */}
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button size="lg" asChild className="bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group">
+                <Button
+                  size="lg"
+                  asChild
+                  className="bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group"
+                >
                   <Link
                     to={
                       loaderData?.isSignedIn
@@ -91,26 +85,13 @@ export default function IntegrationsSection({
                     <span className="relative z-10 flex items-center gap-2">
                       {loaderData?.isSignedIn
                         ? loaderData?.hasActiveSubscription
-                          ? <>📋 View My Membership</>
-                          : <>🚀 Join the Club</>
-                        : <>🎯 Become a Member</>}
+                          ? <>View My Membership</>
+                          : <>Join the Club</>
+                        : <>Become a Member</>}
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
                 </Button>
-                <button
-                  className="text-white/80 text-sm underline-offset-4 hover:underline transition"
-                  onClick={() => {
-                    const element = document.getElementById('features');
-                    if (element) {
-                      const navOffset = 80;
-                      const elementTop = element.offsetTop - navOffset;
-                      window.scrollTo({ top: elementTop, behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  See what’s inside
-                </button>
               </div>
             </div>
           </div>

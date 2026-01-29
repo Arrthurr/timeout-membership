@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function ContentSection() {
   return (
-    <section id="features" className="py-16 md:py-32 bg-background">
+    <section id="features" className="py-16 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -12,7 +12,7 @@ export default function ContentSection() {
             Built as a club, not just a chair
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Modern-minimal spaces, crafted service, and room to linger. Membership gives you the run of the lounge, not just a booking slot.
+            Lounge and golf access, priority booking, elevated amenities, and member perks that keep visits easy.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function ContentSection() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-20">
+        <div className="text-center mt-12 md:mt-16">
           <div className="bg-muted rounded-2xl p-8 border border-border">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
               Experience the club as a member
@@ -142,7 +142,7 @@ export default function ContentSection() {
                 className="gap-2 border-border hover:bg-muted"
               >
                 <Link to="/services">
-                  <span>Book a service first</span>
+                  <span>View Timeout Services</span>
                   <ChevronRight className="size-4" />
                 </Link>
               </Button>

@@ -23,7 +23,7 @@ export default function FooterSection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm mb-6">
+          <div className="flex flex-wrap justify-center gap-6 text-sm mb-4">
             <Link
               to="/services"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -56,13 +56,7 @@ export default function FooterSection() {
             </Link>
           </div>
 
-          <div className="mb-6 text-center">
-            <div className="inline-flex items-center gap-2 bg-barber-green-100 text-barber-green-800 px-3 py-1 rounded-full text-xs font-medium">
-              🏆 Proudly supporting the :20 Second Timeout Foundation
-            </div>
-          </div>
-
-          <div className="border-t border-barber-brown-200 pt-6">
+          <div className="border-t border-barber-brown-200 pt-6 mt-4">
             <span className="text-muted-foreground block text-center text-sm">
               © {new Date().getFullYear()} Timeout At Shannon's. All rights reserved.
             </span>
