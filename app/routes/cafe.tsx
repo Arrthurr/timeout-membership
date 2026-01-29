@@ -3,6 +3,7 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { MenuDisplay } from "~/components/cafe/menu-display";
 import { Navbar } from "~/components/homepage/navbar";
+import Footer from "~/components/homepage/footer";
 import {
   CAFE_HOURS,
   getCoffeeItems,
@@ -210,6 +211,8 @@ export default function CafePage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

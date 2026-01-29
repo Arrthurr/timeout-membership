@@ -14,6 +14,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { Navbar } from "~/components/homepage/navbar";
+import Footer from "~/components/homepage/footer";
 import { api } from "../../convex/_generated/api";
 
 export default function IntegratedPricing() {
@@ -278,6 +279,8 @@ export default function IntegratedPricing() {
           )}
       </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

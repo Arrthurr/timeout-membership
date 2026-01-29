@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ShopHistory } from "~/components/about/shop-history";
 import { Button } from "~/components/ui/button";
 import { Navbar } from "~/components/homepage/navbar";
+import Footer from "~/components/homepage/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -207,6 +208,8 @@ export default function AboutRoute() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

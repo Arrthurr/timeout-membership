@@ -6,6 +6,7 @@ import { CommunityEvents } from "~/components/foundation/events";
 import { ImpactMetrics } from "~/components/foundation/impact";
 import { Button } from "~/components/ui/button";
 import { Navbar } from "~/components/homepage/navbar";
+import Footer from "~/components/homepage/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -85,6 +86,8 @@ export default function Foundation() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

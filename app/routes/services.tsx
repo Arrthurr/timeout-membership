@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
 import { Navbar } from "~/components/homepage/navbar";
+import Footer from "~/components/homepage/footer";
 import type { BarberService } from "~/lib/constants/services";
 import {
   BARBER_SERVICES,
@@ -235,6 +236,8 @@ export default function ServicesPage() {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
