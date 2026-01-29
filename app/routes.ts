@@ -10,7 +10,6 @@ export default [
   route("about", "routes/about.tsx"),
   route("services", "routes/services.tsx"),
   route("cafe", "routes/cafe.tsx"),
-  route("foundation", "routes/foundation.tsx"),
   route("sign-in/*", "routes/sign-in.tsx"),
   route("sign-up/*", "routes/sign-up.tsx"),
   route("pricing", "routes/pricing.tsx"),
@@ -20,5 +19,6 @@ export default [
     route("dashboard", "routes/dashboard/index.tsx"),
     route("dashboard/chat", "routes/dashboard/chat.tsx"),
     route("dashboard/settings", "routes/dashboard/settings.tsx"),
+    route("dashboard/foundation", "routes/foundation.tsx"),
   ]),
 ] satisfies RouteConfig;

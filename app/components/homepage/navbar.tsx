@@ -47,7 +47,6 @@ interface NavbarProps {
 const menuItems: MenuItem[] = [
   { title: "Services", url: "/services" },
   { title: "Out of Bounds", url: "/cafe" },
-  { title: "Community", url: "/foundation" },
   { title: "About", url: "/about" },
   { title: "Membership", url: "/pricing" },
 ];
