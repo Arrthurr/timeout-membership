@@ -7,8 +7,10 @@ export default function IntegratedPricing() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <section className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 py-12">
-        <MembershipCards showHeader />
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <MembershipCards showHeader />
+        </div>
       </section>
       <Footer />
     </div>
