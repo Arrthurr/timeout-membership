@@ -48,7 +48,7 @@ const menuItems: MenuItem[] = [
   { title: "Services", url: "/services" },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
-  { title: "Membership", url: "/pricing" },
+  { title: "Membership", url: "/membership" },
 ];
 
 const mobileExtraLinks = [
@@ -62,7 +62,7 @@ export const Navbar = ({ loaderData, variant = "default" }: NavbarProps) => {
     ? "/sign-up"
     : loaderData.hasActiveSubscription
     ? "/dashboard"
-    : "/pricing";
+    : "/membership";
 
   const dashboardText = !loaderData?.isSignedIn
     ? "Join"

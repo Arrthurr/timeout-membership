@@ -12,7 +12,7 @@ export default [
   route("cafe", "routes/cafe.tsx"),
   route("sign-in/*", "routes/sign-in.tsx"),
   route("sign-up/*", "routes/sign-up.tsx"),
-  route("pricing", "routes/pricing.tsx"),
+  route("membership", "routes/membership.tsx"),
   route("success", "routes/success.tsx"),
   route("subscription-required", "routes/subscription-required.tsx"),
   layout("routes/dashboard/layout.tsx", [

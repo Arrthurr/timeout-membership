@@ -53,7 +53,7 @@ export default function CafePage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                <Link to="/pricing">Join the club</Link>
+                <Link to="/membership">Join the club</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
                 <Link to="#menu">See the menu</Link>
@@ -164,7 +164,7 @@ export default function CafePage() {
 
           <div className="text-center mt-12">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/pricing">
+              <Link to="/membership">
                 Become a member
               </Link>
             </Button>

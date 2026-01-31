@@ -38,7 +38,7 @@ export default function SubscriptionRequired() {
 
           <div className="space-y-3">
             <Button asChild className="w-full" size="lg">
-              <a href="/pricing">
+              <a href="/membership">
                 View Pricing Plans
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

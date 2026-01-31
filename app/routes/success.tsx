@@ -103,7 +103,7 @@ export default function Success() {
             <h3 className="font-semibold text-lg">What's Next?</h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Button asChild className="w-full">
-                <Link to={subscription?.status === 'active' ? "/dashboard" : "/pricing"}>
+                <Link to={subscription?.status === 'active' ? "/dashboard" : "/membership"}>
                   {subscription?.status === 'active' ? (
                     <>
                       Go to Dashboard

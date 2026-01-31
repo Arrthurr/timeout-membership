@@ -77,8 +77,8 @@ export default function IntegrationsSection({
                       loaderData?.isSignedIn
                         ? loaderData?.hasActiveSubscription
                           ? "/dashboard"
-                          : "/pricing"
-                        : "/pricing"
+                          : "/membership"
+                        : "/membership"
                     }
                     prefetch="viewport"
                   >

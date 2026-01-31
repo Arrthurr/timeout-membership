@@ -72,7 +72,7 @@ export default function Foundation() {
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/pricing">Become a member</Link>
+              <Link to="/membership">Become a member</Link>
             </Button>
             <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
               <Link to="/contact">Contact the foundation</Link>

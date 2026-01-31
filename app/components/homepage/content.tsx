@@ -130,7 +130,7 @@ export default function ContentSection() {
                 size="lg"
                 className="gap-2 bg-primary hover:bg-primary/90 shadow-lg"
               >
-                <Link to="/pricing">
+                <Link to="/membership">
                   <span>View Membership Plans</span>
                   <ChevronRight className="size-4" />
                 </Link>

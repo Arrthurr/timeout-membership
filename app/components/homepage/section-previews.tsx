@@ -179,7 +179,7 @@ export default function SectionPreviews() {
           </div>
           <div className="space-y-3">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-              <Link to="/pricing" prefetch="viewport">
+              <Link to="/membership" prefetch="viewport">
                 <span>Join Our Community</span>
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>

@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
-import { MembershipCards } from "~/components/pricing/membership-cards";
+import { MembershipCards } from "~/components/membership/membership-cards";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 import type { BarberService } from "~/lib/constants/services";
@@ -74,7 +74,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                <Link to="/pricing">Join the club</Link>
+                <Link to="/membership">Join the club</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
                 <Link to="#booking-section">Book a service</Link>

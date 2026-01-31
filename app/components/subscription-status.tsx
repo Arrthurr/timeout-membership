@@ -81,7 +81,7 @@ export default function SubscriptionStatus() {
         </CardHeader>
         <CardContent>
           <Button asChild className="w-full">
-            <a href="/pricing">View Plans</a>
+            <a href="/membership">View Plans</a>
           </Button>
         </CardContent>
       </Card>
