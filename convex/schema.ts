@@ -40,4 +40,17 @@ export default defineSchema({
   })
     .index("type", ["type"])
     .index("polarEventId", ["polarEventId"]),
+  waitlistInquiries: defineTable({
+    name: v.string(),
+    email: v.string(),
+    phone: v.optional(v.string()),
+    message: v.optional(v.string()),
+    planName: v.string(),
+    status: v.string(), // "pending" | "contacted" | "converted"
+    createdAt: v.number(),
+    updatedAt: v.optional(v.number()), // Set when inquiry is updated
+  })
+    .index("by_email", ["email"])
+    .index("by_status", ["status"])
+    .index("by_createdAt", ["createdAt"]),
 });

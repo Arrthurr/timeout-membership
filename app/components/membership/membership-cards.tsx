@@ -15,6 +15,7 @@ import {
 } from "~/components/ui/card";
 import { api } from "../../../convex/_generated/api";
 import { cn } from "~/lib/utils";
+import { WaitlistDialog } from "./waitlist-dialog";
 
 interface MembershipCardsProps {
   showHeader?: boolean;
@@ -206,42 +207,48 @@ export function MembershipCards({ showHeader = false, className }: MembershipCar
                 </CardContent>
 
                 <CardFooter>
-                  <Button
-                    className="w-full"
-                    onClick={() => handleSubscribe(price.id)}
-                    disabled={loadingPriceId === price.id}
-                    variant={isCurrentPlan ? "secondary" : "default"}
-                  >
-                    {loadingPriceId === price.id ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Setting up checkout...
-                      </>
-                    ) : isCurrentPlan ? (
-                      "Current Plan"
-                    ) : userSubscription?.status === "active" ? (
-                      (() => {
-                        const currentAmount = userSubscription.amount || 0;
-                        const newAmount = price.amount;
+                  {plan.name === "The Chairman's Cut" ? (
+                    <WaitlistDialog planName={plan.name}>
+                      <Button className="w-full">Join Waitlist</Button>
+                    </WaitlistDialog>
+                  ) : (
+                    <Button
+                      className="w-full"
+                      onClick={() => handleSubscribe(price.id)}
+                      disabled={loadingPriceId === price.id}
+                      variant={isCurrentPlan ? "secondary" : "default"}
+                    >
+                      {loadingPriceId === price.id ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Setting up checkout...
+                        </>
+                      ) : isCurrentPlan ? (
+                        "Current Plan"
+                      ) : userSubscription?.status === "active" ? (
+                        (() => {
+                          const currentAmount = userSubscription.amount || 0;
+                          const newAmount = price.amount;
 
-                        if (newAmount > currentAmount) {
-                          return `Upgrade (+$${(
-                            (newAmount - currentAmount) /
-                            100
-                          ).toFixed(0)}/mo)`;
-                        } else if (newAmount < currentAmount) {
-                          return `Downgrade (-$${(
-                            (currentAmount - newAmount) /
-                            100
-                          ).toFixed(0)}/mo)`;
-                        } else {
-                          return "Manage Plan";
-                        }
-                      })()
-                    ) : (
-                      "Get Started"
-                    )}
-                  </Button>
+                          if (newAmount > currentAmount) {
+                            return `Upgrade (+$${(
+                              (newAmount - currentAmount) /
+                              100
+                            ).toFixed(0)}/mo)`;
+                          } else if (newAmount < currentAmount) {
+                            return `Downgrade (-$${(
+                              (currentAmount - newAmount) /
+                              100
+                            ).toFixed(0)}/mo)`;
+                          } else {
+                            return "Manage Plan";
+                          }
+                        })()
+                      ) : (
+                        "Get Started"
+                      )}
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             );
