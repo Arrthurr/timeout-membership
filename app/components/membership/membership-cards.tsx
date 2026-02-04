@@ -98,6 +98,13 @@ export function MembershipCards({ showHeader = false, className }: MembershipCar
     }
   };
 
+  const normalizePlanName = (name: string) =>
+    name
+      .toLowerCase()
+      .replace(/['\u2019]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
   if (!plans) {
     return (
       <div className={cn("flex flex-col items-center justify-center py-12", className)}>
@@ -149,6 +156,9 @@ export function MembershipCards({ showHeader = false, className }: MembershipCar
             const isCurrentPlan =
               userSubscription?.status === "active" &&
               userSubscription?.amount === price.amount;
+
+            const isChairmansCut =
+              normalizePlanName(plan.name) === "the chairmans cut";
 
             return (
               <Card
@@ -207,7 +217,7 @@ export function MembershipCards({ showHeader = false, className }: MembershipCar
                 </CardContent>
 
                 <CardFooter>
-                  {plan.name === "The Chairman's Cut" ? (
+                  {isChairmansCut ? (
                     <WaitlistDialog planName={plan.name}>
                       <Button className="w-full">Join Waitlist</Button>
                     </WaitlistDialog>
