@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
 import { BookingLink } from "~/components/services/booking-link";
-import { MembershipCards } from "~/components/membership/membership-cards";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 import type { BarberService } from "~/lib/constants/services";
@@ -73,9 +72,6 @@ export default function ServicesPage() {
               Precision cuts, shaves, and grooming with room to linger. Book the craft; enjoy the lounge, bar, and priority treatment that come with membership.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                <Link to="/membership">Join the club</Link>
-              </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
                 <Link to="#booking-section">Book a service</Link>
               </Button>
@@ -151,21 +147,6 @@ export default function ServicesPage() {
               </p>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Membership Levels Section */}
-      <section className="py-16 bg-muted">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Membership levels
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the plan that fits your needs
-            </p>
-          </div>
-          <MembershipCards />
         </div>
       </section>
 

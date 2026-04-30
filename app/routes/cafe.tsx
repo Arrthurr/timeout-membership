@@ -52,9 +52,6 @@ export default function CafePage() {
               A calm café and coffee program inside the lounge—hosted for members. Grab a coffee before a cut, or stay and unwind.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                <Link to="/membership">Join the club</Link>
-              </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
                 <Link to="#menu">See the menu</Link>
               </Button>
@@ -160,14 +157,6 @@ export default function CafePage() {
                 Complimentary drip coffee during services.
               </p>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/membership">
-                Become a member
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

@@ -44,9 +44,6 @@ export default function AboutRoute() {
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                  <Link to="/membership">Join the club</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="border-border hover:bg-muted">
                   <Link to="/services">Book with Shannon</Link>
                 </Button>
               </div>
@@ -200,9 +197,6 @@ export default function AboutRoute() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-              <Link to="/membership">Join now</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="border-border hover:bg-muted">
               <Link to="/services">Book a service</Link>
             </Button>
           </div>

@@ -13,14 +13,10 @@ import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { Navbar } from "./navbar";
 
-export default function IntegrationsSection({
-  loaderData,
-}: {
-  loaderData?: { isSignedIn: boolean; hasActiveSubscription: boolean };
-}) {
+export default function IntegrationsSection() {
   return (
     <section id="hero" className="relative">
-      <Navbar loaderData={loaderData} variant="transparent" />
+      <Navbar variant="transparent" />
       <div className="relative bg-muted dark:bg-background py-24 md:py-32 overflow-hidden pt-32">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
@@ -61,8 +57,7 @@ export default function IntegrationsSection({
 
               {/* Membership Outcomes */}
               <p className="text-sm text-white/80 leading-relaxed">
-                Modern-minimal spaces, crafted service, and room to linger. Membership
-                gives you the run of the lounge, not just a booking slot.
+                Modern-minimal spaces, crafted service, and room to linger.
               </p>
 
               {/* Enhanced Call-to-Action Buttons */}
@@ -72,22 +67,9 @@ export default function IntegrationsSection({
                   asChild
                   className="bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group"
                 >
-                  <Link
-                    to={
-                      loaderData?.isSignedIn
-                        ? loaderData?.hasActiveSubscription
-                          ? "/dashboard"
-                          : "/membership"
-                        : "/membership"
-                    }
-                    prefetch="viewport"
-                  >
+                  <Link to="/services" prefetch="viewport">
                     <span className="relative z-10 flex items-center gap-2">
-                      {loaderData?.isSignedIn
-                        ? loaderData?.hasActiveSubscription
-                          ? <>View My Membership</>
-                          : <>Join the Club</>
-                        : <>Become a Member</>}
+                      Our Services Menu
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>

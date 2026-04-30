@@ -1,9 +1,6 @@
-import { getAuth } from "@clerk/react-router/ssr.server";
-import { fetchQuery } from "convex/nextjs";
 import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
-import { api } from "../../convex/_generated/api";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -48,28 +45,10 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader(args: Route.LoaderArgs) {
-  const { userId } = await getAuth(args);
-
-  const subscriptionData = userId
-    ? await fetchQuery(api.subscriptions.checkUserSubscriptionStatus, {
-        userId,
-      }).catch((error) => {
-        console.error("Failed to fetch subscription data:", error);
-        return null;
-      })
-    : null;
-
-  return {
-    isSignedIn: !!userId,
-    hasActiveSubscription: subscriptionData?.hasActiveSubscription || false,
-  };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function Home() {
   return (
     <>
-      <Integrations loaderData={loaderData} />
+      <Integrations />
       <ContentSection />
       <Footer />
     </>

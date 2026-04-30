@@ -1,7 +1,3 @@
-import { Button } from "~/components/ui/button";
-import { ChevronRight } from "lucide-react";
-import { Link } from "react-router";
-
 export default function ContentSection() {
   return (
     <section id="features" className="py-16 md:py-24 bg-background">
@@ -12,7 +8,7 @@ export default function ContentSection() {
             Built as a club, not just a chair
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Lounge and golf access, priority booking, elevated amenities, and member perks that keep visits easy.
+            Lounge and golf access, priority booking, and elevated amenities that keep visits easy.
           </p>
         </div>
 
@@ -30,7 +26,7 @@ export default function ContentSection() {
             <div className="space-y-5 order-1 md:order-2">
               <h3 className="text-3xl font-semibold">A lounge built to stay awhile</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Quiet rooms, crafted seating, and an elevated bar program. Your membership is access to a calm, polished space—not a rushed appointment.
+                Quiet rooms, crafted seating, and an elevated bar program. You now have access to a calm, polished space—not a rushed appointment.
               </p>
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-3">
@@ -99,7 +95,7 @@ export default function ContentSection() {
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>Foundation support baked into every membership—mentorship and community impact.</span>
+                  <span>Foundation support baked into every experience—mentorship and community impact.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
@@ -113,44 +109,6 @@ export default function ContentSection() {
             </div>
           </div>
 
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12 md:mt-16">
-          <div className="bg-muted rounded-2xl p-8 border border-border">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              Experience the club as a member
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              One membership unlocks every space: lounge, bar, golf sim, crafted cuts, and the quiet you’re looking for.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button
-                asChild
-                size="lg"
-                className="gap-2 bg-primary hover:bg-primary/90 shadow-lg"
-              >
-                <Link to="/membership">
-                  <span>View Membership Plans</span>
-                  <ChevronRight className="size-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="gap-2 border-border hover:bg-muted"
-              >
-                <Link to="/services">
-                  <span>View Timeout Services</span>
-                  <ChevronRight className="size-4" />
-                </Link>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground mt-4">
-              Save 20% with annual membership • No long-term commitment
-            </p>
-          </div>
         </div>
       </div>
     </section>

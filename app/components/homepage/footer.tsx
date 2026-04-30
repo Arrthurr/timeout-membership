@@ -17,6 +17,15 @@ export default function FooterSection() {
             <h3 className="text-lg font-semibold text-primary mb-2">
               Timeout At Shannon's
             </h3>
+            <div className="text-lg font-semibold text-primary mb-2">
+              <p>1607 N. Rutherford Ave., Suite 101</p>
+              <p>Chicago, IL 60707</p>
+              <p>
+                <a href="tel:+13124911748" className="text-inherit no-underline">
+                  312-491-1748
+                </a>
+              </p>
+            </div>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
               Chicago's premier barber shop experience - where tradition meets excellence, 
               and every visit supports our community through the :20 Second Timeout Foundation.
@@ -41,18 +50,6 @@ export default function FooterSection() {
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               About
-            </Link>
-            <Link
-              to="#pricing"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Membership
-            </Link>
-            <Link
-              to="/dashboard"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Member Portal
             </Link>
           </div>
 
