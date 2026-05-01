@@ -177,7 +177,7 @@ export const CAFE_CATEGORIES = {
     description: 'Premium coffee drinks to fuel your day',
     color: 'barber-brown',
     icon: '☕',
-    availability: 'Available all day'
+    availability: 'COMING SOON'
   },
   spirits: {
     name: 'Select Spirits',
