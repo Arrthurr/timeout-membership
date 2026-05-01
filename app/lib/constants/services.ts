@@ -30,9 +30,9 @@ export const BARBER_SERVICES: BarberService[] = [
   {
     id: 'rookies',
     name: 'Rookies',
-    sportsTheme: 'High School & Undergrads',
-    price: 50,
-    duration: '25 minutes',
+    sportsTheme: 'High School',
+    price: 45,
+    duration: '45 minutes',
     description: 'College students with valid ID get the rookie rate on quality cuts.',
     includes: ['Haircut', 'Basic styling', 'Student ID required'],
     category: 'standard',
