@@ -16,64 +16,16 @@ export const ZENOTI_WEBSTORE_URL =
 
 export const BARBER_SERVICES: BarberService[] = [
   {
-    id: 'overtime',
-    name: 'Full Timeout',
-    sportsTheme: 'Complete Service',
-    price: 150,
-    duration: '90 minutes',
-    description: 'Our signature complete service experience - the ultimate timeout treatment.',
-    includes: ['Precision haircut', 'Hot towel straight razor shave', 'Shampoo & scalp treatment', 'Styling & aftercare'],
-    category: 'premium',
-    memberDiscount: 15,
-    icon: '👑'
-  },
-  {
-    id: 'close-call',
-    name: 'That\'s a Close Call',
-    sportsTheme: 'Complete Razor Shave',
-    price: 80,
-    duration: '45 minutes',
-    description: 'Precision straight razor shave that\'s smoother than a perfect call.',
-    includes: ['Hot towel preparation', 'Straight razor shave', 'Cool towel finish', 'Aftershave treatment'],
-    category: 'specialty',
-    memberDiscount: 10,
-    icon: '🪒'
-  },
-  {
-    id: 'timeout-called',
-    name: 'Timeout Called',
-    sportsTheme: 'The Classic Play',
-    price: 50,
-    duration: '45 minutes',
-    description: 'Take a timeout for the perfect haircut and beard refresh.',
-    includes: ['Precision haircut', 'Beard trim', 'Shampoo', 'Styling'],
+    id: 'draft-picks',
+    name: 'Draft Picks',
+    sportsTheme: 'Youth League',
+    price: 40,
+    duration: '20 minutes',
+    description: 'Future all-stars get the VIP treatment - kids through high school.',
+    includes: ['Age-appropriate haircut', 'Gentle approach', 'Parent consultation welcome'],
     category: 'standard',
-    memberDiscount: 10,
-    icon: '⏱️'
-  },
-  {
-    id: 'she-got-game',
-    name: 'She Got Game',
-    sportsTheme: 'Women\'s Championship Cut',
-    price: 50,
-    duration: '30 minutes',
-    description: 'Precision shear cut and shampoo designed specifically for women.',
-    includes: ['Shear cut', 'Shampoo', 'Styling consultation'],
-    category: 'specialty',
-    memberDiscount: 8,
-    icon: '👩🏾‍🦱'
-  },
-  {
-    id: 'official-review',
-    name: 'An Official Review',
-    sportsTheme: 'Beard & Shave Specialist',
-    price: 60,
-    duration: '30 minutes',
-    description: 'Professional beard maintenance with precision razor work.',
-    includes: ['Razor shave', 'Beard trim & shaping', 'Hot towel treatment'],
-    category: 'specialty',
-    memberDiscount: 8,
-    icon: '🧔🏾‍♂️'
+    memberDiscount: 5,
+    icon: '⭐'
   },
   {
     id: 'rookies',
@@ -88,16 +40,64 @@ export const BARBER_SERVICES: BarberService[] = [
     icon: '🎓'
   },
   {
-    id: 'draft-picks',
-    name: 'Draft Picks',
-    sportsTheme: 'Youth League',
-    price: 40,
-    duration: '20 minutes',
-    description: 'Future all-stars get the VIP treatment - kids through high school.',
-    includes: ['Age-appropriate haircut', 'Gentle approach', 'Parent consultation welcome'],
+    id: 'she-got-game',
+    name: 'She Got Game',
+    sportsTheme: 'Women\'s Championship Cut',
+    price: 50,
+    duration: '30 minutes',
+    description: 'Precision shear cut and shampoo designed specifically for women.',
+    includes: ['Shear cut', 'Shampoo', 'Styling consultation'],
+    category: 'specialty',
+    memberDiscount: 8,
+    icon: '👩🏾‍🦱'
+  },
+  {
+    id: 'timeout-called',
+    name: 'Timeout Called',
+    sportsTheme: 'The Classic Play',
+    price: 50,
+    duration: '45 minutes',
+    description: 'Take a timeout for the perfect haircut and beard refresh.',
+    includes: ['Precision haircut', 'Beard trim', 'Shampoo', 'Styling'],
     category: 'standard',
-    memberDiscount: 5,
-    icon: '⭐'
+    memberDiscount: 10,
+    icon: '⏱️'
+  },
+  {
+    id: 'official-review',
+    name: 'An Official Review',
+    sportsTheme: 'Beard & Shave Specialist',
+    price: 60,
+    duration: '30 minutes',
+    description: 'Professional beard maintenance with precision razor work.',
+    includes: ['Razor shave', 'Beard trim & shaping', 'Hot towel treatment'],
+    category: 'specialty',
+    memberDiscount: 8,
+    icon: '🧔🏾‍♂️'
+  },
+  {
+    id: 'close-call',
+    name: 'That\'s a Close Call',
+    sportsTheme: 'Complete Razor Shave',
+    price: 80,
+    duration: '45 minutes',
+    description: 'Precision straight razor shave that\'s smoother than a perfect call.',
+    includes: ['Hot towel preparation', 'Straight razor shave', 'Cool towel finish', 'Aftershave treatment'],
+    category: 'specialty',
+    memberDiscount: 10,
+    icon: '🪒'
+  },
+  {
+    id: 'overtime',
+    name: 'Full Timeout',
+    sportsTheme: 'Complete Service',
+    price: 100,
+    duration: '90 minutes',
+    description: 'Our signature complete service experience - the ultimate timeout treatment.',
+    includes: ['Precision haircut', 'Hot towel straight razor shave', 'Shampoo & scalp treatment', 'Styling & aftercare'],
+    category: 'premium',
+    memberDiscount: 15,
+    icon: '👑'
   }
 ];
 
