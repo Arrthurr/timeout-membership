@@ -1,4 +1,4 @@
-import { Clock, Star, Users } from "lucide-react";
+import { Clock, Star } from "lucide-react";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import {
@@ -15,19 +15,18 @@ import {
   formatPrice,
   getMemberPrice,
   SERVICE_CATEGORIES,
+  ZENOTI_WEBSTORE_URL,
 } from "~/lib/constants/services";
 
 interface ServiceCardProps {
   service: BarberService;
   showMemberPricing?: boolean;
-  onBookService?: (serviceId: string) => void;
   className?: string;
 }
 
 export function ServiceCard({
   service,
   showMemberPricing = false,
-  onBookService,
   className,
 }: ServiceCardProps) {
   const category = SERVICE_CATEGORIES[service.category];
@@ -112,7 +111,7 @@ export function ServiceCard({
                 </>
               ) : (
                 <span className="text-2xl font-bold text-barber-brown-800">
-                  {formatPrice(service.price)}
+                  from {formatPrice(service.price)}
                 </span>
               )}
             </div>
@@ -145,27 +144,17 @@ export function ServiceCard({
             ))}
           </ul>
         </div>
-
-        {/* Member Discount Badge */}
-        {hasMemberDiscount && !showMemberPricing && (
-          <div className="mt-4 p-2 bg-barber-green-100 border border-barber-green-200 rounded-lg">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-barber-green-600" />
-              <span className="text-sm font-medium text-barber-green-800">
-                Members save ${service.memberDiscount}!
-              </span>
-            </div>
-          </div>
-        )}
       </CardContent>
 
       <CardFooter className="pt-0">
         <Button
-          onClick={() => onBookService?.(service.id)}
           className="w-full bg-primary hover:bg-primary/90"
           size="lg"
+          asChild
         >
-          Book This Service
+          <a href={ZENOTI_WEBSTORE_URL} target="_blank" rel="noopener noreferrer">
+            Book This Service
+          </a>
         </Button>
       </CardFooter>
     </Card>

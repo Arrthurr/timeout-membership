@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
-import { BookingLink } from "~/components/services/booking-link";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
-import type { BarberService } from "~/lib/constants/services";
 import {
   BARBER_SERVICES,
   SERVICE_CATEGORIES,
@@ -39,43 +36,24 @@ export function meta() {
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const filteredServices = selectedCategory === 'all' 
     ? BARBER_SERVICES 
     : BARBER_SERVICES.filter(service => service.category === selectedCategory);
 
-  const handleBookService = (serviceId: string) => {
-    setSelectedService(serviceId);
-    // Scroll to booking section
-    document.getElementById('booking-section')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start' 
-    });
-  };
-
-  const selectedServiceData = selectedService 
-    ? BARBER_SERVICES.find(s => s.id === selectedService)
-    : null;
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6">
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl font-semibold text-primary">
               Signature services for members
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Precision cuts, shaves, and grooming with room to linger. Book the craft; enjoy the lounge, bar, and priority treatment that come with membership.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Precision cuts, shaves, and grooming with room to linger. Book the craft; enjoy the lounge, bar, and priority treatment that comes with every service.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
-                <Link to="#booking-section">Book a service</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -129,7 +107,6 @@ export default function ServicesPage() {
               <ServiceCard
                 key={service.id}
                 service={service}
-                onBookService={handleBookService}
                 className="h-full"
               />
             ))}
@@ -145,44 +122,6 @@ export default function ServicesPage() {
               <p className="text-muted-foreground">
                 Try selecting a different category to see available services.
               </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Booking Section */}
-      <section id="booking-section" className="py-16 bg-background">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Ready to book?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Schedule your appointment and experience the Timeout difference.
-            </p>
-          </div>
-
-          <BookingLink 
-            serviceId={selectedService || undefined}
-            serviceName={selectedServiceData?.name}
-            className="max-w-2xl mx-auto"
-          />
-
-          {selectedService && selectedServiceData && (
-            <div className="mt-8 text-center">
-              <p className="text-sm text-muted-foreground">
-                Selected service: <span className="font-medium text-primary">
-                  {selectedServiceData.name} - ${selectedServiceData.price}
-                </span>
-              </p>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setSelectedService(null)}
-                className="mt-2"
-              >
-                Clear Selection
-              </Button>
             </div>
           )}
         </div>

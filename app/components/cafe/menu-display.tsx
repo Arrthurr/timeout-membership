@@ -1,4 +1,4 @@
-import { Clock, Info, Users } from "lucide-react";
+import { Info } from "lucide-react";
 import { Badge } from "~/components/ui/badge";
 import {
   Card,
@@ -12,7 +12,6 @@ import {
   type CafeItem,
   formatPrice,
   getMemberPrice,
-  getMemberSavings,
   CAFE_CATEGORIES,
 } from "~/lib/constants/cafe";
 
@@ -55,31 +54,11 @@ export function MenuDisplay({
     }
   };
 
-  const getAvailabilityColor = (availability?: string) => {
-    switch (availability) {
-      case "all-day":
-        return "text-barber-green-600";
-      case "evening":
-        return "text-orange-600";
-      case "limited":
-        return "text-amber-600";
-      default:
-        return "text-muted-foreground";
-    }
-  };
-
   return (
     <div className={cn("space-y-6", className)}>
       {/* Category Header */}
       <div className="text-center">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="text-2xl">{categoryInfo.icon}</span>
-          <h3 className="text-2xl font-bold text-primary">
-            {categoryInfo.name}
-          </h3>
-        </div>
-        <p className="text-muted-foreground">{categoryInfo.description}</p>
-        <Badge variant="outline" className="mt-2 text-sm">
+        <Badge variant="outline" className="text-sm">
           {categoryInfo.availability}
         </Badge>
       </div>
@@ -148,42 +127,14 @@ export function MenuDisplay({
                 </div>
               </CardHeader>
 
-              <CardContent className="pt-0">
-                <div className="space-y-2">
-                  {/* Alcohol Content (Spirits Only) */}
-                  {item.alcoholContent && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Info className="w-3 h-3" />
-                      <span>{item.alcoholContent}</span>
-                    </div>
-                  )}
-
-                  {/* Availability */}
-                  {item.availability && (
-                    <div className="flex items-center gap-2 text-sm">
-                      <Clock className="w-3 h-3 text-muted-foreground" />
-                      <span className={getAvailabilityColor(item.availability)}>
-                        {item.availability === "all-day" && "Available all day"}
-                        {item.availability === "evening" && "Evening only"}
-                        {item.availability === "limited" &&
-                          "Limited availability"}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Member Savings */}
-                  {hasMemberDiscount && !showMemberPricing && (
-                    <div className="mt-3 p-2 bg-barber-green-100 border border-barber-green-200 rounded-lg">
-                      <div className="flex items-center gap-2">
-                        <Users className="w-3 h-3 text-barber-green-600" />
-                        <span className="text-sm font-medium text-barber-green-800">
-                          Members {getMemberSavings(item)}!
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </CardContent>
+              {item.alcoholContent && (
+                <CardContent className="pt-0">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Info className="w-3 h-3" />
+                    <span>{item.alcoholContent}</span>
+                  </div>
+                </CardContent>
+              )}
             </Card>
           );
         })}

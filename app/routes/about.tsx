@@ -8,7 +8,7 @@ import Footer from "~/components/homepage/footer";
 export const meta: MetaFunction = () => {
   return [
     { title: "About Shannon Jones & Timeout At Shannon's - Master Barber & Community Leader" },
-    { name: "description", content: "Meet Shannon Jones, the vision and craft behind Timeout At Shannon's. Learn how a Chicago barber built a modern members-only lounge rooted in community and quiet luxury." },
+    { name: "description", content: "Meet Shannon Jones, the vision and craft behind Timeout At Shannon's. Learn how a Chicago barber built a modern lounge rooted in community and quiet luxury." },
     { name: "keywords", content: "Shannon Jones, master barber, Timeout At Shannon's, barber shop history, community leader, professional barbering, shop owner biography" }
   ];
 };
@@ -26,7 +26,7 @@ export default function AboutRoute() {
                 Shannon Jones, the craft behind the club.
               </h1>
               <p className="text-lg text-muted-foreground">
-                Chicago-born master barber who turned a neighborhood chair into a modern members-only lounge—equal parts craft, comfort, and community.
+                Chicago-born master barber who turned a neighborhood chair into a modern lounge—equal parts craft, comfort, and community.
               </p>
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-3">
@@ -78,7 +78,7 @@ export default function AboutRoute() {
             <div className="space-y-4">
               <h2 className="text-3xl font-semibold">From K-Town chair to citywide club</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Shannon started in a basement shop on Chicago’s West Side, honing a craft that blends precision, warmth, and a sense of place. Timeout grew from that chair into a lounge where members linger, connect, and get cared for.
+                Shannon started in a basement shop on Chicago’s West Side, honing a craft that blends precision, warmth, and a sense of place. Timeout grew from that chair into a lounge where clientele linger, connect, and get cared for.
               </p>
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-3">
@@ -120,7 +120,7 @@ export default function AboutRoute() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold">How Timeout was built</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A few pivotal moments that shaped the club you step into today.
+              A few pivotal moments that shaped the lounge you step into today.
             </p>
           </div>
           <ShopHistory variant="timeline" />
@@ -193,7 +193,7 @@ export default function AboutRoute() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-semibold mb-4">Visit the club, feel the difference</h2>
           <p className="text-muted-foreground mb-6">
-            Membership puts you at the center of Shannon’s craft: calm spaces, hosted service, and a community rooted in Chicago.
+            Timeout puts you at the center of Shannon’s craft: calm spaces, hosted service, and a community rooted in Chicago.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90">

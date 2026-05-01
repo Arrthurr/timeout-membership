@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { MenuDisplay } from "~/components/cafe/menu-display";
 import { Navbar } from "~/components/homepage/navbar";
@@ -48,14 +46,9 @@ export default function CafePage() {
             <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6">
               Out of Bounds Café
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              A calm café and coffee program inside the lounge—hosted for members. Grab a coffee before a cut, or stay and unwind.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              A calm café and coffee program inside the lounge. Grab a coffee before a cut, or stay and unwind.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button size="lg" variant="outline" className="border-border hover:bg-muted" asChild>
-                <Link to="#menu">See the menu</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -104,59 +97,8 @@ export default function CafePage() {
                   <span className="font-medium">Sunday:</span>
                   <span className="text-barber-brown-700">{CAFE_HOURS.coffee.sunday}</span>
                 </div>
-                <div className="mt-4 p-3 bg-muted rounded-lg border border-border">
-                  <p className="text-sm text-muted-foreground">
-                    ☕ Fresh coffee available all day • Espresso drinks • Cold brew • French press
-                  </p>
-                </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Member Benefits */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Member perks at Out of Bounds Café
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Better pricing, reserved spots, and hosted service while you sip.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
-              <div className="text-3xl mb-3">💰</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Member pricing
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Preferred rates on all café beverages.
-              </p>
-            </div>
-
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
-              <div className="text-3xl mb-3">🎯</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Reserved seating
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Settle into member-preferred spots and enjoy occasional specials.
-              </p>
-            </div>
-
-            <div className="bg-background rounded-xl p-6 text-center border border-barber-green-200 shadow-sm">
-              <div className="text-3xl mb-3">☕</div>
-              <h3 className="font-semibold text-lg mb-2 text-foreground">
-                Hosted coffee
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                Complimentary drip coffee during services.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -169,7 +111,7 @@ export default function CafePage() {
               A hosted café inside the lounge
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Traditional barbering meets modern hospitality—start with coffee, stay awhile, and linger with friends.
+              Traditional barbering meets modern hospitality—start with coffee and stay awhile.
             </p>
           </div>
 

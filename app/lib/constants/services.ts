@@ -11,36 +11,27 @@ export interface BarberService {
   icon?: string;
 }
 
+export const ZENOTI_WEBSTORE_URL =
+  'https://timeoutlounge.zenoti.com/webstoreNew' as const;
+
 export const BARBER_SERVICES: BarberService[] = [
   {
     id: 'overtime',
-    name: 'Overtime',
+    name: 'Full Timeout',
     sportsTheme: 'Complete Service',
     price: 150,
     duration: '90 minutes',
     description: 'Our signature complete service experience - the ultimate timeout treatment.',
-    includes: ['Precision haircut', 'Hot towel straight razor shave', 'Beard trim & styling', 'Shampoo & scalp treatment', 'Styling & aftercare'],
+    includes: ['Precision haircut', 'Hot towel straight razor shave', 'Shampoo & scalp treatment', 'Styling & aftercare'],
     category: 'premium',
     memberDiscount: 15,
     icon: '👑'
   },
   {
-    id: 'jump-ball',
-    name: 'Jump Ball',
-    sportsTheme: 'The Full Court Press',
-    price: 85,
-    duration: '60 minutes',
-    description: 'Start strong with our comprehensive grooming service.',
-    includes: ['Haircut', 'Straight razor shave', 'Shampoo', 'Razor edge lining'],
-    category: 'premium',
-    memberDiscount: 10,
-    icon: '🏀'
-  },
-  {
     id: 'close-call',
-    name: 'Takes a Close Call',
+    name: 'That\'s a Close Call',
     sportsTheme: 'Complete Razor Shave',
-    price: 85,
+    price: 80,
     duration: '45 minutes',
     description: 'Precision straight razor shave that\'s smoother than a perfect call.',
     includes: ['Hot towel preparation', 'Straight razor shave', 'Cool towel finish', 'Aftershave treatment'],
@@ -52,7 +43,7 @@ export const BARBER_SERVICES: BarberService[] = [
     id: 'timeout-called',
     name: 'Timeout Called',
     sportsTheme: 'The Classic Play',
-    price: 70,
+    price: 50,
     duration: '45 minutes',
     description: 'Take a timeout for the perfect haircut and beard refresh.',
     includes: ['Precision haircut', 'Beard trim', 'Shampoo', 'Styling'],
@@ -76,25 +67,13 @@ export const BARBER_SERVICES: BarberService[] = [
     id: 'official-review',
     name: 'An Official Review',
     sportsTheme: 'Beard & Shave Specialist',
-    price: 50,
+    price: 60,
     duration: '30 minutes',
     description: 'Professional beard maintenance with precision razor work.',
     includes: ['Razor shave', 'Beard trim & shaping', 'Hot towel treatment'],
     category: 'specialty',
     memberDiscount: 8,
     icon: '🧔🏾‍♂️'
-  },
-  {
-    id: 'foot-on-line',
-    name: 'His Foot Was on the Line',
-    sportsTheme: 'Locs & Braids Taper',
-    price: 50,
-    duration: '30 minutes',
-    description: 'Specialized taper service for locs and braids - precision you can count on.',
-    includes: ['Taper cut', 'Edge lining', 'Style consultation'],
-    category: 'specialty',
-    memberDiscount: 5,
-    icon: '💫'
   },
   {
     id: 'rookies',
@@ -107,18 +86,6 @@ export const BARBER_SERVICES: BarberService[] = [
     category: 'standard',
     memberDiscount: 5,
     icon: '🎓'
-  },
-  {
-    id: 'few-good-men',
-    name: 'A Few Good Men',
-    sportsTheme: 'Veterans Salute',
-    price: 40,
-    duration: '35 minutes',
-    description: 'Honoring our veterans with premium service at a special rate.',
-    includes: ['Haircut', 'Shave', 'Military ID or discharge papers required'],
-    category: 'specialty',
-    memberDiscount: 5,
-    icon: '🇺🇸'
   },
   {
     id: 'draft-picks',
