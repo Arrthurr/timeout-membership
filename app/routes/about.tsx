@@ -114,6 +114,22 @@ export default function AboutRoute() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="aspect-video w-full overflow-hidden rounded-2xl shadow-xl">
+            <iframe
+              src="https://www.youtube.com/embed/CM9qOA2mb-Q"
+              title="Timeout At Shannon's"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* History Timeline */}
       <section className="py-16 md:py-20 bg-background">
         <div className="mx-auto max-w-6xl px-6">

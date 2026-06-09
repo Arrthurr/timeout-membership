@@ -30,6 +30,7 @@ import { cn } from "~/lib/utils";
 interface MenuItem {
   title: string;
   url: string;
+  external?: boolean;
   description?: string;
   icon?: React.ReactNode;
   items?: MenuItem[];
@@ -43,6 +44,11 @@ const menuItems: MenuItem[] = [
   { title: "Services", url: "/services" },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
+  {
+    title: "Video",
+    url: "https://www.youtube.com/playlist?list=PLquGDM9ySymXFrrMztGGnYsRoMZdpazUo",
+    external: true,
+  },
 ];
 
 export const Navbar = ({ variant = "default" }: NavbarProps) => {
@@ -164,17 +170,29 @@ const renderMenuItem = (item: MenuItem, isTransparent: boolean = false) => {
     );
   }
 
+  const className = cn(
+    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-medium transition-colors",
+    isTransparent
+      ? "bg-transparent text-white/80 hover:bg-white/10 hover:text-white"
+      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+  );
+
+  if (item.external) {
+    return (
+      <a
+        key={item.title}
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {item.title}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      key={item.title}
-      className={cn(
-        "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
-        isTransparent 
-          ? "bg-transparent text-white/80 hover:bg-white/10 hover:text-white" 
-          : "bg-background text-muted-foreground hover:bg-muted hover:text-accent-foreground"
-      )}
-      to={item.url}
-    >
+    <Link key={item.title} className={className} to={item.url}>
       {item.title}
     </Link>
   );
@@ -207,6 +225,20 @@ const renderMobileMenuItem = (item: MenuItem) => {
           ))}
         </AccordionContent>
       </AccordionItem>
+    );
+  }
+
+  if (item.external) {
+    return (
+      <a
+        key={item.title}
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold"
+      >
+        {item.title}
+      </a>
     );
   }
 
