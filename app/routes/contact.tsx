@@ -1,18 +1,11 @@
+import { useEffect, useRef, useState } from "react";
 import { Form, useActionData, useNavigation } from "react-router";
+import { TurnstileWidget } from "~/components/contact/turnstile-widget";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-
-const RATE_LIMIT_MAX_REQUESTS = 5;
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-
-type RateLimitEntry = {
-  count: number;
-  resetAt: number;
-};
-
-const rateLimitStore = new Map<string, RateLimitEntry>();
+import { isContactRateLimited } from "~/lib/contact-rate-limit";
 
 export function meta() {
   return [
@@ -58,27 +51,6 @@ function getClientIp(request: Request): string | undefined {
 
   const firstIp = xForwardedFor.split(",")[0];
   return firstIp?.trim() || undefined;
-}
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const currentEntry = rateLimitStore.get(ip);
-
-  if (!currentEntry || currentEntry.resetAt <= now) {
-    rateLimitStore.set(ip, {
-      count: 1,
-      resetAt: now + RATE_LIMIT_WINDOW_MS,
-    });
-    return false;
-  }
-
-  if (currentEntry.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return true;
-  }
-
-  currentEntry.count += 1;
-  rateLimitStore.set(ip, currentEntry);
-  return false;
 }
 
 async function verifyTurnstileToken(
@@ -129,14 +101,6 @@ export async function action({ request }: { request: Request }): Promise<Contact
 
   const values = { firstName, lastName, email, mobilePhone, comments };
 
-  if (clientIp && isRateLimited(clientIp)) {
-    return {
-      ok: false,
-      message: "Too many submissions. Please wait a few minutes and try again.",
-      values,
-    };
-  }
-
   if (!firstName || !lastName || !email || !comments) {
     return {
       ok: false,
@@ -172,6 +136,14 @@ export async function action({ request }: { request: Request }): Promise<Contact
     return {
       ok: false,
       message: "Please complete the spam check before submitting.",
+      values,
+    };
+  }
+
+  if (clientIp && (await isContactRateLimited(clientIp))) {
+    return {
+      ok: false,
+      message: "Too many submissions. Please wait a few minutes and try again.",
       values,
     };
   }
@@ -230,6 +202,22 @@ export default function ContactPage() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+  const [turnstileResetSignal, setTurnstileResetSignal] = useState(0);
+  const wasSubmittingRef = useRef(false);
+
+  useEffect(() => {
+    if (navigation.state === "submitting") {
+      wasSubmittingRef.current = true;
+      return;
+    }
+
+    if (wasSubmittingRef.current && navigation.state === "idle") {
+      wasSubmittingRef.current = false;
+      if (actionData && !actionData.ok) {
+        setTurnstileResetSignal((count) => count + 1);
+      }
+    }
+  }, [navigation.state, actionData]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -344,12 +332,7 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   {turnstileSiteKey ? (
-                    <div
-                      className="cf-turnstile"
-                      data-sitekey={turnstileSiteKey}
-                      data-theme="auto"
-                      data-size="flexible"
-                    />
+                    <TurnstileWidget siteKey={turnstileSiteKey} resetSignal={turnstileResetSignal} />
                   ) : (
                     <p className="text-xs text-muted-foreground">
                       Spam protection is not configured yet. Please set Turnstile environment variables.
@@ -380,10 +363,6 @@ export default function ContactPage() {
           </Card>
         </div>
       </main>
-
-      {turnstileSiteKey && (
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-      )}
 
       <Footer />
     </div>
