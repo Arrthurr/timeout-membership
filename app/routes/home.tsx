@@ -1,4 +1,5 @@
 import ContentSection from "~/components/homepage/content";
+import FathersDayPromo from "~/components/homepage/fathers-day-promo";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
 import type { Route } from "./+types/home";
@@ -49,6 +50,7 @@ export default function Home() {
   return (
     <>
       <Integrations />
+      <FathersDayPromo />
       <ContentSection />
       <Footer />
     </>

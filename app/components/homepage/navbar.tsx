@@ -44,6 +44,7 @@ const menuItems: MenuItem[] = [
   { title: "Services", url: "/services" },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
+  { title: "Contact", url: "/contact" },
   {
     title: "Video",
     url: "https://www.youtube.com/playlist?list=PLquGDM9ySymXFrrMztGGnYsRoMZdpazUo",
