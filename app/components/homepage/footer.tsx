@@ -46,10 +46,16 @@ export default function FooterSection() {
               Out of Bounds
             </Link>
             <Link
-              to="#team"
+              to="/about"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               About
+            </Link>
+            <Link
+              to="/contact"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Contact
             </Link>
           </div>
 

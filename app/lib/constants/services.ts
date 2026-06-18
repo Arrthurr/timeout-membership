@@ -119,15 +119,6 @@ export const SERVICE_CATEGORIES = {
   }
 } as const;
 
-// Helper functions
-export const getServiceById = (id: string): BarberService | undefined => {
-  return BARBER_SERVICES.find(service => service.id === id);
-};
-
-export const getServicesByCategory = (category: BarberService['category']): BarberService[] => {
-  return BARBER_SERVICES.filter(service => service.category === category);
-};
-
 export const getMemberPrice = (service: BarberService): number => {
   if (!service.memberDiscount) return service.price;
   return service.price - service.memberDiscount;
@@ -135,8 +126,4 @@ export const getMemberPrice = (service: BarberService): number => {
 
 export const formatPrice = (price: number): string => {
   return `$${price}`;
-};
-
-export const formatDuration = (duration: string): string => {
-  return duration;
 };
