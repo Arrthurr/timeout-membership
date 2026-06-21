@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
-import FathersDayPromo from "~/components/homepage/fathers-day-promo";
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 import {
@@ -58,8 +57,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <FathersDayPromo />
 
       {/* Service Categories Filter */}
       <section className="py-8 bg-background border-b border-border">
