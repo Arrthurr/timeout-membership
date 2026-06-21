@@ -13,7 +13,8 @@
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/cafe": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+      "routes/cafe": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -54,6 +55,15 @@
         "parentId": "root",
         "file": "app/routes/cafe.tsx",
         "path": "cafe",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "app/routes/contact.tsx",
+        "path": "contact",
         "config": {
           "runtime": "nodejs"
         }
@@ -101,6 +111,12 @@
         "parentId": "root",
         "file": "routes/cafe.tsx",
         "path": "cafe"
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "routes/contact.tsx",
+        "path": "contact"
       }
     },
     "routeDiscovery": {
@@ -132,6 +148,10 @@
           {
             "file": "routes/cafe.tsx",
             "path": "cafe"
+          },
+          {
+            "file": "routes/contact.tsx",
+            "path": "contact"
           }
         ]
       }
