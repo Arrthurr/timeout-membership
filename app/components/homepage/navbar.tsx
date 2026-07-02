@@ -40,6 +40,9 @@ interface NavbarProps {
   variant?: "default" | "transparent";
 }
 
+const SIGN_IN_URL =
+  "https://timeoutlounge.zenoti.com/webstoreNew/services/guest";
+
 const menuItems: MenuItem[] = [
   { title: "Services", url: "/services" },
   { title: "Out of Bounds", url: "/cafe" },
@@ -52,6 +55,22 @@ const menuItems: MenuItem[] = [
   },
 ];
 
+const SignInButton = ({ className }: { className?: string }) => (
+  <Button
+    size="lg"
+    asChild
+    className={cn(
+      "bg-primary hover:bg-primary/90 shadow-lg relative overflow-hidden group",
+      className
+    )}
+  >
+    <a href={SIGN_IN_URL} target="_blank" rel="noopener noreferrer">
+      <span className="relative z-10 flex items-center gap-2">Sign In</span>
+      <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    </a>
+  </Button>
+);
+
 export const Navbar = ({ variant = "default" }: NavbarProps) => {
   const isTransparent = variant === "transparent";
 
@@ -62,7 +81,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
     )}>
       <div className="container mx-auto max-w-6xl px-6">
         {/* Desktop Navigation */}
-        <nav className="hidden justify-between lg:flex">
+        <nav className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center gap-2">
               <img 
@@ -79,6 +98,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               </NavigationMenu>
             </div>
           </div>
+          <SignInButton />
         </nav>
 
         {/* Mobile Navigation */}
@@ -124,6 +144,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
                   >
                     {menuItems.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
+                  <SignInButton className="w-full" />
                 </div>
               </SheetContent>
             </Sheet>
