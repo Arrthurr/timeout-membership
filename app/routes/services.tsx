@@ -49,10 +49,10 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-5xl font-semibold text-primary">
-              Signature services for members
+              Slam dunk treatments
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Precision cuts, shaves, and grooming with room to linger. Book the craft; enjoy the lounge, bar, and priority treatment that comes with every service.
+              Precision cuts, shaves, and grooming with room to linger.
             </p>
           </div>
         </div>

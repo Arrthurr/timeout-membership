@@ -44,7 +44,22 @@ const SIGN_IN_URL =
   "https://timeoutlounge.zenoti.com/webstoreNew/services/guest";
 
 const menuItems: MenuItem[] = [
-  { title: "Services", url: "/services" },
+  {
+    title: "Services",
+    url: "/services",
+    items: [
+      {
+        title: "Services",
+        url: "/services",
+        description: "Cuts, shaves, and grooming",
+      },
+      {
+        title: "Memberships",
+        url: "/memberships",
+        description: "Season passes and annual packages",
+      },
+    ],
+  },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
   { title: "Contact", url: "/contact" },
@@ -157,9 +172,16 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
 
 const renderMenuItem = (item: MenuItem, isTransparent: boolean = false) => {
   if (item.items) {
+    const triggerClassName = cn(
+      "h-10 text-lg font-medium",
+      isTransparent
+        ? "bg-transparent text-white/80 hover:bg-white/10 hover:text-white data-[state=open]:bg-white/10"
+        : "bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground data-[state=open]:bg-muted"
+    );
+
     return (
       <NavigationMenuItem key={item.title} className={isTransparent ? "text-white/80" : "text-muted-foreground"}>
-        <NavigationMenuTrigger className={isTransparent ? "bg-transparent text-white/80 hover:bg-white/10 hover:text-white data-[state=open]:bg-white/10" : ""}>
+        <NavigationMenuTrigger className={triggerClassName}>
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent>
@@ -168,7 +190,7 @@ const renderMenuItem = (item: MenuItem, isTransparent: boolean = false) => {
               {item.items.map((subItem) => (
                 <li key={subItem.title}>
                   <Link
-                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-foreground"
                     to={subItem.url}
                   >
                     {subItem.icon}
@@ -231,7 +253,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
           {item.items.map((subItem) => (
             <Link
               key={subItem.title}
-              className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+              className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-foreground"
               to={subItem.url}
             >
               {subItem.icon}

@@ -13,6 +13,7 @@
       "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/memberships": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/cafe": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
@@ -46,6 +47,15 @@
         "parentId": "root",
         "file": "app/routes/services.tsx",
         "path": "services",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/memberships": {
+        "id": "routes/memberships",
+        "parentId": "root",
+        "file": "app/routes/memberships.tsx",
+        "path": "memberships",
         "config": {
           "runtime": "nodejs"
         }
@@ -106,6 +116,12 @@
         "file": "routes/services.tsx",
         "path": "services"
       },
+      "routes/memberships": {
+        "id": "routes/memberships",
+        "parentId": "root",
+        "file": "routes/memberships.tsx",
+        "path": "memberships"
+      },
       "routes/cafe": {
         "id": "routes/cafe",
         "parentId": "root",
@@ -144,6 +160,10 @@
           {
             "file": "routes/services.tsx",
             "path": "services"
+          },
+          {
+            "file": "routes/memberships.tsx",
+            "path": "memberships"
           },
           {
             "file": "routes/cafe.tsx",
