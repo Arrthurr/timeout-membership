@@ -57,6 +57,12 @@ export default function FooterSection() {
             >
               Contact
             </Link>
+            <Link
+              to="/privacy"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
           </div>
 
           <div className="border-t border-barber-brown-200 pt-6 mt-4">

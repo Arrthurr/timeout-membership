@@ -7,4 +7,5 @@ export default [
   route("memberships", "routes/memberships.tsx"),
   route("cafe", "routes/cafe.tsx"),
   route("contact", "routes/contact.tsx"),
+  route("privacy", "routes/privacy.tsx"),
 ] satisfies RouteConfig;
