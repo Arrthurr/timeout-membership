@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 
 const TURNSTILE_SCRIPT_ID = "cf-turnstile-script";
+// Cloudflare only invokes onTurnstileLoad when the onload query param is set.
 const TURNSTILE_SCRIPT_SRC =
-  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad";
 
 type TurnstileRenderOptions = {
   sitekey: string;
@@ -31,20 +32,23 @@ function loadTurnstileScript(): Promise<void> {
   }
 
   return new Promise((resolve, reject) => {
-    const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
-    if (existingScript) {
-      const previousOnLoad = window.onTurnstileLoad;
-      window.onTurnstileLoad = () => {
-        previousOnLoad?.();
-        resolve();
-      };
+    const settle = () => {
       if (window.turnstile) {
         resolve();
       }
+    };
+
+    const previousOnLoad = window.onTurnstileLoad;
+    window.onTurnstileLoad = () => {
+      previousOnLoad?.();
+      settle();
+    };
+
+    const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
+    if (existingScript) {
+      settle();
       return;
     }
-
-    window.onTurnstileLoad = () => resolve();
 
     const script = document.createElement("script");
     script.id = TURNSTILE_SCRIPT_ID;
