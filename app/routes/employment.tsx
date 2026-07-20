@@ -601,9 +601,8 @@ export default function EmploymentPage() {
                   </h2>
                   <YesNoField
                     name="canProvideWorkPermit"
-                    legend="If you are under 18, can you provide a work permit? *"
+                    legend="If you are under 18, can you provide a work permit?"
                     value={values?.canProvideWorkPermit ?? ""}
-                    required
                   />
                 </section>
 

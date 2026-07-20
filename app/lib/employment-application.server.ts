@@ -126,10 +126,6 @@ export function validateEmploymentApplication(
     return "Please indicate whether we may inquire about your present employment.";
   }
 
-  if (!values.canProvideWorkPermit) {
-    return "Please indicate whether you can provide a work permit if you are under 18.";
-  }
-
   if (!values.acknowledgement) {
     return "Please confirm that you understand and agree to the acknowledgement statement.";
   }

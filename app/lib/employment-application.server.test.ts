@@ -142,6 +142,12 @@ describe("validateEmploymentApplication", () => {
       validateEmploymentApplication(createValidApplication({ acknowledgement: false })),
     ).toBe("Please confirm that you understand and agree to the acknowledgement statement.");
   });
+
+  it("allows an unanswered work permit question", () => {
+    expect(
+      validateEmploymentApplication(createValidApplication({ canProvideWorkPermit: "" })),
+    ).toBeNull();
+  });
 });
 
 describe("formatEmploymentApplicationEmail", () => {
