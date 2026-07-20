@@ -1,7 +1,7 @@
 import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
 
-const LAST_UPDATED = "July 13, 2026";
+const LAST_UPDATED = "July 20, 2026";
 const PRIVACY_EMAIL = "shop@timeoutatshannons.com";
 
 export function meta() {
@@ -91,9 +91,19 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <span className="text-foreground font-medium">
+                    Employment application information.
+                  </span>{" "}
+                  If you submit our employment application, we collect the
+                  information you provide in the form, including contact
+                  details, address, education and work history, position
+                  preferences, personal statements, and your acknowledgement of
+                  the application terms.
+                </li>
+                <li>
+                  <span className="text-foreground font-medium">
                     Technical and security information.
                   </span>{" "}
-                  When you use the contact form, we may process your IP address
+                  When you use the contact form or employment application, we may process your IP address
                   and related request metadata to help prevent spam and abuse
                   (including rate limiting and Cloudflare Turnstile
                   verification).
@@ -121,6 +131,7 @@ export default function PrivacyPage() {
               <p className="text-muted-foreground">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>Respond to inquiries about appointments, memberships, events, or general questions</li>
+                <li>Review employment applications and follow up with applicants when appropriate</li>
                 <li>Operate, maintain, and improve the Site</li>
                 <li>Protect the Site against spam, fraud, and abuse</li>
                 <li>Understand how visitors use the Site at a high level</li>
@@ -143,7 +154,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>
                   <span className="text-foreground font-medium">Resend</span>{" "}
-                  — delivers contact form messages by email.
+                  — delivers contact form messages and employment applications by email.
                 </li>
                 <li>
                   <span className="text-foreground font-medium">
@@ -183,8 +194,8 @@ export default function PrivacyPage() {
                 Retention, deletion, and your choices
               </h2>
               <p className="text-muted-foreground">
-                We retain contact form messages and related records for as long
-                as needed to respond to your inquiry and for ordinary business
+                We retain contact form messages, employment applications, and related records for as long
+                as needed to respond to your inquiry or review your application and for ordinary business
                 and security purposes, unless a longer period is required by
                 law. Analytics data is retained according to our analytics
                 provider&apos;s practices.

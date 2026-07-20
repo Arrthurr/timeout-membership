@@ -62,7 +62,22 @@ const menuItems: MenuItem[] = [
   },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
-  { title: "Contact", url: "/contact" },
+  {
+    title: "Contact",
+    url: "/contact",
+    items: [
+      {
+        title: "Contact",
+        url: "/contact",
+        description: "Questions, appointments, and general inquiries",
+      },
+      {
+        title: "Employment",
+        url: "/employment",
+        description: "Apply to join our team",
+      },
+    ],
+  },
   {
     title: "Video",
     url: "https://www.youtube.com/playlist?list=PLquGDM9ySymXFrrMztGGnYsRoMZdpazUo",
@@ -106,7 +121,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               />
             </Link>
             <div className="flex items-center">
-              <NavigationMenu>
+              <NavigationMenu viewport={false}>
                 <NavigationMenuList>
                   {menuItems.map((item) => renderMenuItem(item, isTransparent))}
                 </NavigationMenuList>
@@ -186,9 +201,9 @@ const renderMenuItem = (item: MenuItem, isTransparent: boolean = false) => {
         </NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="w-80 p-3">
-            <NavigationMenuLink>
-              {item.items.map((subItem) => (
-                <li key={subItem.title}>
+            {item.items.map((subItem) => (
+              <li key={subItem.title}>
+                <NavigationMenuLink asChild>
                   <Link
                     className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-foreground"
                     to={subItem.url}
@@ -205,9 +220,9 @@ const renderMenuItem = (item: MenuItem, isTransparent: boolean = false) => {
                       )}
                     </div>
                   </Link>
-                </li>
-              ))}
-            </NavigationMenuLink>
+                </NavigationMenuLink>
+              </li>
+            ))}
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
