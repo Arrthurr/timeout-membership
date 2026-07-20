@@ -62,7 +62,22 @@ const menuItems: MenuItem[] = [
   },
   { title: "Out of Bounds", url: "/cafe" },
   { title: "About", url: "/about" },
-  { title: "Contact", url: "/contact" },
+  {
+    title: "Contact",
+    url: "/contact",
+    items: [
+      {
+        title: "Contact",
+        url: "/contact",
+        description: "Questions, appointments, and general inquiries",
+      },
+      {
+        title: "Employment",
+        url: "/employment",
+        description: "Apply to join our team",
+      },
+    ],
+  },
   {
     title: "Video",
     url: "https://www.youtube.com/playlist?list=PLquGDM9ySymXFrrMztGGnYsRoMZdpazUo",
