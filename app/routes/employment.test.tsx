@@ -12,7 +12,7 @@ const EmploymentRouteStub = createRoutesStub([
 
 describe("EmploymentPage", () => {
   it("renders the application sections and required controls", () => {
-    render(<EmploymentRouteStub initialEntries={["/employment"]} />);
+    const { container } = render(<EmploymentRouteStub initialEntries={["/employment"]} />);
 
     expect(screen.getByRole("heading", { name: "Employment" })).toBeInTheDocument();
     expect(screen.getByText(/Bring your talent to Timeout at Shannon's/i)).toBeInTheDocument();
@@ -28,6 +28,8 @@ describe("EmploymentPage", () => {
       screen.getByText(/Timeout at Shannon's is an Equal Opportunity Employer/i),
     ).toBeInTheDocument();
     expect(screen.queryByText(/convicted of a crime/i)).not.toBeInTheDocument();
+    expect(container.querySelector('input[name="applicationFax"]')).toBeInTheDocument();
+    expect(container.querySelector('input[name="company"]')).not.toBeInTheDocument();
   });
 
   it("shows the license question for barber applicants", () => {

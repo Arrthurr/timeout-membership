@@ -53,7 +53,7 @@ export async function action({
   const formData = await request.formData();
   const clientIp = getClientIp(request);
 
-  const honeypot = formData.get("company");
+  const honeypot = formData.get("applicationFax");
   if (typeof honeypot === "string" && honeypot.trim().length > 0) {
     return {
       ok: true,
@@ -240,7 +240,7 @@ export default function EmploymentPage() {
               <Form method="post" className="space-y-10">
                 <input
                   type="text"
-                  name="company"
+                  name="applicationFax"
                   tabIndex={-1}
                   autoComplete="off"
                   className="hidden"
