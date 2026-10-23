@@ -1,5 +1,8 @@
+import { zenotiServiceId, type ZenotiServiceId } from './zenoti';
+
 export interface BarberService {
   id: string;
+  zenotiServiceId: ZenotiServiceId;
   name: string;
   sportsTheme: string;
   price: number;
@@ -11,12 +14,10 @@ export interface BarberService {
   icon?: string;
 }
 
-export const ZENOTI_WEBSTORE_URL =
-  'https://timeoutlounge.zenoti.com/webstoreNew' as const;
-
 export const BARBER_SERVICES: BarberService[] = [
   {
     id: 'draft-picks',
+    zenotiServiceId: zenotiServiceId('ef1a4a01-f6ba-44e2-8af6-5c02ab6a4e07'),
     name: 'Draft Picks',
     sportsTheme: 'Youth League',
     price: 40,
@@ -29,6 +30,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'rookies',
+    zenotiServiceId: zenotiServiceId('9d336934-a810-4e6f-8054-c64269e3294c'),
     name: 'Rookies',
     sportsTheme: 'High School',
     price: 45,
@@ -41,6 +43,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'she-got-game',
+    zenotiServiceId: zenotiServiceId('4464e90f-651b-4821-801f-acd9b9d3c545'),
     name: 'She Got Game',
     sportsTheme: 'Women\'s Championship Cut',
     price: 50,
@@ -53,6 +56,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'timeout-called',
+    zenotiServiceId: zenotiServiceId('145608eb-fc0a-4384-97cd-0e474ca809e8'),
     name: 'Timeout Called',
     sportsTheme: 'The Classic Play',
     price: 95,
@@ -65,6 +69,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'official-review',
+    zenotiServiceId: zenotiServiceId('84245caa-5a79-4164-b6e3-baad9532a76c'),
     name: 'An Official Review',
     sportsTheme: 'Beard & Shave Specialist',
     price: 60,
@@ -77,6 +82,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'close-call',
+    zenotiServiceId: zenotiServiceId('a1652794-436a-45e1-91b2-e524e29f62d1'),
     name: 'That\'s a Close Call',
     sportsTheme: 'Complete Razor Shave',
     price: 100,
@@ -89,6 +95,7 @@ export const BARBER_SERVICES: BarberService[] = [
   },
   {
     id: 'overtime',
+    zenotiServiceId: zenotiServiceId('abc1388e-e043-469c-86d8-9a2c36aed063'),
     name: 'Full Timeout',
     sportsTheme: 'Complete Service',
     price: 120,

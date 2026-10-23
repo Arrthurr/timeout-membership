@@ -10,12 +10,12 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
+import { zenotiServiceUrl } from "~/lib/constants/zenoti";
 import {
   type BarberService,
   formatPrice,
   getMemberPrice,
   SERVICE_CATEGORIES,
-  ZENOTI_WEBSTORE_URL,
 } from "~/lib/constants/services";
 
 interface ServiceCardProps {
@@ -152,7 +152,7 @@ export function ServiceCard({
           size="lg"
           asChild
         >
-          <a href={ZENOTI_WEBSTORE_URL} target="_blank" rel="noopener noreferrer">
+          <a href={zenotiServiceUrl(service.zenotiServiceId)} target="_blank" rel="noopener noreferrer">
             Book This Service
           </a>
         </Button>
