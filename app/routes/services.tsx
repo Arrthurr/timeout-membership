@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import { ServiceCard } from "~/components/services/service-card";
-import { Navbar } from "~/components/homepage/navbar";
 import Footer from "~/components/homepage/footer";
+import GiftCardBanner from "~/components/homepage/gift-card-banner";
+import { Navbar } from "~/components/homepage/navbar";
 import {
   BARBER_SERVICES,
   SERVICE_CATEGORIES,
@@ -57,6 +58,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <GiftCardBanner />
 
       {/* Service Categories Filter */}
       <section className="py-8 bg-background border-b border-border">

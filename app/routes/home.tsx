@@ -1,5 +1,6 @@
 import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
+import GiftCardBanner from "~/components/homepage/gift-card-banner";
 import Integrations from "~/components/homepage/integrations";
 import type { Route } from "./+types/home";
 
@@ -49,6 +50,7 @@ export default function Home() {
   return (
     <>
       <Integrations />
+      <GiftCardBanner />
       <ContentSection />
       <Footer />
     </>
