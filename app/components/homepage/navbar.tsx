@@ -25,6 +25,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet";
+import {
+  ZENOTI_ACCOUNT_URL,
+  ZENOTI_BOOK_NOW_URL,
+} from "~/lib/constants/zenoti";
 import { cn } from "~/lib/utils";
 
 interface MenuItem {
@@ -39,9 +43,6 @@ interface MenuItem {
 interface NavbarProps {
   variant?: "default" | "transparent";
 }
-
-const SIGN_IN_URL =
-  "https://timeoutlounge.zenoti.com/webstoreNew/services/guest";
 
 const menuItems: MenuItem[] = [
   {
@@ -83,9 +84,10 @@ const menuItems: MenuItem[] = [
     url: "https://www.youtube.com/playlist?list=PLquGDM9ySymXFrrMztGGnYsRoMZdpazUo",
     external: true,
   },
+  { title: "My Account", url: ZENOTI_ACCOUNT_URL, external: true },
 ];
 
-const SignInButton = ({ className }: { className?: string }) => (
+const BookNowButton = ({ className }: { className?: string }) => (
   <Button
     size="lg"
     asChild
@@ -94,8 +96,8 @@ const SignInButton = ({ className }: { className?: string }) => (
       className
     )}
   >
-    <a href={SIGN_IN_URL} target="_blank" rel="noopener noreferrer">
-      <span className="relative z-10 flex items-center gap-2">Sign In</span>
+    <a href={ZENOTI_BOOK_NOW_URL} target="_blank" rel="noopener noreferrer">
+      <span className="relative z-10 flex items-center gap-2">Book Now</span>
       <div className="absolute inset-0 bg-gradient-to-r from-barber-orange-600/20 via-transparent to-barber-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </a>
   </Button>
@@ -128,7 +130,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
               </NavigationMenu>
             </div>
           </div>
-          <SignInButton />
+          <BookNowButton />
         </nav>
 
         {/* Mobile Navigation */}
@@ -147,6 +149,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
                   variant={isTransparent ? "ghost" : "outline"} 
                   size="icon"
                   className={isTransparent ? "text-white hover:bg-white/10 border-white/20" : ""}
+                  aria-label="Open menu"
                 >
                   <Menu className="size-4" />
                 </Button>
@@ -174,7 +177,7 @@ export const Navbar = ({ variant = "default" }: NavbarProps) => {
                   >
                     {menuItems.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
-                  <SignInButton className="w-full" />
+                  <BookNowButton className="w-full" />
                 </div>
               </SheetContent>
             </Sheet>
